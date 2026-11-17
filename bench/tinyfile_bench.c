@@ -140,7 +140,9 @@ int main(int argc,char **argv) {
         int fd=openat(dirfd,name,O_WRONLY|O_NOFOLLOW|(create?(O_CREAT|O_EXCL):0),0644);if(fd<0)die("open write");
         size_t off=grow?initial:0;write_all(fd,expected+id*size+off,size-off,(off_t)off);if(close(fd))die("close write");
     }
-    uint64_t operations_end=now_ns();if(!read_mode)sync_filesystem(dirfd);uint64_t end=now_ns();
+    uint64_t operations_end=now_ns();
+    if(!read_mode)sync_filesystem(dirfd);
+    uint64_t end=read_mode?operations_end:now_ns();
     if(getrusage(RUSAGE_SELF,&ru_after))die("getrusage");
     struct io io_after=process_io();
     struct state after=validate(dirfd,count,size,expected,loaded,size);struct utsname u;if(uname(&u))die("uname");

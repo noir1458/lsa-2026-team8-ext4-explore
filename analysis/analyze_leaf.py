@@ -41,6 +41,7 @@ def validate_session(directory, expected_profile, errors):
                 for rep in range(meta["rounds"]) for label, _ in meta["policies"]}
     case_map = {c["case"]: c for c in meta["cases"]}
     policy_map = dict(meta["policies"])
+    stock = meta.get("phase", "patched") == "stock"
     seen, sequences, semantic = set(), {}, {}
     trials, kinds = [], []
 
@@ -49,7 +50,8 @@ def validate_session(directory, expected_profile, errors):
             errors.append(directory.name + ": " + message)
 
     check(bool(meta["profile"]) == expected_profile, "incorrect timing/profile session type")
-    check(policy_map == {"baseline": 0, "shadow": 0, "tail": 1}, "unexpected policy mapping")
+    check(policy_map == ({"baseline": 0, "shadow": 0} if stock else {"baseline": 0, "shadow": 0, "tail": 1}), "unexpected policy mapping")
+    check(not stock or not expected_profile, "stock session cannot provide kernel profiling")
     check(len(summary) == len(expected), "summary row count does not match planned cells")
     for row in summary:
         identity = (row["case"], row["cache"], int(row["round"]), row["label"])
@@ -69,7 +71,8 @@ def validate_session(directory, expected_profile, errors):
         query_count = int(row["queries"])
         positive = int(row["positive"])
         negative = int(row["negative"])
-        candidates, rejects = int(row["candidates"]), int(row["rejects"])
+        candidates = int(row["candidates"]) if row["candidates"] else None
+        rejects = int(row["rejects"]) if row["rejects"] else None
         check(record.get("returncode") == 0 and int(row["errors"]) == 0, tag + " lookup failure")
         check(query_count == positive + negative == case["positive"] + case["negative"], tag + " query count")
         check(positive == case["positive"] and negative == case["negative"], tag + " hit/miss count")
@@ -84,12 +87,16 @@ def validate_session(directory, expected_profile, errors):
         check(int(row["seed"]) == record["seed"] == (meta["seed"] + int(row["round"]) * 1000003) % (2**64), tag + " seed")
         check(record["names_sha256"] == case["names_sha256"], tag + " names manifest hash")
         check(row["kernel"] == meta["kernel"], tag + " kernel mismatch")
-        check(record["stats"] == {"candidates": candidates, "rejects": rejects}, tag + " counter record mismatch")
-        check(0 <= rejects <= candidates, tag + " impossible profile counts")
-        if not expected_profile or row["label"] != "tail" or row["cache"] == "warm":
-            check(candidates == rejects == 0, tag + " nonzero control/timing counters")
+        if stock:
+            check(record["stats"] is None and candidates is None and rejects is None,
+                  tag + " stock counters must be unavailable rather than measured zeros")
         else:
-            check(candidates > 0, tag + " tail profile did not enter comparison path")
+            check(record["stats"] == {"candidates": candidates, "rejects": rejects}, tag + " counter record mismatch")
+            check(candidates is not None and rejects is not None and 0 <= rejects <= candidates, tag + " impossible profile counts")
+            if not expected_profile or row["label"] != "tail" or row["cache"] == "warm":
+                check(candidates == rejects == 0, tag + " nonzero control/timing counters")
+            else:
+                check(candidates is not None and candidates > 0, tag + " tail profile did not enter comparison path")
         latency_file = Path(str(prefix) + ".latencies.csv.gz")
         opener = gzip.open
         if not latency_file.exists():
@@ -170,6 +177,25 @@ def paired(trials):
     return pairs, summaries
 
 
+def paired_query_kinds(trials):
+    """Conditional hit/miss cost inside the mixed workload, not pure-hit trials."""
+    cells = {(r["case"], r["cache"], int(r["round"]), r["label"], r["kind"]): r for r in trials}
+    groups = collections.defaultdict(list)
+    for key, row in cells.items():
+        if row["label"] == "baseline":
+            continue
+        baseline = cells.get(key[:3] + ("baseline", row["kind"]))
+        if baseline is not None:
+            groups[(row["case"], row["cache"], row["label"], row["kind"])].append(float(row["mean_ns"]) / float(baseline["mean_ns"]))
+    return [{"case": case, "cache": cache, "label": label, "kind": kind, "pairs": len(values),
+             "metric": "conditional_mean_syscall_ns_in_mixed_workload",
+             "median_change_percent": (statistics.median(values) - 1) * 100,
+             "min_change_percent": (min(values) - 1) * 100,
+             "max_change_percent": (max(values) - 1) * 100,
+             "faster_pairs": sum(v < 1 for v in values), "slower_pairs": sum(v > 1 for v in values)}
+            for (case, cache, label, kind), values in sorted(groups.items())]
+
+
 def plot_report(report, output):
     import matplotlib
     matplotlib.use("Agg")
@@ -177,9 +203,12 @@ def plot_report(report, output):
     summaries = report["paired_summary"]
     cases = [c["case"] for c in report["metadata"]["cases"]]
     modes = report["metadata"]["modes"]
+    labels = [label for label, _ in report["metadata"]["policies"] if label != "baseline"]
     fig, axes = plt.subplots(len(modes), 1, figsize=(10, 3.4 * len(modes)), squeeze=False)
     for ax, mode in zip(axes[:, 0], modes):
-        for label, offset, color in (("shadow", -0.12, "#69758a"), ("tail", 0.12, "#167d9a")):
+        for label_index, label in enumerate(labels):
+            offset = (label_index - (len(labels) - 1) / 2) * 0.24
+            color = "#69758a" if label == "shadow" else "#167d9a"
             selected = [next(r for r in summaries if r["case"] == case and r["cache"] == mode and r["label"] == label) for case in cases]
             median = [r["median_change_percent"] for r in selected]
             error = [[r["median_change_percent"] - r["min_change_percent"] for r in selected],
@@ -191,7 +220,7 @@ def plot_report(report, output):
         ax.set_ylabel("Time change vs baseline (%)")
         ax.grid(axis="y", alpha=0.2)
         ax.legend()
-    fig.suptitle("Leaf tail prefilter — negative values are faster")
+    fig.suptitle(("Stock-kernel same-policy control" if report["metadata"].get("phase") == "stock" else "Leaf tail prefilter") + " — negative values are faster")
     fig.tight_layout()
     fig.savefig(output / "fig1_leaf.png", dpi=180, bbox_inches="tight")
     plt.close(fig)
@@ -212,20 +241,24 @@ def main():
         if profile_meta["kernel"] != meta["kernel"] or profile_meta["benchmark_sha256"] != meta["benchmark_sha256"]:
             errors.append("profiling and timing used different kernel or benchmark")
     pairs, summary = paired(trials)
+    kind_summary = paired_query_kinds(kinds)
     report = {"status": "ok" if not errors else "invalid", "validation_errors": errors,
               "metadata": meta, "timing_trials": len(trials), "profile_trials": len(profiles),
-              "paired_summary": summary, "profile_summary": profiles,
+              "paired_summary": summary, "query_kind_paired_summary": kind_summary, "profile_summary": profiles,
               "notes": ["Each invocation analyzes one session; discovery/confirmation sessions are never pooled.",
                         "Primary metric is complete loop elapsed_ns / queries, including timer and correctness overhead.",
                         "Same-round ratios use identical query order; individual queries are not independent replications.",
                         "shadow and baseline both set leaf_prefilter=0; shadow measures same-policy variability.",
+                        "Hit/miss summaries are conditional means inside the mixed query workload, not separate 100-percent-hit/miss experiments.",
                         "Min/max bars are observed ranges, not confidence intervals or equivalence tests.",
                         "Profile times are excluded from all timing comparisons.",
-                        "leaf_stats only counts enabled tail checks; zero baseline/shadow counters cannot prove dcache hits."]}
+                        "leaf_stats only counts enabled tail checks; zero baseline/shadow counters cannot prove dcache hits.",
+                        "Stock-kernel counters are unavailable, not measured zeros; stock/patch boot sessions are never pooled or paired."]}
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / "leaf_summary.json").write_text(json.dumps(report, indent=2, allow_nan=False) + "\n")
     write_csv(args.output / "leaf_trials.csv", trials)
     write_csv(args.output / "leaf_query_kind_trials.csv", kinds)
+    write_csv(args.output / "leaf_query_kind_paired_summary.csv", kind_summary)
     write_csv(args.output / "leaf_paired_trials.csv", pairs)
     write_csv(args.output / "leaf_paired_summary.csv", summary)
     write_csv(args.output / "leaf_profiles.csv", profiles)

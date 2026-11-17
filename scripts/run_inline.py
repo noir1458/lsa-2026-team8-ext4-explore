@@ -173,7 +173,7 @@ def main():
         order = sizes[:]; random.Random(args.seed + r * 101).shuffle(order)
         schedule.append({"round": r, "labels": labels, "size_order": order,
                          "order_seed": args.seed + r * 1009})
-    plan = {"experiment": "existing_ext4_inline_data", "rounds": args.rounds, "files_per_size": args.count,
+    plan = {"experiment": "existing_ext4_inline_data", "rounds": args.rounds, "files_per_size": args.count, "seed": args.seed,
             "sizes": sizes, "image_mib": args.image_mib, "block_size": 4096, "inode_size": 256,
             "schedule": schedule, "trial_count": args.rounds * 2 * (3 * len(sizes) + 3),
             "create_sync": "buffered writes, close all files, fsync(directory), syncfs(filesystem)",
