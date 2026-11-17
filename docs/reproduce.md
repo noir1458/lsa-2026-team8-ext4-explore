@@ -62,3 +62,30 @@ python3 analysis/analyze_inline.py --results "$experiment_dir/results/inline" --
 ```
 
 완료한 실험은 일반 파일 이미지 두 개를 분리한 뒤 원래 커널로 다시 부팅한다. 이미지는 재검증을 위해 남겨둘 수 있으며, inline runner는 자기가 만든 개별 이미지에 대해 fsck가 성공한 경우만 정리한다.
+
+## 원본 B0 및 독립 확인
+
+B0는 패치를 적용하지 않은 별도 Linux 5.4.214 소스에서 같은 설정을 사용하되 CONFIG_LOCALVERSION만 -b0로 바꿔 빌드한다. 제공한 config-diff 기록에는 이름 한 줄만 다르다. B0로 한 번 부팅한 다음 기존 leaf 이미지를 다시 마운트하고 실행한다.
+
+```sh
+experiment_dir="$HOME/ext4-extra-new-run"
+sudo mount -o loop,noatime "$experiment_dir/fixtures/leaf.img" "$experiment_dir/fixtures/leaf-mount"
+sudo bash "$experiment_dir/scripts/run_stock.sh" "$experiment_dir"
+```
+
+이후 ext4ex1로 한 번 더 부팅해 확인 세션을 실행한다. 이 명령은 첫 실행 결과를 덮어쓰지 않고 별도 confirm/stock 출력에 기록한다. 동일한 image·이름 목록에서 새 실행/질의 순서 seed를 사용하며, inline 비교는 새 이미지를 만든다. 확인 세션이 끝날 때까지 원자료 전송이나 다른 실험을 함께 돌리지 않는다.
+
+```sh
+experiment_dir="$HOME/ext4-extra-new-run"
+sudo bash "$experiment_dir/scripts/run_confirmation.sh" "$experiment_dir"
+```
+
+SEEK_DATA 반환값 외에 mapping 변경 후 실제 데이터를 검증하려고 page별 고유 payload를 넣은 별도 파일에 buffered·O_DIRECT 읽기를 모두 수행한다. 추가 pread 성능 대조는 이 정확성 검증과도 구분한다.
+
+```sh
+python3 analysis/analyze_leaf.py --input "$experiment_dir/results/leaf-stock" --output "$experiment_dir/analysis/leaf-stock"
+python3 analysis/analyze_leaf.py --input "$experiment_dir/results/leaf-confirm" --profiles "$experiment_dir/results/leaf-profile" --output "$experiment_dir/analysis/leaf-confirm"
+python3 analysis/analyze_es.py --input "$experiment_dir/results" --output "$experiment_dir/analysis/es"
+python3 analysis/analyze_inline.py --results "$experiment_dir/results/inline-confirm" --output "$experiment_dir/analysis/inline-confirm"
+python3 analysis/analyze_es_io.py --input "$experiment_dir/results" --output "$experiment_dir/analysis/es-io"
+```
