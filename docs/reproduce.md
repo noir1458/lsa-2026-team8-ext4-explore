@@ -27,6 +27,7 @@ GRUB에서 실제 항목 ID를 확인해 `grub-reboot`으로 새 커널을 한 �
 ## 새 측정 디렉터리
 
 ```sh
+experiment_repo=/path/to/lsa-2026-team8-ext4-explore
 cd "$experiment_repo"
 make -C bench
 python3 scripts/check_leaf.py
@@ -83,9 +84,14 @@ sudo bash "$experiment_dir/scripts/run_confirmation.sh" "$experiment_dir"
 SEEK_DATA 반환값 외에 mapping 변경 후 실제 데이터를 검증하려고 page별 고유 payload를 넣은 별도 파일에 buffered·O_DIRECT 읽기를 모두 수행한다. 추가 pread 성능 대조는 이 정확성 검증과도 구분한다.
 
 ```sh
+experiment_repo=/path/to/lsa-2026-team8-ext4-explore
+experiment_dir="$HOME/ext4-extra-new-run"
+cd "$experiment_repo"
 python3 analysis/analyze_leaf.py --input "$experiment_dir/results/leaf-stock" --output "$experiment_dir/analysis/leaf-stock"
 python3 analysis/analyze_leaf.py --input "$experiment_dir/results/leaf-confirm" --profiles "$experiment_dir/results/leaf-profile" --output "$experiment_dir/analysis/leaf-confirm"
 python3 analysis/analyze_es.py --input "$experiment_dir/results" --output "$experiment_dir/analysis/es"
 python3 analysis/analyze_inline.py --results "$experiment_dir/results/inline-confirm" --output "$experiment_dir/analysis/inline-confirm"
 python3 analysis/analyze_es_io.py --input "$experiment_dir/results" --output "$experiment_dir/analysis/es-io"
+python3 analysis/plot_es.py --input "$experiment_dir/analysis/es" --output "$experiment_dir/analysis/es"
+python3 analysis/plot_es_io.py --input "$experiment_dir/analysis/es-io" --output "$experiment_dir/analysis/es-io"
 ```
