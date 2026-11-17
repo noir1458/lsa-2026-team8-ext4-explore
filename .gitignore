@@ -1,0 +1,7 @@
+source/
+fixtures/
+private/
+__pycache__/
+bench/*_bench
+*.img
+*.o

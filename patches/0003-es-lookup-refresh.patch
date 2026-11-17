@@ -1,0 +1,180 @@
+--- a/fs/ext4/extents_status.c
++++ b/fs/ext4/extents_status.c
+@@ -13,6 +13,8 @@
+ #include <linux/list_sort.h>
+ #include <linux/proc_fs.h>
+ #include <linux/seq_file.h>
++#include <linux/module.h>
++#include <linux/sched.h>
+ #include "ext4.h"
+ 
+ #include <trace/events/ext4.h>
+@@ -141,6 +143,89 @@
+  *   -- Extent-level locking
+  */
+ 
++
++/* Experiment: lookup locality hint. On-disk state and invalidation unchanged. */
++static bool es_lookup_refresh;
++module_param(es_lookup_refresh, bool, 0644);
++MODULE_PARM_DESC(es_lookup_refresh, "Refresh ES last-extent hint after lookup (default off)");
++static bool es_lookup_profile;
++module_param(es_lookup_profile, bool, 0644);
++MODULE_PARM_DESC(es_lookup_profile, "Profile es_bench tasks; disable for timing");
++static atomic64_t es_exp_lookups = ATOMIC64_INIT(0);
++static atomic64_t es_exp_pointer_hits = ATOMIC64_INIT(0);
++static atomic64_t es_exp_tree_nodes = ATOMIC64_INIT(0);
++static atomic64_t es_exp_tree_hits = ATOMIC64_INIT(0);
++static atomic64_t es_exp_tree_misses = ATOMIC64_INIT(0);
++static atomic64_t es_exp_refreshes = ATOMIC64_INIT(0);
++
++static int es_exp_stats_get(char *buf, const struct kernel_param *kp)
++{
++	return scnprintf(buf, PAGE_SIZE,
++		"lookups=%lld pointer_hits=%lld tree_nodes=%lld tree_hits=%lld tree_misses=%lld refreshes=%lld\n",
++		(long long)atomic64_read(&es_exp_lookups),
++		(long long)atomic64_read(&es_exp_pointer_hits),
++		(long long)atomic64_read(&es_exp_tree_nodes),
++		(long long)atomic64_read(&es_exp_tree_hits),
++		(long long)atomic64_read(&es_exp_tree_misses),
++		(long long)atomic64_read(&es_exp_refreshes));
++}
++static const struct kernel_param_ops es_exp_stats_ops = { .get = es_exp_stats_get };
++module_param_cb(es_lookup_stats, &es_exp_stats_ops, NULL, 0444);
++
++static int es_exp_reset_set(const char *val, const struct kernel_param *kp)
++{
++	bool reset;
++	int err = kstrtobool(val, &reset);
++	if (err)
++		return err;
++	if (!reset)
++		return -EINVAL;
++	if (READ_ONCE(es_lookup_profile))
++		return -EBUSY;
++	atomic64_set(&es_exp_lookups, 0);
++	atomic64_set(&es_exp_pointer_hits, 0);
++	atomic64_set(&es_exp_tree_nodes, 0);
++	atomic64_set(&es_exp_tree_hits, 0);
++	atomic64_set(&es_exp_tree_misses, 0);
++	atomic64_set(&es_exp_refreshes, 0);
++	return 0;
++}
++static const struct kernel_param_ops es_exp_reset_ops = { .set = es_exp_reset_set };
++module_param_cb(es_lookup_reset, &es_exp_reset_ops, NULL, 0200);
++
++/* Replay only during profiling: no counter branch in the timed tree loop.
++ * tree_nodes counts visited RB nodes, not individual comparison operators.
++ * Caller holds i_es_lock, so the tree and the original hit stay valid.
++ */
++static void es_exp_record(struct ext4_es_tree *tree, ext4_lblk_t lblk,
++			  bool pointer_hit, bool found)
++{
++	struct rb_node *node;
++	struct extent_status *es;
++	unsigned int visits = 0;
++	atomic64_inc(&es_exp_lookups);
++	if (pointer_hit) {
++		atomic64_inc(&es_exp_pointer_hits);
++		return;
++	}
++	node = tree->root.rb_node;
++	while (node) {
++		es = rb_entry(node, struct extent_status, rb_node);
++		visits++;
++		if (lblk < es->es_lblk)
++			node = node->rb_left;
++		else if (lblk - es->es_lblk >= es->es_len)
++			node = node->rb_right;
++		else
++			break;
++	}
++	atomic64_add(visits, &es_exp_tree_nodes);
++	if (found)
++		atomic64_inc(&es_exp_tree_hits);
++	else
++		atomic64_inc(&es_exp_tree_misses);
++}
++
+ static struct kmem_cache *ext4_es_cachep;
+ static struct kmem_cache *ext4_pending_cachep;
+ 
+@@ -269,14 +354,12 @@
+ 
+ 	/* see if the extent has been cached */
+ 	es->es_lblk = es->es_len = es->es_pblk = 0;
+-	if (tree->cache_es) {
+-		es1 = tree->cache_es;
+-		if (in_range(lblk, es1->es_lblk, es1->es_len)) {
+-			es_debug("%u cached by [%u/%u) %llu %x\n",
+-				 lblk, es1->es_lblk, es1->es_len,
+-				 ext4_es_pblock(es1), ext4_es_status(es1));
+-			goto out;
+-		}
++	es1 = READ_ONCE(tree->cache_es);
++	if (es1 && in_range(lblk, es1->es_lblk, es1->es_len)) {
++		es_debug("%u cached by [%u/%u) %llu %x\n",
++			 lblk, es1->es_lblk, es1->es_len,
++			 ext4_es_pblock(es1), ext4_es_status(es1));
++		goto out;
+ 	}
+ 
+ 	es1 = __es_tree_search(&tree->root, lblk);
+@@ -295,7 +378,7 @@
+ 	}
+ 
+ 	if (es1 && matching_fn(es1)) {
+-		tree->cache_es = es1;
++		WRITE_ONCE(tree->cache_es, es1);
+ 		es->es_lblk = es1->es_lblk;
+ 		es->es_len = es1->es_len;
+ 		es->es_pblk = es1->es_pblk;
+@@ -907,6 +990,9 @@
+ 	struct extent_status *es1 = NULL;
+ 	struct rb_node *node;
+ 	int found = 0;
++	bool pointer_hit = false;
++	bool profile = unlikely(READ_ONCE(es_lookup_profile)) &&
++		!strcmp(current->comm, "es_bench");
+ 
+ 	trace_ext4_es_lookup_extent_enter(inode, lblk);
+ 	es_debug("lookup extent in block %u\n", lblk);
+@@ -916,14 +1002,13 @@
+ 
+ 	/* find extent in cache firstly */
+ 	es->es_lblk = es->es_len = es->es_pblk = 0;
+-	if (tree->cache_es) {
+-		es1 = tree->cache_es;
+-		if (in_range(lblk, es1->es_lblk, es1->es_len)) {
+-			es_debug("%u cached by [%u/%u)\n",
+-				 lblk, es1->es_lblk, es1->es_len);
+-			found = 1;
+-			goto out;
+-		}
++	es1 = READ_ONCE(tree->cache_es);
++	if (es1 && in_range(lblk, es1->es_lblk, es1->es_len)) {
++		es_debug("%u cached by [%u/%u)\n",
++			 lblk, es1->es_lblk, es1->es_len);
++		found = 1;
++		pointer_hit = true;
++		goto out;
+ 	}
+ 
+ 	node = tree->root.rb_node;
+@@ -940,9 +1025,16 @@
+ 	}
+ 
+ out:
++	if (profile)
++		es_exp_record(tree, lblk, pointer_hit, found);
+ 	stats = &EXT4_SB(inode->i_sb)->s_es_stats;
+ 	if (found) {
+ 		BUG_ON(!es1);
++		if (!pointer_hit && READ_ONCE(es_lookup_refresh)) {
++			WRITE_ONCE(tree->cache_es, es1);
++			if (profile)
++				atomic64_inc(&es_exp_refreshes);
++		}
+ 		es->es_lblk = es1->es_lblk;
+ 		es->es_len = es1->es_len;
+ 		es->es_pblk = es1->es_pblk;

@@ -1,0 +1,68 @@
+--- a/fs/ext4/namei.c
++++ b/fs/ext4/namei.c
+@@ -57,6 +57,43 @@
+ static unsigned int htree_search;
+ static unsigned int htree_linear_limit = 8;
+ static bool htree_profile;
++
++/* Experiment: cheap tail rejection before the ordinary full name match. */
++static bool leaf_prefilter;
++static bool leaf_profile;
++module_param(leaf_prefilter, bool, 0644);
++module_param(leaf_profile, bool, 0644);
++static atomic64_t leaf_candidates = ATOMIC64_INIT(0);
++static atomic64_t leaf_rejects = ATOMIC64_INIT(0);
++
++static bool leaf_tail_equal(const unsigned char *a, const unsigned char *b,
++                           unsigned int len)
++{
++	return !memcmp(a + len - 8, b + len - 8, 8);
++}
++
++static int leaf_stats_get(char *buf, const struct kernel_param *kp)
++{
++	return scnprintf(buf, PAGE_SIZE, "candidates=%lld rejects=%lld\n",
++		(long long)atomic64_read(&leaf_candidates),
++		(long long)atomic64_read(&leaf_rejects));
++}
++static int leaf_reset_set(const char *val, const struct kernel_param *kp)
++{
++	bool reset;
++	int err = kstrtobool(val, &reset);
++	if (err || !reset)
++		return err ? err : -EINVAL;
++	if (READ_ONCE(leaf_profile))
++		return -EBUSY;
++	atomic64_set(&leaf_candidates, 0);
++	atomic64_set(&leaf_rejects, 0);
++	return 0;
++}
++static const struct kernel_param_ops leaf_stats_ops = { .get = leaf_stats_get };
++static const struct kernel_param_ops leaf_reset_ops = { .set = leaf_reset_set };
++module_param_cb(leaf_stats, &leaf_stats_ops, NULL, 0444);
++module_param_cb(leaf_reset, &leaf_reset_ops, NULL, 0200);
+ 
+ enum htree_counter {
+ 	HT_FIND, HT_DX_LOOKUP, HT_PROBE, HT_NODE, HT_COUNT_SUM,
+@@ -1561,6 +1598,21 @@
+ 	}
+ #endif
+ 
++	/* Casefold handling above remains unchanged; encrypted names bypass this. */
++	if (READ_ONCE(leaf_prefilter) && !IS_ENCRYPTED(parent) &&
++	    f.disk_name.name && f.disk_name.len == de->name_len &&
++	    de->name_len >= 8) {
++		bool equal = leaf_tail_equal((const unsigned char *)de->name,
++					    f.disk_name.name, de->name_len);
++		if (unlikely(READ_ONCE(leaf_profile)) &&
++		    !strcmp(current->comm, "lookup_bench")) {
++			atomic64_inc(&leaf_candidates);
++			if (!equal)
++				atomic64_inc(&leaf_rejects);
++		}
++		if (!equal)
++			return false;
++	}
+ 	return fscrypt_match_name(&f, de->name, de->name_len);
+ }
+ 
