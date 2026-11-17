@@ -3,7 +3,7 @@
 from pathlib import Path
 import re,subprocess,tempfile
 r=Path(__file__).resolve().parents[1]
-s=(r/'source/namei-leaf.c').read_text()
+s='\n'.join(line[1:] for line in (r/'patches/0002-dirent-tail-prefilter.patch').read_text().splitlines() if line.startswith('+') and not line.startswith('+++'))
 helper=re.search(r'static bool leaf_tail_equal\([^}]+\}',s,re.S).group(0)
 test=r'''
 #include <stdbool.h>
@@ -21,13 +21,16 @@ int main(void){
  for(unsigned n=1;n<=255;n++){
   unsigned char *a=malloc(n),*b=malloc(n);
   for(unsigned i=0;i<n;i++) a[i]=b[i]=(i*17+n)%255+1;
-  if(!match(a,n,b,n,1)) abort(); checks++;
+  if(!match(a,n,b,n,1)) abort();
+  checks++;
   for(unsigned j=0;j<n;j++){
    unsigned char old=b[j]; b[j]^=127;
-   if(match(a,n,b,n,0)!=match(a,n,b,n,1)) abort(); checks++;b[j]=old;
+   if(match(a,n,b,n,0)!=match(a,n,b,n,1)) abort();
+  checks++;b[j]=old;
   }
   for(unsigned m=1;m<=n;m++){
-   if(match(a,n,b,m,0)!=match(a,n,b,m,1)) abort();checks++;
+   if(match(a,n,b,m,0)!=match(a,n,b,m,1)) abort();
+   checks++;
   }
   free(a);free(b);
  }
