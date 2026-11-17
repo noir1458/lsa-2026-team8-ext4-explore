@@ -1,0 +1,9 @@
+dataset,source,label,pattern,io,round,trial,kernel,queries,seed,query_digest,elapsed_ns,loop_ns_per_query,validation,lookups,pointer_hits,tree_nodes,tree_hits,tree_misses,refreshes,lookups_per_query,pointer_hits_per_query,tree_nodes_per_query
+es-io-profile,es-io-profile/trial_0000_baseline_random_buffered.json,baseline,random,buffered,0,0,5.4.214-ext4ex1,4000,20261119,b0e12cbcc4d41ba5,7375383,1843.84575,PASS,0,0,0,0,0,0,0.0,0.0,0.0
+es-io-profile,es-io-profile/trial_0001_baseline_random_direct.json,baseline,random,direct,0,1,5.4.214-ext4ex1,4000,20261119,b0e12cbcc4d41ba5,170783728,42695.932,PASS,4000,4,38083,3996,0,0,1.0,0.001,9.52075
+es-io-profile,es-io-profile/trial_0002_baseline_hot_buffered.json,baseline,hot,buffered,0,2,5.4.214-ext4ex1,4000,20261119,dabd395da3882ba5,5518041,1379.51025,PASS,0,0,0,0,0,0,0.0,0.0,0.0
+es-io-profile,es-io-profile/trial_0003_baseline_hot_direct.json,baseline,hot,direct,0,3,5.4.214-ext4ex1,4000,20261119,dabd395da3882ba5,178615962,44653.9905,PASS,4000,0,36000,4000,0,0,1.0,0.0,9.0
+es-io-profile,es-io-profile/trial_0004_refresh_random_buffered.json,refresh,random,buffered,0,4,5.4.214-ext4ex1,4000,20261119,b0e12cbcc4d41ba5,6633291,1658.32275,PASS,0,0,0,0,0,0,0.0,0.0,0.0
+es-io-profile,es-io-profile/trial_0005_refresh_hot_buffered.json,refresh,hot,buffered,0,5,5.4.214-ext4ex1,4000,20261119,dabd395da3882ba5,5646681,1411.67025,PASS,0,0,0,0,0,0,0.0,0.0,0.0
+es-io-profile,es-io-profile/trial_0006_refresh_hot_direct.json,refresh,hot,direct,0,6,5.4.214-ext4ex1,4000,20261119,dabd395da3882ba5,176023306,44005.8265,PASS,4000,3999,9,1,0,1,1.0,0.99975,0.00225
+es-io-profile,es-io-profile/trial_0007_refresh_random_direct.json,refresh,random,direct,0,7,5.4.214-ext4ex1,4000,20261119,b0e12cbcc4d41ba5,180146299,45036.57475,PASS,4000,2,38141,3998,0,3998,1.0,0.0005,9.53525

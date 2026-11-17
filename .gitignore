@@ -5,7 +5,6 @@ __pycache__/
 bench/*_bench
 *.img
 *.o
-scripts/make_es_patch.py
 *.asan
 *.mac
 *.dSYM/

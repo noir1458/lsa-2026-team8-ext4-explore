@@ -1,0 +1,232 @@
+scripts/kconfig/conf  --syncconfig Kconfig
+  UPD     include/config/kernel.release
+  DESCEND  objtool
+  UPD     include/generated/utsrelease.h
+  CALL    scripts/atomic/check-atomics.sh
+  CALL    scripts/checksyscalls.sh
+  CHK     include/generated/compile.h
+  CC      init/version.o
+  AR      init/built-in.a
+  CC      kernel/sys.o
+  CC      fs/ext4/extents_status.o
+  CC      kernel/trace/trace.o
+  CC      fs/ext4/namei.o
+  AR      fs/ext4/built-in.a
+  AR      kernel/trace/built-in.a
+  CC      kernel/module.o
+  AR      fs/built-in.a
+  UPD     kernel/config_data
+  AR      kernel/built-in.a
+  GZIP    kernel/config_data.gz
+  CC [M]  kernel/configs.o
+  CC      drivers/base/firmware_loader/fallback_table.o
+  CC      drivers/base/firmware_loader/main.o
+  CC      drivers/base/firmware_loader/fallback.o
+  AR      drivers/base/firmware_loader/built-in.a
+  AR      drivers/base/built-in.a
+  AR      drivers/built-in.a
+  GEN     .version
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/version.o
+  AR      init/built-in.a
+  LD      vmlinux.o
+  MODPOST vmlinux.o
+  MODINFO modules.builtin.modinfo
+  LD      .tmp_vmlinux.kallsyms1
+  KSYM    .tmp_vmlinux.kallsyms1.o
+  LD      .tmp_vmlinux.kallsyms2
+  KSYM    .tmp_vmlinux.kallsyms2.o
+  LD      vmlinux
+  SORTEX  vmlinux
+  SYSMAP  System.map
+  Building modules, stage 2.
+  MODPOST 84 modules
+  VOFFSET arch/x86/boot/compressed/../voffset.h
+  OBJCOPY arch/x86/boot/compressed/vmlinux.bin
+  RELOCS  arch/x86/boot/compressed/vmlinux.relocs
+  CC [M]  arch/x86/crypto/aesni-intel.mod.o
+  CC      arch/x86/boot/compressed/kaslr.o
+  CC [M]  arch/x86/crypto/crc32-pclmul.mod.o
+  CC [M]  arch/x86/crypto/crct10dif-pclmul.mod.o
+  CC [M]  arch/x86/crypto/ghash-clmulni-intel.mod.o
+  CC      arch/x86/boot/compressed/misc.o
+  CC [M]  arch/x86/crypto/glue_helper.mod.o
+  CC [M]  arch/x86/events/rapl.mod.o
+  CC [M]  arch/x86/kernel/msr.mod.o
+  CC [M]  crypto/cryptd.mod.o
+  CC [M]  crypto/crypto_simd.mod.o
+  GZIP    arch/x86/boot/compressed/vmlinux.bin.gz
+  CC [M]  drivers/acpi/video.mod.o
+  CC [M]  drivers/ata/acard-ahci.mod.o
+  CC [M]  drivers/ata/ahci.mod.o
+  CC [M]  drivers/ata/ahci_platform.mod.o
+  CC [M]  drivers/ata/libahci.mod.o
+  CC [M]  drivers/ata/libahci_platform.mod.o
+  CC [M]  drivers/ata/pata_acpi.mod.o
+  CC [M]  drivers/char/lp.mod.o
+  CC [M]  drivers/char/ppdev.mod.o
+  CC [M]  drivers/firmware/efi/efi-pstore.mod.o
+  CC [M]  drivers/gpu/drm/drm.mod.o
+  CC [M]  drivers/gpu/drm/drm_kms_helper.mod.o
+  CC [M]  drivers/gpu/drm/ttm/ttm.mod.o
+  CC [M]  drivers/gpu/drm/vmwgfx/vmwgfx.mod.o
+  MKPIGGY arch/x86/boot/compressed/piggy.S
+  AS      arch/x86/boot/compressed/piggy.o
+  LD      arch/x86/boot/compressed/vmlinux
+  CC      arch/x86/boot/version.o
+  CC [M]  drivers/hid/hid-generic.mod.o
+  OBJCOPY arch/x86/boot/vmlinux.bin
+  ZOFFSET arch/x86/boot/zoffset.h
+  AS      arch/x86/boot/header.o
+  LD      arch/x86/boot/setup.elf
+  OBJCOPY arch/x86/boot/setup.bin
+  BUILD   arch/x86/boot/bzImage
+Setup is 17884 bytes (padded to 17920 bytes).
+System is 10153 kB
+CRC 71523107
+Kernel: arch/x86/boot/bzImage is ready  (#2)
+  CC [M]  drivers/hid/hid.mod.o
+  CC [M]  drivers/hid/usbhid/usbhid.mod.o
+  CC [M]  drivers/i2c/algos/i2c-algo-bit.mod.o
+  CC [M]  drivers/i2c/busses/i2c-piix4.mod.o
+  CC [M]  drivers/input/input-leds.mod.o
+  CC [M]  drivers/input/joydev.mod.o
+  CC [M]  drivers/input/mouse/psmouse.mod.o
+  CC [M]  drivers/input/serio/serio_raw.mod.o
+  CC [M]  drivers/macintosh/mac_hid.mod.o
+  CC [M]  drivers/net/ethernet/intel/e1000/e1000.mod.o
+  CC [M]  drivers/parport/parport.mod.o
+  CC [M]  drivers/parport/parport_pc.mod.o
+  CC [M]  drivers/powercap/intel_rapl_common.mod.o
+  CC [M]  drivers/powercap/intel_rapl_msr.mod.o
+  CC [M]  drivers/video/fbdev/core/fb_sys_fops.mod.o
+  CC [M]  drivers/video/fbdev/core/syscopyarea.mod.o
+  CC [M]  drivers/video/fbdev/core/sysfillrect.mod.o
+  CC [M]  drivers/video/fbdev/core/sysimgblt.mod.o
+  CC [M]  drivers/virt/vboxguest/vboxguest.mod.o
+  CC [M]  drivers/xen/xen-privcmd.mod.o
+  CC [M]  fs/autofs/autofs4.mod.o
+  CC [M]  fs/binfmt_misc.mod.o
+  CC [M]  fs/isofs/isofs.mod.o
+  CC [M]  fs/nls/nls_iso8859-1.mod.o
+  CC [M]  fs/pstore/ramoops.mod.o
+  CC [M]  kernel/configs.mod.o
+  CC [M]  lib/libcrc32c.mod.o
+  CC [M]  lib/reed_solomon/reed_solomon.mod.o
+  CC [M]  net/bpfilter/bpfilter.mod.o
+  CC [M]  net/ipv4/netfilter/ip_tables.mod.o
+  CC [M]  net/ipv4/netfilter/iptable_filter.mod.o
+  CC [M]  net/ipv4/netfilter/iptable_mangle.mod.o
+  CC [M]  net/ipv4/netfilter/iptable_nat.mod.o
+  CC [M]  net/ipv4/netfilter/nf_defrag_ipv4.mod.o
+  CC [M]  net/ipv6/netfilter/ip6_tables.mod.o
+  CC [M]  net/ipv6/netfilter/ip6table_filter.mod.o
+  CC [M]  net/ipv6/netfilter/ip6table_mangle.mod.o
+  CC [M]  net/ipv6/netfilter/ip6table_nat.mod.o
+  CC [M]  net/ipv6/netfilter/nf_defrag_ipv6.mod.o
+  CC [M]  net/netfilter/nf_conntrack.mod.o
+  CC [M]  net/netfilter/nf_nat.mod.o
+  CC [M]  net/netfilter/nf_tables.mod.o
+  CC [M]  net/netfilter/nfnetlink.mod.o
+  CC [M]  net/netfilter/x_tables.mod.o
+  CC [M]  net/netfilter/xt_MASQUERADE.mod.o
+  CC [M]  net/netfilter/xt_connmark.mod.o
+  CC [M]  net/netfilter/xt_conntrack.mod.o
+  CC [M]  net/netfilter/xt_mark.mod.o
+  CC [M]  net/netfilter/xt_nat.mod.o
+  CC [M]  net/netfilter/xt_tcpudp.mod.o
+  CC [M]  net/sched/sch_fq_codel.mod.o
+  CC [M]  sound/ac97_bus.mod.o
+  CC [M]  sound/core/seq/snd-seq.mod.o
+  CC [M]  sound/core/snd-pcm.mod.o
+  CC [M]  sound/core/snd-seq-device.mod.o
+  CC [M]  sound/core/snd-timer.mod.o
+  CC [M]  sound/core/snd.mod.o
+  CC [M]  sound/pci/ac97/snd-ac97-codec.mod.o
+  CC [M]  sound/pci/snd-intel8x0.mod.o
+  CC [M]  sound/soundcore.mod.o
+  LD [M]  arch/x86/crypto/aesni-intel.ko
+  LD [M]  arch/x86/crypto/crc32-pclmul.ko
+  LD [M]  arch/x86/crypto/crct10dif-pclmul.ko
+  LD [M]  arch/x86/crypto/ghash-clmulni-intel.ko
+  LD [M]  arch/x86/crypto/glue_helper.ko
+  LD [M]  arch/x86/events/rapl.ko
+  LD [M]  arch/x86/kernel/msr.ko
+  LD [M]  crypto/cryptd.ko
+  LD [M]  crypto/crypto_simd.ko
+  LD [M]  drivers/acpi/video.ko
+  LD [M]  drivers/ata/acard-ahci.ko
+  LD [M]  drivers/ata/ahci.ko
+  LD [M]  drivers/ata/ahci_platform.ko
+  LD [M]  drivers/ata/libahci.ko
+  LD [M]  drivers/ata/libahci_platform.ko
+  LD [M]  drivers/ata/pata_acpi.ko
+  LD [M]  drivers/char/lp.ko
+  LD [M]  drivers/char/ppdev.ko
+  LD [M]  drivers/firmware/efi/efi-pstore.ko
+  LD [M]  drivers/gpu/drm/drm.ko
+  LD [M]  drivers/gpu/drm/drm_kms_helper.ko
+  LD [M]  drivers/gpu/drm/ttm/ttm.ko
+  LD [M]  drivers/gpu/drm/vmwgfx/vmwgfx.ko
+  LD [M]  drivers/hid/hid-generic.ko
+  LD [M]  drivers/hid/hid.ko
+  LD [M]  drivers/hid/usbhid/usbhid.ko
+  LD [M]  drivers/i2c/algos/i2c-algo-bit.ko
+  LD [M]  drivers/i2c/busses/i2c-piix4.ko
+  LD [M]  drivers/input/joydev.ko
+  LD [M]  drivers/input/input-leds.ko
+  LD [M]  drivers/input/mouse/psmouse.ko
+  LD [M]  drivers/input/serio/serio_raw.ko
+  LD [M]  drivers/macintosh/mac_hid.ko
+  LD [M]  drivers/net/ethernet/intel/e1000/e1000.ko
+  LD [M]  drivers/parport/parport.ko
+  LD [M]  drivers/parport/parport_pc.ko
+  LD [M]  drivers/powercap/intel_rapl_common.ko
+  LD [M]  drivers/powercap/intel_rapl_msr.ko
+  LD [M]  drivers/video/fbdev/core/fb_sys_fops.ko
+  LD [M]  drivers/video/fbdev/core/syscopyarea.ko
+  LD [M]  drivers/video/fbdev/core/sysfillrect.ko
+  LD [M]  drivers/video/fbdev/core/sysimgblt.ko
+  LD [M]  drivers/virt/vboxguest/vboxguest.ko
+  LD [M]  drivers/xen/xen-privcmd.ko
+  LD [M]  fs/autofs/autofs4.ko
+  LD [M]  fs/binfmt_misc.ko
+  LD [M]  fs/isofs/isofs.ko
+  LD [M]  fs/nls/nls_iso8859-1.ko
+  LD [M]  fs/pstore/ramoops.ko
+  LD [M]  kernel/configs.ko
+  LD [M]  lib/libcrc32c.ko
+  LD [M]  lib/reed_solomon/reed_solomon.ko
+  LD [M]  net/bpfilter/bpfilter.ko
+  LD [M]  net/ipv4/netfilter/ip_tables.ko
+  LD [M]  net/ipv4/netfilter/iptable_mangle.ko
+  LD [M]  net/ipv4/netfilter/iptable_filter.ko
+  LD [M]  net/ipv4/netfilter/iptable_nat.ko
+  LD [M]  net/ipv4/netfilter/nf_defrag_ipv4.ko
+  LD [M]  net/ipv6/netfilter/ip6_tables.ko
+  LD [M]  net/ipv6/netfilter/ip6table_filter.ko
+  LD [M]  net/ipv6/netfilter/ip6table_mangle.ko
+  LD [M]  net/ipv6/netfilter/nf_defrag_ipv6.ko
+  LD [M]  net/ipv6/netfilter/ip6table_nat.ko
+  LD [M]  net/netfilter/nf_conntrack.ko
+  LD [M]  net/netfilter/nf_nat.ko
+  LD [M]  net/netfilter/nf_tables.ko
+  LD [M]  net/netfilter/nfnetlink.ko
+  LD [M]  net/netfilter/x_tables.ko
+  LD [M]  net/netfilter/xt_MASQUERADE.ko
+  LD [M]  net/netfilter/xt_connmark.ko
+  LD [M]  net/netfilter/xt_conntrack.ko
+  LD [M]  net/netfilter/xt_mark.ko
+  LD [M]  net/netfilter/xt_nat.ko
+  LD [M]  net/netfilter/xt_tcpudp.ko
+  LD [M]  net/sched/sch_fq_codel.ko
+  LD [M]  sound/ac97_bus.ko
+  LD [M]  sound/core/seq/snd-seq.ko
+  LD [M]  sound/core/snd-pcm.ko
+  LD [M]  sound/core/snd-seq-device.ko
+  LD [M]  sound/core/snd-timer.ko
+  LD [M]  sound/core/snd.ko
+  LD [M]  sound/pci/ac97/snd-ac97-codec.ko
+  LD [M]  sound/pci/snd-intel8x0.ko
+  LD [M]  sound/soundcore.ko

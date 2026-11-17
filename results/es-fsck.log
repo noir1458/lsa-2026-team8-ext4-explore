@@ -1,0 +1,7 @@
+e2fsck 1.45.5 (07-Jan-2020)
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+fixtures/es.img: 17/65536 files (11.8% non-contiguous), 24693/65536 blocks

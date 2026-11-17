@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "debugfs",
+    "-R",
+    "stat /n1000_b32/file_00000000",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/inline-run/r05_inline.img"
+  ],
+  "returncode": 0,
+  "elapsed_ns": 27216199
+}

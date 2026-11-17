@@ -1,0 +1,53 @@
+{
+  "round": 5,
+  "label": "inline",
+  "cache_mode": "cold_guest",
+  "fixture": "original",
+  "mode": "read",
+  "size": 4096,
+  "initial_size": 0,
+  "count": 1000,
+  "order_seed": 20270259,
+  "content_seed": 20261118,
+  "cpu": 0,
+  "argv": [
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/bench/tinyfile_bench",
+    "--dir",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/inline-run/mount/n1000_b4096",
+    "--mode",
+    "read",
+    "--count",
+    "1000",
+    "--size",
+    "4096",
+    "--seed",
+    "20270259",
+    "--content-seed",
+    "20261118",
+    "--ready-fd",
+    "4",
+    "--start-fd",
+    "5"
+  ],
+  "filesystem_before": {
+    "f_bsize": 4096,
+    "f_frsize": 4096,
+    "f_blocks": 14837,
+    "f_bfree": 13814,
+    "f_bavail": 13487,
+    "f_files": 8192,
+    "f_ffree": 6177
+  },
+  "cache_preparation_completed_ns": 476484476592,
+  "returncode": 0,
+  "wall_elapsed_ns": 272499537,
+  "filesystem_after": {
+    "f_bsize": 4096,
+    "f_frsize": 4096,
+    "f_blocks": 14837,
+    "f_bfree": 13814,
+    "f_bavail": 13487,
+    "f_files": 8192,
+    "f_ffree": 6177
+  }
+}

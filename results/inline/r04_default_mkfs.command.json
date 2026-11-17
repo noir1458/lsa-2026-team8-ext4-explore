@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "mke2fs",
+    "-q",
+    "-t",
+    "ext4",
+    "-F",
+    "-b",
+    "4096",
+    "-I",
+    "256",
+    "-N",
+    "8192",
+    "-m",
+    "0",
+    "-U",
+    "abbba8b8-ff7b-5cbe-98e9-c6d3b68ff8c6",
+    "-O",
+    "none,has_journal,ext_attr,resize_inode,dir_index,filetype,extent,64bit,flex_bg,sparse_super,large_file,huge_file,dir_nlink,extra_isize,metadata_csum",
+    "-E",
+    "lazy_itable_init=0,lazy_journal_init=0,nodiscard,hash_seed=953932d9-713b-5d5f-8a4e-16ca872b7c4c",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/inline-run/r04_default.img"
+  ],
+  "returncode": 0,
+  "elapsed_ns": 28395227
+}

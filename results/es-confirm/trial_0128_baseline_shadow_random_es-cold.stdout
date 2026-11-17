@@ -1,0 +1,1 @@
+{"pattern":"random","cache_state":"es-cold","threads":1,"seed":27261140,"extents":1024,"span":65536,"queries":200000,"elapsed_ns":193242262,"ns_per_query":966.211,"errors":0,"digest":"ecbca6fd20e44c25"}

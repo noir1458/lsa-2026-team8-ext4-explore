@@ -1,0 +1,9 @@
+case,cache,label,kind,pairs,metric,median_change_percent,min_change_percent,max_change_percent,faster_pairs,slower_pairs
+long128,warmdir,shadow,hit,8,conditional_mean_syscall_ns_in_mixed_workload,-0.1357080095321317,-12.459377356125067,4.36754545346576,4,4
+long128,warmdir,shadow,miss,8,conditional_mean_syscall_ns_in_mixed_workload,-0.6264167946027355,-1.3996980643077528,2.7042109016314875,4,4
+random128,warmdir,shadow,hit,8,conditional_mean_syscall_ns_in_mixed_workload,-0.3134354302677611,-19.16965623259169,0.7900454718326788,4,4
+random128,warmdir,shadow,miss,8,conditional_mean_syscall_ns_in_mixed_workload,0.16987158610590747,-1.636246773830119,0.8098155588399436,3,5
+short13,warmdir,shadow,hit,8,conditional_mean_syscall_ns_in_mixed_workload,1.5309325891652126,-0.5496140454316123,27.90346864651354,1,7
+short13,warmdir,shadow,miss,8,conditional_mean_syscall_ns_in_mixed_workload,1.0926504283382155,-0.7766294899600235,26.18063543048368,2,6
+varied,warmdir,shadow,hit,8,conditional_mean_syscall_ns_in_mixed_workload,0.5017355710390081,-28.406778429398095,1.6086803226865731,1,7
+varied,warmdir,shadow,miss,8,conditional_mean_syscall_ns_in_mixed_workload,0.5206304478168722,-0.25430442219791516,1.6285889064322046,4,4

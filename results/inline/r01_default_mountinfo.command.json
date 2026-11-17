@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "findmnt",
+    "--json",
+    "--target",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/inline-run/mount"
+  ],
+  "returncode": 0,
+  "elapsed_ns": 41350129
+}

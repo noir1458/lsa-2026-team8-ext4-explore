@@ -1,0 +1,5 @@
+case,cache,label,pairs,median_change_percent,min_change_percent,max_change_percent,faster_pairs,slower_pairs,comparison
+long128,warmdir,shadow,8,-0.4300316813882099,-6.67266286902819,2.6080186856232146,4,4,same_policy_control
+random128,warmdir,shadow,8,-0.08017687140116081,-12.853933127510519,0.5964026028199898,4,4,same_policy_control
+short13,warmdir,shadow,8,1.3637362241845974,-0.5494256791158669,27.291927470881806,1,7,same_policy_control
+varied,warmdir,shadow,8,0.2764539732168281,-18.916871612535545,1.6098865946738483,2,6,same_policy_control

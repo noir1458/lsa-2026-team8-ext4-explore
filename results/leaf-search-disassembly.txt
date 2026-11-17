@@ -1,0 +1,594 @@
+
+fs/ext4/namei.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000002fe0 <ext4_search_dir>:
+    2fe0:	e8 00 00 00 00       	callq  2fe5 <ext4_search_dir+0x5>
+			1: R_X86_64_PLT32	__fentry__-0x4
+			9: R_X86_64_PC32	.bss+0xbc
+			15: R_X86_64_32S	.rodata.str1.1
+			1c: R_X86_64_PC32	.bss+0xc4
+			24: R_X86_64_PLT32	scnprintf-0x4
+			31: R_X86_64_PLT32	__fentry__-0x4
+			3e: R_X86_64_32S	.rodata+0x4a0
+			66: R_X86_64_32S	.bss+0x60
+			b6: R_X86_64_32S	.rodata.str1.1+0x22
+			bb: R_X86_64_PLT32	scnprintf-0x4
+			d1: R_X86_64_32S	.rodata.str1.1+0x20
+			de: R_X86_64_32S	.rodata.str1.1+0x1e
+			e5: R_X86_64_32S	.rodata.str1.1+0x20
+			100: R_X86_64_32S	.bss
+			115: R_X86_64_32S	.rodata+0x440
+			132: R_X86_64_32S	.rodata+0x440
+			13c: R_X86_64_32S	.rodata.str1.1+0x2b
+			144: R_X86_64_PLT32	scnprintf-0x4
+			166: R_X86_64_32S	.data+0x580
+			16f: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			18b: R_X86_64_32S	.data+0x500
+			194: R_X86_64_PLT32	__ubsan_handle_type_mismatch_v1-0x4
+			1a4: R_X86_64_32S	.data+0x540
+			1ad: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			1c9: R_X86_64_32S	.data+0x440
+			1d6: R_X86_64_PLT32	__ubsan_handle_type_mismatch_v1-0x4
+			1ed: R_X86_64_32S	.data+0x480
+			1fa: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			211: R_X86_64_32S	.data+0x4c0
+			21a: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			231: R_X86_64_PLT32	__fentry__-0x4
+			2a1: R_X86_64_PLT32	__fentry__-0x4
+			2c7: R_X86_64_PLT32	kstrtouint-0x4
+			2fb: R_X86_64_PLT32	__stack_chk_fail-0x4
+			301: R_X86_64_PLT32	__fentry__-0x4
+			32a: R_X86_64_PLT32	__brelse-0x4
+			361: R_X86_64_PLT32	__fentry__-0x4
+			381: R_X86_64_PLT32	__fentry__-0x4
+			3ca: R_X86_64_PLT32	memmove-0x4
+			3ed: R_X86_64_32S	.data+0x420
+			3f2: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			3fb: R_X86_64_32S	.data+0x410
+			400: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			411: R_X86_64_PLT32	__fentry__-0x4
+			461: R_X86_64_PC32	.text.unlikely-0x4
+			482: R_X86_64_PLT32	ext4_map_blocks-0x4
+			4a0: R_X86_64_PLT32	ext4_bread-0x4
+			4c4: R_X86_64_32S	.rodata+0xe8
+			4da: R_X86_64_PLT32	__ext4_journal_get_write_access-0x4
+			50a: R_X86_64_32S	.rodata.str1.8
+			51b: R_X86_64_32S	.rodata+0xe8
+			527: R_X86_64_PLT32	__ext4_error_inode-0x4
+			53b: R_X86_64_PLT32	__brelse-0x4
+			552: R_X86_64_32S	.rodata+0xe8
+			557: R_X86_64_PLT32	__ext4_std_error-0x4
+			57a: R_X86_64_PLT32	__stack_chk_fail-0x4
+			581: R_X86_64_PLT32	__fentry__-0x4
+			590: R_X86_64_PC32	.bss+0xce
+			598: R_X86_64_PC32	.text.unlikely+0x22
+			5b2: R_X86_64_32S	current_task
+			5f9: R_X86_64_32S	.data+0x400
+			5fe: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			611: R_X86_64_PLT32	__fentry__-0x4
+			61f: R_X86_64_PLT32	inc_nlink-0x4
+			664: R_X86_64_PLT32	set_nlink-0x4
+			671: R_X86_64_PLT32	__fentry__-0x4
+			6a8: R_X86_64_PLT32	drop_nlink-0x4
+			6b3: R_X86_64_PLT32	ext4_mark_inode_dirty-0x4
+			6cc: R_X86_64_PLT32	ext4_mark_inode_dirty-0x4
+			6e1: R_X86_64_PLT32	__fentry__-0x4
+			702: R_X86_64_PLT32	kstrtobool-0x4
+			713: R_X86_64_PC32	.text.unlikely+0x3d
+			71f: R_X86_64_PC32	.bss+0xcc
+			728: R_X86_64_PC32	.text.unlikely+0x57
+			734: R_X86_64_PC32	.bss+0xc0
+			73f: R_X86_64_PC32	.bss+0xb8
+			76c: R_X86_64_PLT32	__stack_chk_fail-0x4
+			771: R_X86_64_PLT32	__fentry__-0x4
+			792: R_X86_64_PLT32	kstrtobool-0x4
+			7a1: R_X86_64_PC32	.bss+0xce
+			7aa: R_X86_64_PC32	.text.unlikely+0x8b
+			7c0: R_X86_64_PC32	.text.unlikely+0x71
+			7d0: R_X86_64_PC32	.bss+0x58
+			7db: R_X86_64_PC32	.bss+0x60
+			7e6: R_X86_64_PC32	.bss+0x68
+			7f1: R_X86_64_PC32	.bss+0x70
+			7fc: R_X86_64_PC32	.bss+0x78
+			807: R_X86_64_PC32	.bss+0x80
+			812: R_X86_64_PC32	.bss+0x88
+			81d: R_X86_64_PC32	.bss+0x90
+			828: R_X86_64_PC32	.bss+0x98
+			833: R_X86_64_PC32	.bss+0xa0
+			83e: R_X86_64_PC32	.bss+0xa8
+			849: R_X86_64_PC32	.bss+0xb0
+			854: R_X86_64_PC32	.bss-0x8
+			85f: R_X86_64_PC32	.bss
+			86a: R_X86_64_PC32	.bss+0x8
+			875: R_X86_64_PC32	.bss+0x10
+			880: R_X86_64_PC32	.bss+0x18
+			88b: R_X86_64_PC32	.bss+0x20
+			896: R_X86_64_PC32	.bss+0x28
+			8a1: R_X86_64_PC32	.bss+0x30
+			8ac: R_X86_64_PC32	.bss+0x38
+			8b7: R_X86_64_PC32	.bss+0x40
+			8c2: R_X86_64_PC32	.bss+0x48
+			8ef: R_X86_64_PLT32	__stack_chk_fail-0x4
+			901: R_X86_64_PLT32	__fentry__-0x4
+			95c: R_X86_64_PLT32	crypto_shash_update-0x4
+			981: R_X86_64_PLT32	crypto_shash_update-0x4
+			9a7: R_X86_64_PLT32	crypto_shash_update-0x4
+			9cf: R_X86_64_32S	.data+0x3f0
+			9d4: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			9dd: R_X86_64_32S	.data+0x3e0
+			9e2: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			9eb: R_X86_64_32S	.data+0x3d0
+			9f0: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			9f9: R_X86_64_32S	.data+0x3c0
+			9fe: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			a07: R_X86_64_32S	.data+0x3b0
+			a0c: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			a15: R_X86_64_32S	.data+0x3a0
+			a1a: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			a1f: R_X86_64_PLT32	__stack_chk_fail-0x4
+			a31: R_X86_64_PLT32	__fentry__-0x4
+			a71: R_X86_64_PLT32	__fentry__-0x4
+			af2: R_X86_64_PLT32	crypto_shash_update-0x4
+			b22: R_X86_64_32S	.rodata.str1.8+0x20
+			b2e: R_X86_64_32S	.rodata+0x420
+			b33: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			b49: R_X86_64_32S	.data+0x390
+			b4e: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			b57: R_X86_64_32S	.data+0x380
+			b5c: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			b61: R_X86_64_PLT32	__stack_chk_fail-0x4
+			b71: R_X86_64_PLT32	__fentry__-0x4
+			bae: R_X86_64_PLT32	ext4_bread-0x4
+			cc0: R_X86_64_32S	.rodata.str1.8+0x130
+			ccf: R_X86_64_PLT32	__ext4_error_inode-0x4
+			cde: R_X86_64_PLT32	__brelse-0x4
+			cf4: R_X86_64_32S	.rodata.str1.8+0xd0
+			cf9: R_X86_64_PLT32	__ext4_error_inode-0x4
+			d08: R_X86_64_PLT32	__brelse-0x4
+			d41: R_X86_64_32S	.rodata.str1.1+0x67
+			d4e: R_X86_64_32S	.rodata.str1.1+0x61
+			d5c: R_X86_64_32S	.rodata.str1.8+0xa8
+			d6c: R_X86_64_PLT32	__ext4_error_inode-0x4
+			d9c: R_X86_64_PLT32	ext4_dirblock_csum_verify-0x4
+			dd9: R_X86_64_32S	current_task
+			df7: R_X86_64_32S	.rodata.str1.8+0x60
+			e00: R_X86_64_PLT32	__ext4_warning-0x4
+			e0e: R_X86_64_32S	.rodata.str1.8+0x20
+			e1a: R_X86_64_32S	.rodata+0x3b0
+			e22: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			e31: R_X86_64_32S	.rodata.str1.8+0x150
+			e3d: R_X86_64_32S	.rodata.str1.8+0x108
+			e4e: R_X86_64_32S	.rodata+0x3b0
+			e53: R_X86_64_PLT32	__ext4_error_inode-0x4
+			e5d: R_X86_64_PLT32	__stack_chk_fail-0x4
+			e71: R_X86_64_PLT32	__fentry__-0x4
+			ea8: R_X86_64_PC32	.bss+0xd0
+			eb4: R_X86_64_PC32	.data+0x81c
+			ec3: R_X86_64_PC32	.bss+0x6c
+			f02: R_X86_64_32S	.rodata+0x3c8
+			f28: R_X86_64_32S	.rodata.str1.8+0x170
+			f90: R_X86_64_PLT32	ext4fs_dirhash-0x4
+			116c: R_X86_64_32S	.rodata+0x3c8
+			11f3: R_X86_64_32S	.rodata.str1.8+0x190
+			11ff: R_X86_64_32S	.rodata+0x3c8
+			1207: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			1224: R_X86_64_PLT32	__brelse-0x4
+			123d: R_X86_64_32S	.rodata.str1.8+0x248
+			124c: R_X86_64_32S	.rodata+0x3c8
+			1251: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			13ad: R_X86_64_32S	.rodata.str1.8+0x280
+			13bc: R_X86_64_32S	.rodata+0x3c8
+			13c8: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			13db: R_X86_64_32S	.rodata.str1.8+0x1b0
+			13e7: R_X86_64_32S	.rodata+0x3c8
+			13ec: R_X86_64_PLT32	__ext4_warning-0x4
+			140c: R_X86_64_32S	.rodata.str1.8+0x1f0
+			141b: R_X86_64_32S	.rodata+0x3c8
+			1420: R_X86_64_PLT32	__ext4_warning-0x4
+			1490: R_X86_64_PC32	.bss+0x74
+			1498: R_X86_64_PC32	.bss+0x7c
+			14a0: R_X86_64_32S	.bss+0x60
+			14a8: R_X86_64_PC32	.bss+0x94
+			14c0: R_X86_64_32S	.bss
+			150f: R_X86_64_PC32	.bss+0xb4
+			1537: R_X86_64_32S	.rodata.str1.8+0x220
+			153e: R_X86_64_32S	.rodata+0x3c8
+			154a: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			15a5: R_X86_64_32S	.rodata.str1.8+0x2e0
+			1649: R_X86_64_32S	.rodata.str1.8+0x2b8
+			1650: R_X86_64_32S	.rodata+0x3c8
+			1655: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			168c: R_X86_64_32S	.data+0x2c0
+			1698: R_X86_64_PLT32	__ubsan_handle_type_mismatch_v1-0x4
+			16ab: R_X86_64_32S	.data+0x300
+			16b7: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			16d1: R_X86_64_32S	.data+0x260
+			16da: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			16ea: R_X86_64_32S	.data+0x340
+			1704: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			1723: R_X86_64_PLT32	__stack_chk_fail-0x4
+			172d: R_X86_64_32S	.data+0x2a0
+			173a: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			1757: R_X86_64_32S	.data+0x280
+			1760: R_X86_64_PLT32	__ubsan_handle_type_mismatch_v1-0x4
+			1779: R_X86_64_32S	.data+0x240
+			1782: R_X86_64_PLT32	__ubsan_handle_type_mismatch_v1-0x4
+			1791: R_X86_64_PLT32	__fentry__-0x4
+			17ad: R_X86_64_32S	.rodata+0x390
+			187b: R_X86_64_PLT32	ext4_htree_store_dirent-0x4
+			18aa: R_X86_64_PC32	.text.unlikely+0xa5
+			18c3: R_X86_64_32S	.rodata+0x390
+			18de: R_X86_64_PLT32	__ext4_check_dir_entry-0x4
+			18fd: R_X86_64_PLT32	ext4fs_dirhash-0x4
+			1935: R_X86_64_PLT32	__brelse-0x4
+			193e: R_X86_64_PLT32	fscrypt_fname_free_buffer-0x4
+			1988: R_X86_64_PLT32	fscrypt_fname_disk_to_usr-0x4
+			19a4: R_X86_64_PLT32	ext4_htree_store_dirent-0x4
+			19ba: R_X86_64_PLT32	fscrypt_get_encryption_info-0x4
+			19d9: R_X86_64_PLT32	fscrypt_fname_alloc_buffer-0x4
+			19f5: R_X86_64_PLT32	__brelse-0x4
+			1a0f: R_X86_64_PLT32	__stack_chk_fail-0x4
+			1a21: R_X86_64_PLT32	__fentry__-0x4
+			1acb: R_X86_64_32S	.rodata+0x370
+			1af3: R_X86_64_PLT32	__brelse-0x4
+			1b41: R_X86_64_PLT32	__fentry__-0x4
+			1b9b: R_X86_64_PLT32	ext4_get_first_inline_block-0x4
+			1bd0: R_X86_64_32S	.rodata+0x230
+			1bd5: R_X86_64_PLT32	__ext4_journal_get_write_access-0x4
+			1bf1: R_X86_64_32S	.rodata+0x210
+			1c23: R_X86_64_32S	.rodata+0x210
+			1c2d: R_X86_64_PLT32	__ext4_check_dir_entry-0x4
+			1c4b: R_X86_64_32S	.rodata.str1.1+0x6e
+			1c59: R_X86_64_32S	.rodata+0x210
+			1c61: R_X86_64_PLT32	__ext4_error_inode-0x4
+			1c6e: R_X86_64_PLT32	__brelse-0x4
+			1cb6: R_X86_64_32S	.rodata+0x210
+			1cce: R_X86_64_PLT32	__ext4_check_dir_entry-0x4
+			1ceb: R_X86_64_32S	.rodata.str1.1+0x87
+			1d2a: R_X86_64_PLT32	__stack_chk_fail-0x4
+			1d31: R_X86_64_PLT32	__fentry__-0x4
+			1dc0: R_X86_64_PLT32	crypto_shash_update-0x4
+			1de0: R_X86_64_32S	.rodata+0x400
+			1de5: R_X86_64_PLT32	__ext4_handle_dirty_metadata-0x4
+			1e08: R_X86_64_32S	.rodata.str1.8+0x20
+			1e14: R_X86_64_32S	.rodata+0x3e0
+			1e1c: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			1e2b: R_X86_64_32S	.data+0x230
+			1e30: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			1e39: R_X86_64_32S	.data+0x220
+			1e3e: R_X86_64_PLT32	__ubsan_handle_builtin_unreachable-0x4
+			1e43: R_X86_64_PLT32	__stack_chk_fail-0x4
+			1e51: R_X86_64_PLT32	__fentry__-0x4
+			1e6e: R_X86_64_32S	.rodata+0x1f8
+			1e82: R_X86_64_PLT32	__ext4_journal_get_write_access-0x4
+			1ee7: R_X86_64_PLT32	current_time-0x4
+			1f08: R_X86_64_PLT32	ext4_mark_inode_dirty-0x4
+			1f39: R_X86_64_PLT32	ext4_handle_dirty_dirblock-0x4
+			1f52: R_X86_64_32S	.rodata+0x1f8
+			1f5b: R_X86_64_PLT32	__ext4_std_error-0x4
+			1f71: R_X86_64_PLT32	__fentry__-0x4
+			1fdd: R_X86_64_PLT32	ext4_handle_dirty_dirblock-0x4
+			200c: R_X86_64_PLT32	ext4_mark_inode_dirty-0x4
+			201c: R_X86_64_32S	.rodata+0x1e0
+			202d: R_X86_64_PLT32	__ext4_std_error-0x4
+			20b6: R_X86_64_32S	.rodata+0x1c0
+			20bb: R_X86_64_PLT32	__ext4_handle_dirty_metadata-0x4
+			20c7: R_X86_64_32S	.rodata.str1.8+0x20
+			20d3: R_X86_64_32S	.rodata+0x1a0
+			20db: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			20e8: R_X86_64_32S	.rodata.str1.8+0x108
+			20f9: R_X86_64_32S	.rodata+0x1a0
+			20fe: R_X86_64_PLT32	__ext4_error_inode-0x4
+			2105: R_X86_64_PLT32	__stack_chk_fail-0x4
+			2111: R_X86_64_PLT32	__fentry__-0x4
+			21c4: R_X86_64_32S	.rodata+0x128
+			21cc: R_X86_64_PLT32	__ext4_journal_get_write_access-0x4
+			21e5: R_X86_64_PLT32	__brelse-0x4
+			21f6: R_X86_64_PLT32	__brelse-0x4
+			2211: R_X86_64_32S	.rodata+0x128
+			2216: R_X86_64_PLT32	__ext4_std_error-0x4
+			224e: R_X86_64_32S	.rodata+0x128
+			2256: R_X86_64_PLT32	__ext4_journal_get_write_access-0x4
+			233e: R_X86_64_32S	.rodata+0x118
+			2346: R_X86_64_PLT32	__ext4_check_dir_entry-0x4
+			2376: R_X86_64_PLT32	ext4fs_dirhash-0x4
+			23a8: R_X86_64_PLT32	_cond_resched-0x4
+			25b1: R_X86_64_PLT32	memmove-0x4
+			2699: R_X86_64_PLT32	ext4_handle_dirty_dirblock-0x4
+			274c: R_X86_64_32S	.rodata+0x1c0
+			2751: R_X86_64_PLT32	__ext4_handle_dirty_metadata-0x4
+			27a6: R_X86_64_PLT32	__brelse-0x4
+			28c5: R_X86_64_PLT32	__brelse-0x4
+			28d8: R_X86_64_PLT32	ext4_initialize_dirent_tail-0x4
+			28e4: R_X86_64_PLT32	ext4_initialize_dirent_tail-0x4
+			28fe: R_X86_64_32S	.rodata.str1.8+0x20
+			290a: R_X86_64_32S	.rodata+0x1a0
+			2912: R_X86_64_PLT32	__ext4_warning_inode-0x4
+			2936: R_X86_64_32S	.rodata.str1.8+0x108
+			2947: R_X86_64_32S	.rodata+0x1a0
+			294c: R_X86_64_PLT32	__ext4_error_inode-0x4
+			295b: R_X86_64_PLT32	__stack_chk_fail-0x4
+			2971: R_X86_64_PLT32	__fentry__-0x4
+			2a8c: R_X86_64_PLT32	ext4_inlinedir_to_tree-0x4
+			2b42: R_X86_64_PLT32	ext4_htree_store_dirent-0x4
+			2b62: R_X86_64_32S	current_task
+			2b80: R_X86_64_PLT32	_cond_resched-0x4
+			2c53: R_X86_64_PLT32	ext4_htree_store_dirent-0x4
+			2cb4: R_X86_64_PLT32	__stack_chk_fail-0x4
+			2cc1: R_X86_64_PLT32	__fentry__-0x4
+			2ceb: R_X86_64_PLT32	utf8_strncasecmp_folded-0x4
+			2cfb: R_X86_64_PLT32	utf8_strncasecmp-0x4
+			2d26: R_X86_64_PLT32	memcmp-0x4
+			2d41: R_X86_64_PLT32	__fentry__-0x4
+			2d72: R_X86_64_PC32	kmalloc_caches+0x3c
+			2d84: R_X86_64_PLT32	kmem_cache_alloc_trace-0x4
+			2daf: R_X86_64_PLT32	utf8_casefold-0x4
+			2dc8: R_X86_64_PLT32	kfree-0x4
+			2e0c: R_X86_64_PLT32	fscrypt_setup_filename-0x4
+			2e7d: R_X86_64_PLT32	ext4_fname_setup_ci_filename-0x4
+			2ea2: R_X86_64_PLT32	__stack_chk_fail-0x4
+			2f94: R_X86_64_PLT32	ext4_fname_setup_ci_filename-0x4
+			2fbc: R_X86_64_PLT32	__fscrypt_prepare_lookup-0x4
+			2fdc: R_X86_64_PLT32	__stack_chk_fail-0x4
+			2fe1: R_X86_64_PLT32	__fentry__-0x4
+    2fe5:	55                   	push   %rbp
+    2fe6:	48 89 e5             	mov    %rsp,%rbp
+    2fe9:	41 57                	push   %r15
+    2feb:	4d 89 c7             	mov    %r8,%r15
+    2fee:	41 56                	push   %r14
+    2ff0:	41 55                	push   %r13
+    2ff2:	41 54                	push   %r12
+    2ff4:	49 89 f4             	mov    %rsi,%r12
+    2ff7:	53                   	push   %rbx
+    2ff8:	48 81 ec 88 00 00 00 	sub    $0x88,%rsp
+    2fff:	48 8b 45 10          	mov    0x10(%rbp),%rax
+    3003:	48 89 7d 80          	mov    %rdi,-0x80(%rbp)
+    3007:	89 95 7c ff ff ff    	mov    %edx,-0x84(%rbp)
+    300d:	48 89 45 98          	mov    %rax,-0x68(%rbp)
+    3011:	65 48 8b 04 25 28 00 	mov    %gs:0x28,%rax
+    3018:	00 00 
+    301a:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+    301e:	31 c0                	xor    %eax,%eax
+    3020:	48 63 c2             	movslq %edx,%rax
+    3023:	4c 8d 04 06          	lea    (%rsi,%rax,1),%r8
+    3027:	48 89 45 88          	mov    %rax,-0x78(%rbp)
+    302b:	49 8d 78 f7          	lea    -0x9(%r8),%rdi
+    302f:	65 48 8b 04 25 00 00 	mov    %gs:0x0,%rax
+    3036:	00 00 
+			3034: R_X86_64_32S	current_task
+    3038:	48 05 58 0a 00 00    	add    $0xa58,%rax
+    303e:	48 89 7d a8          	mov    %rdi,-0x58(%rbp)
+    3042:	48 89 85 70 ff ff ff 	mov    %rax,-0x90(%rbp)
+    3049:	48 39 fe             	cmp    %rdi,%rsi
+    304c:	0f 83 e0 01 00 00    	jae    3232 <ext4_search_dir+0x252>
+    3052:	48 89 75 a0          	mov    %rsi,-0x60(%rbp)
+    3056:	49 89 ca             	mov    %rcx,%r10
+    3059:	45 89 ce             	mov    %r9d,%r14d
+    305c:	48 89 f3             	mov    %rsi,%rbx
+    305f:	4d 89 c4             	mov    %r8,%r12
+    3062:	eb 1d                	jmp    3081 <ext4_search_dir+0xa1>
+    3064:	0f b7 53 04          	movzwl 0x4(%rbx),%edx
+    3068:	66 85 d2             	test   %dx,%dx
+    306b:	0f 84 46 02 00 00    	je     32b7 <ext4_search_dir+0x2d7>
+    3071:	41 01 d6             	add    %edx,%r14d
+    3074:	48 01 d3             	add    %rdx,%rbx
+    3077:	48 3b 5d a8          	cmp    -0x58(%rbp),%rbx
+    307b:	0f 83 ad 01 00 00    	jae    322e <ext4_search_dir+0x24e>
+    3081:	0f b6 43 06          	movzbl 0x6(%rbx),%eax
+    3085:	4c 8d 6b 08          	lea    0x8(%rbx),%r13
+    3089:	48 89 c6             	mov    %rax,%rsi
+    308c:	4c 01 e8             	add    %r13,%rax
+    308f:	49 39 c4             	cmp    %rax,%r12
+    3092:	72 d0                	jb     3064 <ext4_search_dir+0x84>
+    3094:	8b 03                	mov    (%rbx),%eax
+    3096:	44 0f b6 c6          	movzbl %sil,%r8d
+    309a:	c7 45 b0 00 00 00 00 	movl   $0x0,-0x50(%rbp)
+    30a1:	44 89 45 b4          	mov    %r8d,-0x4c(%rbp)
+    30a5:	4c 89 6d b8          	mov    %r13,-0x48(%rbp)
+    30a9:	85 c0                	test   %eax,%eax
+    30ab:	74 b7                	je     3064 <ext4_search_dir+0x84>
+    30ad:	49 8b 42 28          	mov    0x28(%r10),%rax
+    30b1:	4d 8b 1f             	mov    (%r15),%r11
+    30b4:	48 8b 80 b8 03 00 00 	mov    0x3b8(%rax),%rax
+    30bb:	48 83 b8 18 02 00 00 	cmpq   $0x0,0x218(%rax)
+    30c2:	00 
+    30c3:	0f 84 9e 00 00 00    	je     3167 <ext4_search_dir+0x187>
+    30c9:	41 f6 42 0d 80       	testb  $0x80,0xd(%r10)
+    30ce:	0f 84 93 00 00 00    	je     3167 <ext4_search_dir+0x187>
+    30d4:	49 8b 47 40          	mov    0x40(%r15),%rax
+    30d8:	48 85 c0             	test   %rax,%rax
+    30db:	0f 84 e5 01 00 00    	je     32c6 <ext4_search_dir+0x2e6>
+    30e1:	41 8b 57 48          	mov    0x48(%r15),%edx
+    30e5:	c7 45 c0 00 00 00 00 	movl   $0x0,-0x40(%rbp)
+    30ec:	b9 01 00 00 00       	mov    $0x1,%ecx
+    30f1:	48 8d 75 c0          	lea    -0x40(%rbp),%rsi
+    30f5:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+    30f9:	89 55 c4             	mov    %edx,-0x3c(%rbp)
+    30fc:	48 8d 55 b0          	lea    -0x50(%rbp),%rdx
+    3100:	4c 89 d7             	mov    %r10,%rdi
+    3103:	4c 89 55 90          	mov    %r10,-0x70(%rbp)
+    3107:	e8 00 00 00 00       	callq  310c <ext4_search_dir+0x12c>
+			3108: R_X86_64_PLT32	ext4_ci_compare-0x4
+    310c:	4c 8b 55 90          	mov    -0x70(%rbp),%r10
+    3110:	85 c0                	test   %eax,%eax
+    3112:	0f 94 c0             	sete   %al
+    3115:	84 c0                	test   %al,%al
+    3117:	0f 84 47 ff ff ff    	je     3064 <ext4_search_dir+0x84>
+    311d:	4c 8b 65 a0          	mov    -0x60(%rbp),%r12
+    3121:	8b 85 7c ff ff ff    	mov    -0x84(%rbp),%eax
+    3127:	41 56                	push   %r14
+    3129:	49 89 d8             	mov    %rbx,%r8
+    312c:	4c 8b 4d 80          	mov    -0x80(%rbp),%r9
+    3130:	31 c9                	xor    %ecx,%ecx
+    3132:	4c 89 d2             	mov    %r10,%rdx
+    3135:	be 67 06 00 00       	mov    $0x667,%esi
+    313a:	50                   	push   %rax
+    313b:	48 c7 c7 00 00 00 00 	mov    $0x0,%rdi
+			313e: R_X86_64_32S	.rodata+0x350
+    3142:	41 54                	push   %r12
+    3144:	e8 00 00 00 00       	callq  3149 <ext4_search_dir+0x169>
+			3145: R_X86_64_PLT32	__ext4_check_dir_entry-0x4
+    3149:	48 83 c4 18          	add    $0x18,%rsp
+    314d:	85 c0                	test   %eax,%eax
+    314f:	0f 85 66 01 00 00    	jne    32bb <ext4_search_dir+0x2db>
+    3155:	48 8b 45 98          	mov    -0x68(%rbp),%rax
+    3159:	41 bd 01 00 00 00    	mov    $0x1,%r13d
+    315f:	48 89 18             	mov    %rbx,(%rax)
+    3162:	e9 ce 00 00 00       	jmpq   3235 <ext4_search_dir+0x255>
+    3167:	0f b6 05 00 00 00 00 	movzbl 0x0(%rip),%eax        # 316e <ext4_search_dir+0x18e>
+			316a: R_X86_64_PC32	.bss+0xcd
+    316e:	4d 8b 4f 08          	mov    0x8(%r15),%r9
+    3172:	41 8b 4f 10          	mov    0x10(%r15),%ecx
+    3176:	49 8b 57 30          	mov    0x30(%r15),%rdx
+    317a:	3c 01                	cmp    $0x1,%al
+    317c:	0f 87 00 00 00 00    	ja     3182 <ext4_search_dir+0x1a2>
+			317e: R_X86_64_PC32	.text.unlikely+0x11c
+    3182:	a8 01                	test   $0x1,%al
+    3184:	74 77                	je     31fd <ext4_search_dir+0x21d>
+    3186:	41 f6 42 0d 40       	testb  $0x40,0xd(%r10)
+    318b:	75 70                	jne    31fd <ext4_search_dir+0x21d>
+    318d:	4d 85 c9             	test   %r9,%r9
+    3190:	0f 84 3e 01 00 00    	je     32d4 <ext4_search_dir+0x2f4>
+    3196:	44 39 c1             	cmp    %r8d,%ecx
+    3199:	0f 85 c5 fe ff ff    	jne    3064 <ext4_search_dir+0x84>
+    319f:	40 80 fe 07          	cmp    $0x7,%sil
+    31a3:	76 61                	jbe    3206 <ext4_search_dir+0x226>
+    31a5:	44 89 c2             	mov    %r8d,%edx
+    31a8:	4c 89 ce             	mov    %r9,%rsi
+    31ab:	4c 89 ef             	mov    %r13,%rdi
+    31ae:	4c 89 95 68 ff ff ff 	mov    %r10,-0x98(%rbp)
+    31b5:	89 8d 78 ff ff ff    	mov    %ecx,-0x88(%rbp)
+    31bb:	4c 89 4d 90          	mov    %r9,-0x70(%rbp)
+    31bf:	e8 9c d1 ff ff       	callq  360 <leaf_tail_equal>
+    31c4:	0f b6 15 00 00 00 00 	movzbl 0x0(%rip),%edx        # 31cb <ext4_search_dir+0x1eb>
+			31c7: R_X86_64_PC32	.bss+0xcc
+    31cb:	4c 8b 4d 90          	mov    -0x70(%rbp),%r9
+    31cf:	8b 8d 78 ff ff ff    	mov    -0x88(%rbp),%ecx
+    31d5:	4c 8b 95 68 ff ff ff 	mov    -0x98(%rbp),%r10
+    31dc:	80 fa 01             	cmp    $0x1,%dl
+    31df:	0f 87 00 00 00 00    	ja     31e5 <ext4_search_dir+0x205>
+			31e1: R_X86_64_PC32	.text.unlikely+0xcc
+    31e5:	83 e2 01             	and    $0x1,%edx
+    31e8:	0f 85 45 01 00 00    	jne    3333 <ext4_search_dir+0x353>
+    31ee:	84 c0                	test   %al,%al
+    31f0:	0f 84 6e fe ff ff    	je     3064 <ext4_search_dir+0x84>
+    31f6:	44 0f b6 43 06       	movzbl 0x6(%rbx),%r8d
+    31fb:	eb 09                	jmp    3206 <ext4_search_dir+0x226>
+    31fd:	4d 85 c9             	test   %r9,%r9
+    3200:	0f 84 ce 00 00 00    	je     32d4 <ext4_search_dir+0x2f4>
+    3206:	44 39 c1             	cmp    %r8d,%ecx
+    3209:	0f 85 55 fe ff ff    	jne    3064 <ext4_search_dir+0x84>
+    320f:	89 ca                	mov    %ecx,%edx
+    3211:	4c 89 ce             	mov    %r9,%rsi
+    3214:	4c 89 ef             	mov    %r13,%rdi
+    3217:	4c 89 55 90          	mov    %r10,-0x70(%rbp)
+    321b:	e8 00 00 00 00       	callq  3220 <ext4_search_dir+0x240>
+			321c: R_X86_64_PLT32	memcmp-0x4
+    3220:	4c 8b 55 90          	mov    -0x70(%rbp),%r10
+    3224:	85 c0                	test   %eax,%eax
+    3226:	0f 94 c0             	sete   %al
+    3229:	e9 e7 fe ff ff       	jmpq   3115 <ext4_search_dir+0x135>
+    322e:	4c 8b 65 a0          	mov    -0x60(%rbp),%r12
+    3232:	45 31 ed             	xor    %r13d,%r13d
+    3235:	e8 46 d3 ff ff       	callq  580 <htree_profile_task>
+    323a:	84 c0                	test   %al,%al
+    323c:	74 54                	je     3292 <ext4_search_dir+0x2b2>
+    323e:	f0 48 ff 05 00 00 00 	lock incq 0x0(%rip)        # 3246 <ext4_search_dir+0x266>
+    3245:	00 
+			3242: R_X86_64_PC32	.bss+0x9c
+    3246:	41 83 fd ff          	cmp    $0xffffffff,%r13d
+    324a:	0f 84 ba 00 00 00    	je     330a <ext4_search_dir+0x32a>
+    3250:	48 8b 45 88          	mov    -0x78(%rbp),%rax
+    3254:	48 8b 75 98          	mov    -0x68(%rbp),%rsi
+    3258:	31 d2                	xor    %edx,%edx
+    325a:	49 8d 4c 04 f7       	lea    -0x9(%r12,%rax,1),%rcx
+    325f:	49 39 cc             	cmp    %rcx,%r12
+    3262:	72 18                	jb     327c <ext4_search_dir+0x29c>
+    3264:	e9 c3 00 00 00       	jmpq   332c <ext4_search_dir+0x34c>
+    3269:	41 0f b7 44 24 04    	movzwl 0x4(%r12),%eax
+    326f:	66 85 c0             	test   %ax,%ax
+    3272:	74 16                	je     328a <ext4_search_dir+0x2aa>
+    3274:	49 01 c4             	add    %rax,%r12
+    3277:	49 39 cc             	cmp    %rcx,%r12
+    327a:	73 0e                	jae    328a <ext4_search_dir+0x2aa>
+    327c:	83 c2 01             	add    $0x1,%edx
+    327f:	41 83 fd 01          	cmp    $0x1,%r13d
+    3283:	75 e4                	jne    3269 <ext4_search_dir+0x289>
+    3285:	4c 39 26             	cmp    %r12,(%rsi)
+    3288:	75 df                	jne    3269 <ext4_search_dir+0x289>
+    328a:	f0 48 01 15 00 00 00 	lock add %rdx,0x0(%rip)        # 3292 <ext4_search_dir+0x2b2>
+    3291:	00 
+			328e: R_X86_64_PC32	.bss+0xa4
+    3292:	48 8b 45 d0          	mov    -0x30(%rbp),%rax
+    3296:	65 48 33 04 25 28 00 	xor    %gs:0x28,%rax
+    329d:	00 00 
+    329f:	0f 85 dc 00 00 00    	jne    3381 <ext4_search_dir+0x3a1>
+    32a5:	48 8d 65 d8          	lea    -0x28(%rbp),%rsp
+    32a9:	44 89 e8             	mov    %r13d,%eax
+    32ac:	5b                   	pop    %rbx
+    32ad:	41 5c                	pop    %r12
+    32af:	41 5d                	pop    %r13
+    32b1:	41 5e                	pop    %r14
+    32b3:	41 5f                	pop    %r15
+    32b5:	5d                   	pop    %rbp
+    32b6:	c3                   	retq   
+    32b7:	4c 8b 65 a0          	mov    -0x60(%rbp),%r12
+    32bb:	41 bd ff ff ff ff    	mov    $0xffffffff,%r13d
+    32c1:	e9 6f ff ff ff       	jmpq   3235 <ext4_search_dir+0x255>
+    32c6:	31 c9                	xor    %ecx,%ecx
+    32c8:	48 8d 55 b0          	lea    -0x50(%rbp),%rdx
+    32cc:	4c 89 de             	mov    %r11,%rsi
+    32cf:	e9 2c fe ff ff       	jmpq   3100 <ext4_search_dir+0x120>
+    32d4:	49 8b 43 08          	mov    0x8(%r11),%rax
+    32d8:	80 38 5f             	cmpb   $0x5f,(%rax)
+    32db:	75 48                	jne    3325 <ext4_search_dir+0x345>
+    32dd:	41 83 f8 20          	cmp    $0x20,%r8d
+    32e1:	0f 86 7d fd ff ff    	jbe    3064 <ext4_search_dir+0x84>
+    32e7:	41 8d 78 ef          	lea    -0x11(%r8),%edi
+    32eb:	83 e7 f0             	and    $0xfffffff0,%edi
+    32ee:	49 01 fd             	add    %rdi,%r13
+    32f1:	48 8b 7a 08          	mov    0x8(%rdx),%rdi
+    32f5:	49 39 7d 00          	cmp    %rdi,0x0(%r13)
+    32f9:	74 1c                	je     3317 <ext4_search_dir+0x337>
+    32fb:	b8 01 00 00 00       	mov    $0x1,%eax
+    3300:	85 c0                	test   %eax,%eax
+    3302:	0f 94 c0             	sete   %al
+    3305:	e9 0b fe ff ff       	jmpq   3115 <ext4_search_dir+0x135>
+    330a:	f0 48 ff 05 00 00 00 	lock incq 0x0(%rip)        # 3312 <ext4_search_dir+0x332>
+    3311:	00 
+			330e: R_X86_64_PC32	.bss+0xac
+    3312:	e9 7b ff ff ff       	jmpq   3292 <ext4_search_dir+0x2b2>
+    3317:	48 8b 42 10          	mov    0x10(%rdx),%rax
+    331b:	49 39 45 08          	cmp    %rax,0x8(%r13)
+    331f:	75 da                	jne    32fb <ext4_search_dir+0x31b>
+    3321:	31 c0                	xor    %eax,%eax
+    3323:	eb db                	jmp    3300 <ext4_search_dir+0x320>
+    3325:	0f 0b                	ud2    
+    3327:	e9 38 fd ff ff       	jmpq   3064 <ext4_search_dir+0x84>
+    332c:	31 d2                	xor    %edx,%edx
+    332e:	e9 57 ff ff ff       	jmpq   328a <ext4_search_dir+0x2aa>
+    3333:	48 8b bd 70 ff ff ff 	mov    -0x90(%rbp),%rdi
+    333a:	48 be 6c 6f 6f 6b 75 	movabs $0x625f70756b6f6f6c,%rsi
+    3341:	70 5f 62 
+    3344:	48 39 37             	cmp    %rsi,(%rdi)
+    3347:	0f 85 a1 fe ff ff    	jne    31ee <ext4_search_dir+0x20e>
+    334d:	81 7f 08 65 6e 63 68 	cmpl   $0x68636e65,0x8(%rdi)
+    3354:	0f 85 94 fe ff ff    	jne    31ee <ext4_search_dir+0x20e>
+    335a:	80 7f 0c 00          	cmpb   $0x0,0xc(%rdi)
+    335e:	0f 85 8a fe ff ff    	jne    31ee <ext4_search_dir+0x20e>
+    3364:	f0 48 ff 05 00 00 00 	lock incq 0x0(%rip)        # 336c <ext4_search_dir+0x38c>
+    336b:	00 
+			3368: R_X86_64_PC32	.bss+0xc4
+    336c:	84 c0                	test   %al,%al
+    336e:	0f 85 82 fe ff ff    	jne    31f6 <ext4_search_dir+0x216>
+    3374:	f0 48 ff 05 00 00 00 	lock incq 0x0(%rip)        # 337c <ext4_search_dir+0x39c>
+    337b:	00 
+			3378: R_X86_64_PC32	.bss+0xbc
+    337c:	e9 e3 fc ff ff       	jmpq   3064 <ext4_search_dir+0x84>
+    3381:	e8 00 00 00 00       	callq  3386 <ext4_search_dir+0x3a6>
+			3382: R_X86_64_PLT32	__stack_chk_fail-0x4
+
+Disassembly of section .text.unlikely:

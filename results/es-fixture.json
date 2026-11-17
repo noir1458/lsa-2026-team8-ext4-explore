@@ -1,0 +1,1 @@
+{"path": "fixtures/es-mount/es.bin", "written_spans": 1024, "span_bytes": 65536, "logical_bytes": 134217728, "written_bytes": 67108864, "layout": "written span, hole span, repeated; final span is a hole"}

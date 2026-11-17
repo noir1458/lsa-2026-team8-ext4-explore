@@ -1,0 +1,232 @@
+{
+  "status": "ok",
+  "benchmark_sha256": "0b891ca0732f873d9232c846d6fd1fd94a6f0d5b45e996325e438de0303a1a03",
+  "summary": [
+    {
+      "session": "stock",
+      "kernel": "5.4.214-b0",
+      "case": "short13",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 8,
+      "median_us_per_query": 10.18891865,
+      "min_us_per_query": 10.074141,
+      "max_us_per_query": 10.2907367
+    },
+    {
+      "session": "stock",
+      "kernel": "5.4.214-b0",
+      "case": "long128",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 8,
+      "median_us_per_query": 15.1367625,
+      "min_us_per_query": 14.85424365,
+      "max_us_per_query": 16.041653399999998
+    },
+    {
+      "session": "stock",
+      "kernel": "5.4.214-b0",
+      "case": "random128",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 8,
+      "median_us_per_query": 6.97698155,
+      "min_us_per_query": 6.94078895,
+      "max_us_per_query": 7.9051162
+    },
+    {
+      "session": "stock",
+      "kernel": "5.4.214-b0",
+      "case": "varied",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 8,
+      "median_us_per_query": 6.439493475,
+      "min_us_per_query": 6.3379789,
+      "max_us_per_query": 8.0408224
+    },
+    {
+      "session": "initial",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "short13",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 10,
+      "median_us_per_query": 10.711939325,
+      "min_us_per_query": 10.54424,
+      "max_us_per_query": 10.98730205
+    },
+    {
+      "session": "initial",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "short13",
+      "cache": "warmdir",
+      "label": "tail",
+      "rounds": 10,
+      "median_us_per_query": 6.819569575,
+      "min_us_per_query": 6.7310471,
+      "max_us_per_query": 7.2763026
+    },
+    {
+      "session": "initial",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "long128",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 10,
+      "median_us_per_query": 15.3532786,
+      "min_us_per_query": 15.16130085,
+      "max_us_per_query": 15.5310855
+    },
+    {
+      "session": "initial",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "long128",
+      "cache": "warmdir",
+      "label": "tail",
+      "rounds": 10,
+      "median_us_per_query": 7.0781951,
+      "min_us_per_query": 7.0328058,
+      "max_us_per_query": 14.0103292
+    },
+    {
+      "session": "initial",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "random128",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 10,
+      "median_us_per_query": 7.177144524999999,
+      "min_us_per_query": 7.0790473,
+      "max_us_per_query": 7.535214600000001
+    },
+    {
+      "session": "initial",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "random128",
+      "cache": "warmdir",
+      "label": "tail",
+      "rounds": 10,
+      "median_us_per_query": 7.05992475,
+      "min_us_per_query": 7.00390425,
+      "max_us_per_query": 7.82323625
+    },
+    {
+      "session": "initial",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "varied",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 10,
+      "median_us_per_query": 6.678717825,
+      "min_us_per_query": 6.6357721000000005,
+      "max_us_per_query": 7.6183103
+    },
+    {
+      "session": "initial",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "varied",
+      "cache": "warmdir",
+      "label": "tail",
+      "rounds": 10,
+      "median_us_per_query": 6.6164238,
+      "min_us_per_query": 6.51775325,
+      "max_us_per_query": 8.60790585
+    },
+    {
+      "session": "confirm",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "short13",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 20,
+      "median_us_per_query": 10.74682045,
+      "min_us_per_query": 10.52366655,
+      "max_us_per_query": 11.0046387
+    },
+    {
+      "session": "confirm",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "short13",
+      "cache": "warmdir",
+      "label": "tail",
+      "rounds": 20,
+      "median_us_per_query": 6.8681465,
+      "min_us_per_query": 6.693549699999999,
+      "max_us_per_query": 8.1933477
+    },
+    {
+      "session": "confirm",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "long128",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 20,
+      "median_us_per_query": 15.43409095,
+      "min_us_per_query": 15.08976835,
+      "max_us_per_query": 15.68316975
+    },
+    {
+      "session": "confirm",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "long128",
+      "cache": "warmdir",
+      "label": "tail",
+      "rounds": 20,
+      "median_us_per_query": 7.082178225,
+      "min_us_per_query": 6.987707,
+      "max_us_per_query": 7.2816215
+    },
+    {
+      "session": "confirm",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "random128",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 20,
+      "median_us_per_query": 7.193062449999999,
+      "min_us_per_query": 6.98776795,
+      "max_us_per_query": 7.5343276999999995
+    },
+    {
+      "session": "confirm",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "random128",
+      "cache": "warmdir",
+      "label": "tail",
+      "rounds": 20,
+      "median_us_per_query": 7.093607049999999,
+      "min_us_per_query": 6.9634089,
+      "max_us_per_query": 7.13527895
+    },
+    {
+      "session": "confirm",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "varied",
+      "cache": "warmdir",
+      "label": "baseline",
+      "rounds": 20,
+      "median_us_per_query": 6.7280847,
+      "min_us_per_query": 6.62179835,
+      "max_us_per_query": 7.2430567
+    },
+    {
+      "session": "confirm",
+      "kernel": "5.4.214-ext4ex1",
+      "case": "varied",
+      "cache": "warmdir",
+      "label": "tail",
+      "rounds": 20,
+      "median_us_per_query": 6.652862275,
+      "min_us_per_query": 6.529788099999999,
+      "max_us_per_query": 6.910869150000001
+    }
+  ],
+  "notes": [
+    "Different sessions include different boots and different random order seeds; this is descriptive only.",
+    "No cross-session paired effect or percentage is calculated.",
+    "Primary causal policy comparisons are same-round ratios within each patched session.",
+    "Minimum and maximum describe observed trial times; they are not confidence intervals."
+  ]
+}

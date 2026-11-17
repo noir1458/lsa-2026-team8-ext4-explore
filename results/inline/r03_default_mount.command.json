@@ -1,0 +1,13 @@
+{
+  "argv": [
+    "mount",
+    "-t",
+    "ext4",
+    "-o",
+    "loop,noatime,nodiratime,data=ordered",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/inline-run/r03_default.img",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/inline-run/mount"
+  ],
+  "returncode": 0,
+  "elapsed_ns": 66839566
+}

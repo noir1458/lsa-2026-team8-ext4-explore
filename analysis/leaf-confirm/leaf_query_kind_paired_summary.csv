@@ -1,0 +1,17 @@
+case,cache,label,kind,pairs,metric,median_change_percent,min_change_percent,max_change_percent,faster_pairs,slower_pairs
+long128,warmdir,shadow,hit,20,conditional_mean_syscall_ns_in_mixed_workload,0.05921218655746685,-2.324906209628741,2.124762378892231,9,11
+long128,warmdir,shadow,miss,20,conditional_mean_syscall_ns_in_mixed_workload,-0.015322747883317334,-2.491317743970256,2.101280130652494,10,10
+long128,warmdir,tail,hit,20,conditional_mean_syscall_ns_in_mixed_workload,-39.01865484479244,-40.16050394393022,-37.282282243410414,20,0
+long128,warmdir,tail,miss,20,conditional_mean_syscall_ns_in_mixed_workload,-66.73890171321808,-67.20176227069592,-66.25952322531654,20,0
+random128,warmdir,shadow,hit,20,conditional_mean_syscall_ns_in_mixed_workload,-0.3403779848241584,-6.338935701195581,55.788649219257636,11,9
+random128,warmdir,shadow,miss,20,conditional_mean_syscall_ns_in_mixed_workload,-0.06954789922635207,-6.54362059350817,67.96474012460443,10,10
+random128,warmdir,tail,hit,20,conditional_mean_syscall_ns_in_mixed_workload,-0.3565801013918124,-4.955327901929163,2.3750727437881203,14,6
+random128,warmdir,tail,miss,20,conditional_mean_syscall_ns_in_mixed_workload,-2.805580722939416,-7.989897918034505,2.507145357036822,19,1
+short13,warmdir,shadow,hit,20,conditional_mean_syscall_ns_in_mixed_workload,0.22278262564663365,-3.8547245387888784,4.4894967576844635,8,12
+short13,warmdir,shadow,miss,20,conditional_mean_syscall_ns_in_mixed_workload,0.1478961471022444,-3.5130839287829674,5.125734131329018,9,11
+short13,warmdir,tail,hit,20,conditional_mean_syscall_ns_in_mixed_workload,-26.54961938183441,-28.498097737911955,-11.197524494903977,20,0
+short13,warmdir,tail,miss,20,conditional_mean_syscall_ns_in_mixed_workload,-45.277194178390936,-47.72026859893983,-28.75707488865763,20,0
+varied,warmdir,shadow,hit,20,conditional_mean_syscall_ns_in_mixed_workload,-0.44779618139707544,-7.962807338841582,2.718154381646154,13,7
+varied,warmdir,shadow,miss,20,conditional_mean_syscall_ns_in_mixed_workload,-0.29097369024031483,-5.883925550957492,2.5380692416684614,12,8
+varied,warmdir,tail,hit,20,conditional_mean_syscall_ns_in_mixed_workload,-0.8390701690122349,-7.589625891082519,3.8390736588111096,13,7
+varied,warmdir,tail,miss,20,conditional_mean_syscall_ns_in_mixed_workload,-2.4352785360390428,-7.983168945340424,2.030252906942076,19,1

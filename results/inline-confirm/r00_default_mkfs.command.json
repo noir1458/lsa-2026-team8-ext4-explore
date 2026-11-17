@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "mke2fs",
+    "-q",
+    "-t",
+    "ext4",
+    "-F",
+    "-b",
+    "4096",
+    "-I",
+    "256",
+    "-N",
+    "8192",
+    "-m",
+    "0",
+    "-U",
+    "46e91cad-e50c-5341-aabe-a6665f750560",
+    "-O",
+    "none,has_journal,ext_attr,resize_inode,dir_index,filetype,extent,64bit,flex_bg,sparse_super,large_file,huge_file,dir_nlink,extra_isize,metadata_csum",
+    "-E",
+    "lazy_itable_init=0,lazy_journal_init=0,nodiscard,hash_seed=27903e54-2077-592f-a149-73291c5c86b7",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/inline-confirm/r00_default.img"
+  ],
+  "returncode": 0,
+  "elapsed_ns": 17026509
+}

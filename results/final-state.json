@@ -1,0 +1,9 @@
+{
+  "kernel": "5.4.214-SEOJUNGMIN+",
+  "captured_at": "2026-11-18T03:04:05+0900",
+  "leaf_image_mounted": false,
+  "es_image_mounted": false,
+  "inline_image_mounted": false,
+  "prior_grub_default_preserved": true,
+  "experimental_profiles_disabled_before_reboot": true
+}

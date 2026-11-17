@@ -1,0 +1,55 @@
+
+fs/ext4/namei.o:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000000360 <leaf_tail_equal>:
+     360:	e8 00 00 00 00       	callq  365 <leaf_tail_equal+0x5>
+			1: R_X86_64_PLT32	__fentry__-0x4
+			9: R_X86_64_PC32	.bss+0xbc
+			15: R_X86_64_32S	.rodata.str1.1
+			1c: R_X86_64_PC32	.bss+0xc4
+			24: R_X86_64_PLT32	scnprintf-0x4
+			31: R_X86_64_PLT32	__fentry__-0x4
+			3e: R_X86_64_32S	.rodata+0x4a0
+			66: R_X86_64_32S	.bss+0x60
+			b6: R_X86_64_32S	.rodata.str1.1+0x22
+			bb: R_X86_64_PLT32	scnprintf-0x4
+			d1: R_X86_64_32S	.rodata.str1.1+0x20
+			de: R_X86_64_32S	.rodata.str1.1+0x1e
+			e5: R_X86_64_32S	.rodata.str1.1+0x20
+			100: R_X86_64_32S	.bss
+			115: R_X86_64_32S	.rodata+0x440
+			132: R_X86_64_32S	.rodata+0x440
+			13c: R_X86_64_32S	.rodata.str1.1+0x2b
+			144: R_X86_64_PLT32	scnprintf-0x4
+			166: R_X86_64_32S	.data+0x580
+			16f: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			18b: R_X86_64_32S	.data+0x500
+			194: R_X86_64_PLT32	__ubsan_handle_type_mismatch_v1-0x4
+			1a4: R_X86_64_32S	.data+0x540
+			1ad: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			1c9: R_X86_64_32S	.data+0x440
+			1d6: R_X86_64_PLT32	__ubsan_handle_type_mismatch_v1-0x4
+			1ed: R_X86_64_32S	.data+0x480
+			1fa: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			211: R_X86_64_32S	.data+0x4c0
+			21a: R_X86_64_PLT32	__ubsan_handle_out_of_bounds-0x4
+			231: R_X86_64_PLT32	__fentry__-0x4
+			2a1: R_X86_64_PLT32	__fentry__-0x4
+			2c7: R_X86_64_PLT32	kstrtouint-0x4
+			2fb: R_X86_64_PLT32	__stack_chk_fail-0x4
+			301: R_X86_64_PLT32	__fentry__-0x4
+			32a: R_X86_64_PLT32	__brelse-0x4
+			361: R_X86_64_PLT32	__fentry__-0x4
+     365:	55                   	push   %rbp
+     366:	89 d2                	mov    %edx,%edx
+     368:	48 8b 44 32 f8       	mov    -0x8(%rdx,%rsi,1),%rax
+     36d:	48 39 44 3a f8       	cmp    %rax,-0x8(%rdx,%rdi,1)
+     372:	0f 94 c0             	sete   %al
+     375:	48 89 e5             	mov    %rsp,%rbp
+     378:	5d                   	pop    %rbp
+     379:	c3                   	retq   
+
+Disassembly of section .text.unlikely:

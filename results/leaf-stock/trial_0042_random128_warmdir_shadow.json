@@ -1,0 +1,17 @@
+{
+  "phase": "stock",
+  "trial": 42,
+  "round": 5,
+  "case": "random128",
+  "cache": "warmdir",
+  "label": "shadow",
+  "policy": 0,
+  "profile": false,
+  "seed": 25261133,
+  "drop_caches": 2,
+  "names_sha256": "3fcb4e7e8f95fcbddfb72a69a61705b09218f33f9c084d3fb1bd043b69ee13a3",
+  "stats": null,
+  "counter_availability": "unavailable_on_stock_kernel",
+  "start_utc": "2026-11-17T17:49:36Z",
+  "returncode": 0
+}

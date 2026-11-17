@@ -1,0 +1,16 @@
+{
+  "bench": "bench/es_io_bench",
+  "file": "fixtures/es-mount/es.bin",
+  "output": "results/es-io-profile",
+  "extents": 1024,
+  "span": 65536,
+  "queries": 4000,
+  "rounds": 1,
+  "seed": 20261119,
+  "profile": true,
+  "cpus": "0",
+  "kernel": "5.4.214-ext4ex1",
+  "setup": "mode0; ordinary pread all query offsets; clear ES; SEEK_DATA every written span; select measured policy",
+  "scope": "4KiB pread from written offsets; file page cache warmed for both modes; device/host caches uncontrolled",
+  "checks": "all returned lengths and all payload bytes checked outside timing; profiling runs excluded from timing"
+}

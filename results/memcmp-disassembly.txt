@@ -1,0 +1,30 @@
+
+vmlinux:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+ffffffff81b82730 <memcmp>:
+ffffffff81b82730:	48 85 d2             	test   %rdx,%rdx
+ffffffff81b82733:	74 1d                	je     ffffffff81b82752 <memcmp+0x22>
+ffffffff81b82735:	31 c9                	xor    %ecx,%ecx
+ffffffff81b82737:	eb 09                	jmp    ffffffff81b82742 <memcmp+0x12>
+ffffffff81b82739:	48 83 c1 01          	add    $0x1,%rcx
+ffffffff81b8273d:	48 39 ca             	cmp    %rcx,%rdx
+ffffffff81b82740:	74 0f                	je     ffffffff81b82751 <memcmp+0x21>
+ffffffff81b82742:	0f b6 04 0f          	movzbl (%rdi,%rcx,1),%eax
+ffffffff81b82746:	44 0f b6 04 0e       	movzbl (%rsi,%rcx,1),%r8d
+ffffffff81b8274b:	44 29 c0             	sub    %r8d,%eax
+ffffffff81b8274e:	74 e9                	je     ffffffff81b82739 <memcmp+0x9>
+ffffffff81b82750:	c3                   	retq   
+ffffffff81b82751:	c3                   	retq   
+ffffffff81b82752:	31 c0                	xor    %eax,%eax
+ffffffff81b82754:	c3                   	retq   
+
+Disassembly of section .init.text:
+
+Disassembly of section .altinstr_aux:
+
+Disassembly of section .altinstr_replacement:
+
+Disassembly of section .exit.text:

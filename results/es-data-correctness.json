@@ -1,0 +1,134 @@
+{
+  "fixture": "es-data-correctness.bin",
+  "kernel": "5.4.214-ext4ex1",
+  "written_spans": 64,
+  "span_bytes": 16384,
+  "logical_bytes": 2097152,
+  "seed": 20261118,
+  "page_payload": "unique logical-page identity plus SHA256-derived bytes",
+  "profiling": 0,
+  "direct_reads_requested": true,
+  "tests": [
+    {
+      "mode": 0,
+      "stage": "unique_payload_and_holes",
+      "size_bytes": 2097152,
+      "expected_sha256": "090e05cdf53610997e21d94b09e182818367e2364bc059507241a4cfaec8bd34",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    },
+    {
+      "mode": 0,
+      "stage": "punch_hole_returns_zero",
+      "size_bytes": 2097152,
+      "expected_sha256": "58af90239e735be159b5b9679bbeec3e6bd70eb6ae6b634e0e1dd7ffb92ed3d3",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    },
+    {
+      "mode": 0,
+      "stage": "rewritten_extent_restores_unique_bytes",
+      "size_bytes": 2097152,
+      "expected_sha256": "090e05cdf53610997e21d94b09e182818367e2364bc059507241a4cfaec8bd34",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    },
+    {
+      "mode": 0,
+      "stage": "truncate_preserves_prefix",
+      "size_bytes": 1056768,
+      "expected_sha256": "e14f61c9e285607a8018fc650e8b509a06b20119ea989b04a1da229db45a14fe",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 1056768,
+      "direct_bytes_checked": 1056768
+    },
+    {
+      "mode": 0,
+      "stage": "extension_reads_zero_not_old_data",
+      "size_bytes": 2097152,
+      "expected_sha256": "fa5ab9a276a2e65f8c8f4ad8efd43fb3235de3d21d86479cf91f84ad0a589120",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    },
+    {
+      "mode": 0,
+      "stage": "sparse_layout_restored",
+      "size_bytes": 2097152,
+      "expected_sha256": "090e05cdf53610997e21d94b09e182818367e2364bc059507241a4cfaec8bd34",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    },
+    {
+      "mode": 1,
+      "stage": "unique_payload_and_holes",
+      "size_bytes": 2097152,
+      "expected_sha256": "090e05cdf53610997e21d94b09e182818367e2364bc059507241a4cfaec8bd34",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    },
+    {
+      "mode": 1,
+      "stage": "punch_hole_returns_zero",
+      "size_bytes": 2097152,
+      "expected_sha256": "58af90239e735be159b5b9679bbeec3e6bd70eb6ae6b634e0e1dd7ffb92ed3d3",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    },
+    {
+      "mode": 1,
+      "stage": "rewritten_extent_restores_unique_bytes",
+      "size_bytes": 2097152,
+      "expected_sha256": "090e05cdf53610997e21d94b09e182818367e2364bc059507241a4cfaec8bd34",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    },
+    {
+      "mode": 1,
+      "stage": "truncate_preserves_prefix",
+      "size_bytes": 1056768,
+      "expected_sha256": "e14f61c9e285607a8018fc650e8b509a06b20119ea989b04a1da229db45a14fe",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 1056768,
+      "direct_bytes_checked": 1056768
+    },
+    {
+      "mode": 1,
+      "stage": "extension_reads_zero_not_old_data",
+      "size_bytes": 2097152,
+      "expected_sha256": "fa5ab9a276a2e65f8c8f4ad8efd43fb3235de3d21d86479cf91f84ad0a589120",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    },
+    {
+      "mode": 1,
+      "stage": "sparse_layout_restored",
+      "size_bytes": 2097152,
+      "expected_sha256": "090e05cdf53610997e21d94b09e182818367e2364bc059507241a4cfaec8bd34",
+      "fadvise_dontneed": "completed (advisory)",
+      "errors": 0,
+      "buffered_bytes_checked": 2097152,
+      "direct_bytes_checked": 2097152
+    }
+  ],
+  "status": "PASS"
+}

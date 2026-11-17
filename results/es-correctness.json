@@ -1,0 +1,82 @@
+{
+  "fixture": "fixtures/es-mount/checks/es-correctness.bin",
+  "tests": [
+    {
+      "mode": 0,
+      "stage": "initial_geometry",
+      "result": {
+        "geometry_errors": 0
+      }
+    },
+    {
+      "mode": 0,
+      "stage": "two_readers_shared_inode",
+      "result": {
+        "pattern": "random",
+        "cache_state": "es-warm",
+        "threads": 2,
+        "seed": 314159,
+        "extents": 8,
+        "span": 16384,
+        "queries": 200000,
+        "elapsed_ns": 166629981,
+        "ns_per_query": 833.15,
+        "errors": 0,
+        "digest": "9bbdd0d0ca28e000"
+      }
+    },
+    {
+      "mode": 0,
+      "stage": "punch_and_restore",
+      "result": {
+        "geometry_errors": 0
+      }
+    },
+    {
+      "mode": 0,
+      "stage": "truncate_extend_and_restore",
+      "result": {
+        "geometry_errors": 0
+      }
+    },
+    {
+      "mode": 1,
+      "stage": "initial_geometry",
+      "result": {
+        "geometry_errors": 0
+      }
+    },
+    {
+      "mode": 1,
+      "stage": "two_readers_shared_inode",
+      "result": {
+        "pattern": "random",
+        "cache_state": "es-warm",
+        "threads": 2,
+        "seed": 314159,
+        "extents": 8,
+        "span": 16384,
+        "queries": 200000,
+        "elapsed_ns": 97564511,
+        "ns_per_query": 487.823,
+        "errors": 0,
+        "digest": "9bbdd0d0ca28e000"
+      }
+    },
+    {
+      "mode": 1,
+      "stage": "punch_and_restore",
+      "result": {
+        "geometry_errors": 0
+      }
+    },
+    {
+      "mode": 1,
+      "stage": "truncate_extend_and_restore",
+      "result": {
+        "geometry_errors": 0
+      }
+    }
+  ],
+  "status": "PASS"
+}

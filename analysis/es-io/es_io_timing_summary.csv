@@ -1,0 +1,13 @@
+dataset,kernel,pattern,io,label,trials,loop_ns_per_query_median,loop_ns_per_query_min,loop_ns_per_query_max
+es-io,5.4.214-ext4ex1,hot,buffered,baseline,8,1370.258,1342.04225,1414.62375
+es-io,5.4.214-ext4ex1,hot,buffered,baseline_shadow,8,1385.289,1363.16275,1417.516
+es-io,5.4.214-ext4ex1,hot,buffered,refresh,8,1399.4985000000001,1350.393,2318.74525
+es-io,5.4.214-ext4ex1,hot,direct,baseline,8,17276.34725,17037.56075,43636.45375
+es-io,5.4.214-ext4ex1,hot,direct,baseline_shadow,8,17122.711,16916.628,44684.82975
+es-io,5.4.214-ext4ex1,hot,direct,refresh,8,17101.803625,16959.34225,43665.97175
+es-io,5.4.214-ext4ex1,random,buffered,baseline,8,1730.422875,1653.813,2027.84375
+es-io,5.4.214-ext4ex1,random,buffered,baseline_shadow,8,1712.5437499999998,1642.25775,1854.41775
+es-io,5.4.214-ext4ex1,random,buffered,refresh,8,1716.0965,1641.57225,1742.54575
+es-io,5.4.214-ext4ex1,random,direct,baseline,8,17702.193625,17374.32175,43491.09075
+es-io,5.4.214-ext4ex1,random,direct,baseline_shadow,8,17621.513625,17463.88075,45218.78025
+es-io,5.4.214-ext4ex1,random,direct,refresh,8,17537.70925,17410.05275,44576.3245

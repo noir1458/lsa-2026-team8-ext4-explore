@@ -1,0 +1,1 @@
+{"pattern":"random","io":"direct","policy":1,"profile":0,"actual_policy":1,"actual_profile":0,"queries":4000,"bytes":16384000,"seed":22261125,"elapsed_ns":69640211,"ns_per_query":17410.053,"errors":0,"query_digest":"230b0a3f2fb5cba5","lookups":0,"pointer_hits":0,"tree_nodes":0,"tree_hits":0,"tree_misses":0,"refreshes":0}

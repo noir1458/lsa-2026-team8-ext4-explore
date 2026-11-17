@@ -1,0 +1,14 @@
+Inode: 296   Type: regular    Mode:  0644   Flags: 0x80000
+Generation: 2867847694    Version: 0x00000000:00000001
+User:     0   Group:     0   Project:     0   Size: 4096
+File ACL: 0
+Links: 1   Blockcount: 8
+Fragment:  Address: 0    Number: 0    Size: 0
+ ctime: 0x6afc9203:e08f2ac4 -- Wed Nov 18 02:42:27 2026
+ atime: 0x6afc9202:10aabac4 -- Wed Nov 18 02:42:26 2026
+ mtime: 0x6afc9203:e08f2ac4 -- Wed Nov 18 02:42:27 2026
+crtime: 0x6afc9202:10aabac4 -- Wed Nov 18 02:42:26 2026
+Size of extra inode fields: 32
+Inode checksum: 0x184b5091
+EXTENTS:
+(0):3770

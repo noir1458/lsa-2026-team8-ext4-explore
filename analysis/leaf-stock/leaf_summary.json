@@ -1,0 +1,271 @@
+{
+  "status": "ok",
+  "validation_errors": [],
+  "metadata": {
+    "phase": "stock",
+    "kernel": "5.4.214-b0",
+    "seed": 20261118,
+    "rounds": 8,
+    "profile": false,
+    "drop_caches": 2,
+    "cpu": 0,
+    "cases": [
+      {
+        "case": "short13",
+        "directory": "short13",
+        "names_file": "short13.names",
+        "positive": 10000,
+        "negative": 10000,
+        "positive_length_histogram": {
+          "13": 10000
+        },
+        "negative_length_histogram": {
+          "13": 10000
+        },
+        "names_sha256": "2d29c50be0243c376ec5b70dce1eb3e7eb686b48e3179bd22c63f6d216b0ce0a",
+        "creation_order_sha256": "494509d7b4cc22c7c5c3db1a110ef7c5f90601aa82f4f3b941318477ee91d59f"
+      },
+      {
+        "case": "long128",
+        "directory": "long128",
+        "names_file": "long128.names",
+        "positive": 10000,
+        "negative": 10000,
+        "positive_length_histogram": {
+          "128": 10000
+        },
+        "negative_length_histogram": {
+          "128": 10000
+        },
+        "names_sha256": "fea43dd3cf347c5f8820582b3038f80a54f84fd564ce00794426cf77914853e2",
+        "creation_order_sha256": "52220383523b91a1983f8348125abed271a05c019fba188a236b48d63a2c8c2b"
+      },
+      {
+        "case": "random128",
+        "directory": "random128",
+        "names_file": "random128.names",
+        "positive": 10000,
+        "negative": 10000,
+        "positive_length_histogram": {
+          "128": 10000
+        },
+        "negative_length_histogram": {
+          "128": 10000
+        },
+        "names_sha256": "3fcb4e7e8f95fcbddfb72a69a61705b09218f33f9c084d3fb1bd043b69ee13a3",
+        "creation_order_sha256": "722a01d7a81ee778f8f2f5986def474e4ef0c0180785ad87e0c69b71106a1fa0"
+      },
+      {
+        "case": "varied",
+        "directory": "varied",
+        "names_file": "varied.names",
+        "positive": 10000,
+        "negative": 10000,
+        "positive_length_histogram": {
+          "13": 2000,
+          "32": 2000,
+          "64": 2000,
+          "128": 2000,
+          "240": 2000
+        },
+        "negative_length_histogram": {
+          "13": 2000,
+          "32": 2000,
+          "64": 2000,
+          "128": 2000,
+          "240": 2000
+        },
+        "names_sha256": "8b4c462232100cf3294fd97587f2b944a285b84970e55bd4d73936552d1c03c7",
+        "creation_order_sha256": "1d92ed3dcd77055ca60c4251f5224b44f1776119761dd40f26d7caf7b18f3269"
+      }
+    ],
+    "modes": [
+      "warmdir"
+    ],
+    "policies": [
+      [
+        "baseline",
+        0
+      ],
+      [
+        "shadow",
+        0
+      ]
+    ],
+    "benchmark_sha256": "0b891ca0732f873d9232c846d6fd1fd94a6f0d5b45e996325e438de0303a1a03",
+    "counter_availability": "unavailable_on_stock_kernel",
+    "metric": "elapsed_ns / queries; per-call timing is a separate field",
+    "cache_note": "warmdir enumerates names after drop_caches=2; warm also looks up all names once",
+    "comparison_note": "stock and patched are separate boot sessions; never pair them as randomized within-boot policy effects"
+  },
+  "timing_trials": 64,
+  "profile_trials": 0,
+  "paired_summary": [
+    {
+      "case": "long128",
+      "cache": "warmdir",
+      "label": "shadow",
+      "pairs": 8,
+      "median_change_percent": -0.4300316813882099,
+      "min_change_percent": -6.67266286902819,
+      "max_change_percent": 2.6080186856232146,
+      "faster_pairs": 4,
+      "slower_pairs": 4,
+      "comparison": "same_policy_control"
+    },
+    {
+      "case": "random128",
+      "cache": "warmdir",
+      "label": "shadow",
+      "pairs": 8,
+      "median_change_percent": -0.08017687140116081,
+      "min_change_percent": -12.853933127510519,
+      "max_change_percent": 0.5964026028199898,
+      "faster_pairs": 4,
+      "slower_pairs": 4,
+      "comparison": "same_policy_control"
+    },
+    {
+      "case": "short13",
+      "cache": "warmdir",
+      "label": "shadow",
+      "pairs": 8,
+      "median_change_percent": 1.3637362241845974,
+      "min_change_percent": -0.5494256791158669,
+      "max_change_percent": 27.291927470881806,
+      "faster_pairs": 1,
+      "slower_pairs": 7,
+      "comparison": "same_policy_control"
+    },
+    {
+      "case": "varied",
+      "cache": "warmdir",
+      "label": "shadow",
+      "pairs": 8,
+      "median_change_percent": 0.2764539732168281,
+      "min_change_percent": -18.916871612535545,
+      "max_change_percent": 1.6098865946738483,
+      "faster_pairs": 2,
+      "slower_pairs": 6,
+      "comparison": "same_policy_control"
+    }
+  ],
+  "query_kind_paired_summary": [
+    {
+      "case": "long128",
+      "cache": "warmdir",
+      "label": "shadow",
+      "kind": "hit",
+      "pairs": 8,
+      "metric": "conditional_mean_syscall_ns_in_mixed_workload",
+      "median_change_percent": -0.1357080095321317,
+      "min_change_percent": -12.459377356125067,
+      "max_change_percent": 4.36754545346576,
+      "faster_pairs": 4,
+      "slower_pairs": 4
+    },
+    {
+      "case": "long128",
+      "cache": "warmdir",
+      "label": "shadow",
+      "kind": "miss",
+      "pairs": 8,
+      "metric": "conditional_mean_syscall_ns_in_mixed_workload",
+      "median_change_percent": -0.6264167946027355,
+      "min_change_percent": -1.3996980643077528,
+      "max_change_percent": 2.7042109016314875,
+      "faster_pairs": 4,
+      "slower_pairs": 4
+    },
+    {
+      "case": "random128",
+      "cache": "warmdir",
+      "label": "shadow",
+      "kind": "hit",
+      "pairs": 8,
+      "metric": "conditional_mean_syscall_ns_in_mixed_workload",
+      "median_change_percent": -0.3134354302677611,
+      "min_change_percent": -19.16965623259169,
+      "max_change_percent": 0.7900454718326788,
+      "faster_pairs": 4,
+      "slower_pairs": 4
+    },
+    {
+      "case": "random128",
+      "cache": "warmdir",
+      "label": "shadow",
+      "kind": "miss",
+      "pairs": 8,
+      "metric": "conditional_mean_syscall_ns_in_mixed_workload",
+      "median_change_percent": 0.16987158610590747,
+      "min_change_percent": -1.636246773830119,
+      "max_change_percent": 0.8098155588399436,
+      "faster_pairs": 3,
+      "slower_pairs": 5
+    },
+    {
+      "case": "short13",
+      "cache": "warmdir",
+      "label": "shadow",
+      "kind": "hit",
+      "pairs": 8,
+      "metric": "conditional_mean_syscall_ns_in_mixed_workload",
+      "median_change_percent": 1.5309325891652126,
+      "min_change_percent": -0.5496140454316123,
+      "max_change_percent": 27.90346864651354,
+      "faster_pairs": 1,
+      "slower_pairs": 7
+    },
+    {
+      "case": "short13",
+      "cache": "warmdir",
+      "label": "shadow",
+      "kind": "miss",
+      "pairs": 8,
+      "metric": "conditional_mean_syscall_ns_in_mixed_workload",
+      "median_change_percent": 1.0926504283382155,
+      "min_change_percent": -0.7766294899600235,
+      "max_change_percent": 26.18063543048368,
+      "faster_pairs": 2,
+      "slower_pairs": 6
+    },
+    {
+      "case": "varied",
+      "cache": "warmdir",
+      "label": "shadow",
+      "kind": "hit",
+      "pairs": 8,
+      "metric": "conditional_mean_syscall_ns_in_mixed_workload",
+      "median_change_percent": 0.5017355710390081,
+      "min_change_percent": -28.406778429398095,
+      "max_change_percent": 1.6086803226865731,
+      "faster_pairs": 1,
+      "slower_pairs": 7
+    },
+    {
+      "case": "varied",
+      "cache": "warmdir",
+      "label": "shadow",
+      "kind": "miss",
+      "pairs": 8,
+      "metric": "conditional_mean_syscall_ns_in_mixed_workload",
+      "median_change_percent": 0.5206304478168722,
+      "min_change_percent": -0.25430442219791516,
+      "max_change_percent": 1.6285889064322046,
+      "faster_pairs": 4,
+      "slower_pairs": 4
+    }
+  ],
+  "profile_summary": [],
+  "notes": [
+    "Each invocation analyzes one session; discovery/confirmation sessions are never pooled.",
+    "Primary metric is complete loop elapsed_ns / queries, including timer and correctness overhead.",
+    "Same-round ratios use identical query order; individual queries are not independent replications.",
+    "shadow and baseline both set leaf_prefilter=0; shadow measures same-policy variability.",
+    "Hit/miss summaries are conditional means inside the mixed query workload, not separate 100-percent-hit/miss experiments.",
+    "Min/max bars are observed ranges, not confidence intervals or equivalence tests.",
+    "Profile times are excluded from all timing comparisons.",
+    "leaf_stats only counts enabled tail checks; zero baseline/shadow counters cannot prove dcache hits.",
+    "Stock-kernel counters are unavailable, not measured zeros; stock/patch boot sessions are never pooled or paired."
+  ]
+}

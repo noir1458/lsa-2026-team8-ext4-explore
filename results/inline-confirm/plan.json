@@ -1,0 +1,144 @@
+{
+  "experiment": "existing_ext4_inline_data",
+  "rounds": 8,
+  "files_per_size": 1000,
+  "seed": 20261119,
+  "sizes": [
+    32,
+    128,
+    512,
+    4096
+  ],
+  "image_mib": 64,
+  "block_size": 4096,
+  "inode_size": 256,
+  "schedule": [
+    {
+      "round": 0,
+      "labels": [
+        "default",
+        "inline"
+      ],
+      "size_order": [
+        128,
+        32,
+        512,
+        4096
+      ],
+      "order_seed": 20261119
+    },
+    {
+      "round": 1,
+      "labels": [
+        "inline",
+        "default"
+      ],
+      "size_order": [
+        128,
+        4096,
+        512,
+        32
+      ],
+      "order_seed": 20262128
+    },
+    {
+      "round": 2,
+      "labels": [
+        "inline",
+        "default"
+      ],
+      "size_order": [
+        128,
+        512,
+        32,
+        4096
+      ],
+      "order_seed": 20263137
+    },
+    {
+      "round": 3,
+      "labels": [
+        "default",
+        "inline"
+      ],
+      "size_order": [
+        512,
+        32,
+        4096,
+        128
+      ],
+      "order_seed": 20264146
+    },
+    {
+      "round": 4,
+      "labels": [
+        "inline",
+        "default"
+      ],
+      "size_order": [
+        4096,
+        128,
+        512,
+        32
+      ],
+      "order_seed": 20265155
+    },
+    {
+      "round": 5,
+      "labels": [
+        "default",
+        "inline"
+      ],
+      "size_order": [
+        4096,
+        512,
+        128,
+        32
+      ],
+      "order_seed": 20266164
+    },
+    {
+      "round": 6,
+      "labels": [
+        "default",
+        "inline"
+      ],
+      "size_order": [
+        32,
+        4096,
+        512,
+        128
+      ],
+      "order_seed": 20267173
+    },
+    {
+      "round": 7,
+      "labels": [
+        "inline",
+        "default"
+      ],
+      "size_order": [
+        4096,
+        32,
+        512,
+        128
+      ],
+      "order_seed": 20268182
+    }
+  ],
+  "trial_count": 240,
+  "create_sync": "buffered writes, close all files, fsync(directory), syncfs(filesystem)",
+  "grow": "warm validated source files, append deterministic bytes from 32 B to 4096 B, then same sync",
+  "cold_scope": "drop_caches=3 requested in guest after process ready; host/VMM caches uncontrolled",
+  "no_kernel_changes": true,
+  "binary_sha256": "cd92c61b345156b371a01f7d50f9c9d4c61091ee518e7032e2a1fc99e7924c11",
+  "runner_sha256": "1f2841a81e52c7b4373b16d24cdb8654ba0d1e9475ac09352165ebb071457562",
+  "kernel": "5.4.214-ext4ex1",
+  "utc": "2026-11-17T17:58:54Z",
+  "proc_version": "Linux version 5.4.214-ext4ex1 (EXPERIMENT_USER@EXPERIMENT_USER-VirtualBox) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2)) #2 SMP Wed Nov 18 02:32:24 KST 2026\n",
+  "meminfo": "MemTotal:        4027056 kB\nMemFree:         2809780 kB\nMemAvailable:    3139928 kB\nBuffers:           79648 kB\nCached:           429156 kB\nSwapCached:            0 kB\nActive:           725692 kB\nInactive:         300172 kB\nActive(anon):     518064 kB\nInactive(anon):     1788 kB\nActive(file):     207628 kB\nInactive(file):   298384 kB\nUnevictable:           0 kB\nMlocked:               0 kB\nSwapTotal:       2097148 kB\nSwapFree:        2097148 kB\nDirty:              1328 kB\nWriteback:             0 kB\nAnonPages:        517120 kB\nMapped:           281136 kB\nShmem:              2756 kB\nKReclaimable:      54448 kB\nSlab:             120892 kB\nSReclaimable:      54448 kB\nSUnreclaim:        66444 kB\nKernelStack:        7056 kB\nPageTables:        10784 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:     4110676 kB\nCommitted_AS:    3260744 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       34720 kB\nVmallocChunk:          0 kB\nPercpu:             1544 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:      151488 kB\nDirectMap2M:     4042752 kB\n",
+  "cpu_models": [
+    "Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz"
+  ],
+  "mke2fs_conf": "[defaults]\n\tbase_features = sparse_super,large_file,filetype,resize_inode,dir_index,ext_attr\n\tdefault_mntopts = acl,user_xattr\n\tenable_periodic_fsck = 0\n\tblocksize = 4096\n\tinode_size = 256\n\tinode_ratio = 16384\n\n[fs_types]\n\text3 = {\n\t\tfeatures = has_journal\n\t}\n\text4 = {\n\t\tfeatures = has_journal,extent,huge_file,flex_bg,metadata_csum,64bit,dir_nlink,extra_isize\n\t\tinode_size = 256\n\t}\n\tsmall = {\n\t\tinode_size = 128\n\t\tinode_ratio = 4096\n\t}\n\tfloppy = {\n\t\tinode_size = 128\n\t\tinode_ratio = 8192\n\t}\n\tbig = {\n\t\tinode_ratio = 32768\n\t}\n\thuge = {\n\t\tinode_ratio = 65536\n\t}\n\tnews = {\n\t\tinode_ratio = 4096\n\t}\n\tlargefile = {\n\t\tinode_ratio = 1048576\n\t\tblocksize = -1\n\t}\n\tlargefile4 = {\n\t\tinode_ratio = 4194304\n\t\tblocksize = -1\n\t}\n\thurd = {\n\t     blocksize = 4096\n\t     inode_size = 128\n\t}\n\n[options]\n\tfname_encoding = utf8\n"
+}

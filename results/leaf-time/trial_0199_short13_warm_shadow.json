@@ -1,0 +1,18 @@
+{
+  "trial": 199,
+  "round": 8,
+  "case": "short13",
+  "cache": "warm",
+  "label": "shadow",
+  "policy": 0,
+  "profile": false,
+  "seed": 28261142,
+  "drop_caches": 2,
+  "names_sha256": "2d29c50be0243c376ec5b70dce1eb3e7eb686b48e3179bd22c63f6d216b0ce0a",
+  "start_utc": "2026-11-17T17:40:59Z",
+  "stats": {
+    "candidates": 0,
+    "rejects": 0
+  },
+  "returncode": 0
+}

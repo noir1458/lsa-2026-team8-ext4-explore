@@ -1,0 +1,1078 @@
+[    0.000000] Linux version 5.4.214-ext4ex1 (EXPERIMENT_USER@EXPERIMENT_USER-VirtualBox) (gcc version 9.4.0 (Ubuntu 9.4.0-1ubuntu1~20.04.2)) #2 SMP Wed Nov 18 02:32:24 KST 2026
+[    0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz-5.4.214-ext4ex1 root=UUID=6c9de6cb-11ba-4f5a-a889-d610259a7830 ro quiet splash
+[    0.000000] KERNEL supported cpus:
+[    0.000000]   Intel GenuineIntel
+[    0.000000]   AMD AuthenticAMD
+[    0.000000]   Hygon HygonGenuine
+[    0.000000]   Centaur CentaurHauls
+[    0.000000]   zhaoxin   Shanghai  
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[    0.000000] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[    0.000000] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[    0.000000] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[    0.000000] BIOS-provided physical RAM map:
+[    0.000000] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[    0.000000] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000000100000-0x00000000dffeffff] usable
+[    0.000000] BIOS-e820: [mem 0x00000000dfff0000-0x00000000dfffffff] ACPI data
+[    0.000000] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+[    0.000000] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[    0.000000] BIOS-e820: [mem 0x0000000100000000-0x000000011fffffff] usable
+[    0.000000] NX (Execute Disable) protection: active
+[    0.000000] SMBIOS 2.5 present.
+[    0.000000] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[    0.000000] Hypervisor detected: KVM
+[    0.000000] kvm-clock: Using msrs 4b564d01 and 4b564d00
+[    0.000001] kvm-clock: cpu 0, msr 116201001, primary cpu clock
+[    0.000001] kvm-clock: using sched offset of 14907411426 cycles
+[    0.000004] clocksource: kvm-clock: mask: 0xffffffffffffffff max_cycles: 0x1cd42e4dffb, max_idle_ns: 881590591483 ns
+[    0.000007] tsc: Detected 3392.148 MHz processor
+[    0.004005] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[    0.004008] e820: remove [mem 0x000a0000-0x000fffff] usable
+[    0.004019] last_pfn = 0x120000 max_arch_pfn = 0x400000000
+[    0.004108] MTRR default type: uncachable
+[    0.004110] MTRR fixed ranges enabled:
+[    0.004112]   00000-9FFFF write-back
+[    0.004114]   A0000-BFFFF uncachable
+[    0.004117]   C0000-FFFFF write-protect
+[    0.004118] MTRR variable ranges enabled:
+[    0.004121]   0 base 0000000000 mask 7F00000000 write-back
+[    0.004124]   1 base 00E0000000 mask 7FE0000000 uncachable
+[    0.004127]   2 base 0100000000 mask 7FE0000000 write-back
+[    0.004128]   3 disabled
+[    0.004130]   4 disabled
+[    0.004131]   5 disabled
+[    0.004133]   6 disabled
+[    0.004134]   7 disabled
+[    0.004136]   8 disabled
+[    0.004137]   9 disabled
+[    0.004139]   10 disabled
+[    0.004141]   11 disabled
+[    0.004142]   12 disabled
+[    0.004144]   13 disabled
+[    0.004145]   14 disabled
+[    0.004147]   15 disabled
+[    0.004167] x86/PAT: Configuration [0-7]: WB  WC  UC- UC  WB  WP  UC- WT  
+[    0.004228] total RAM covered: 4096M
+[    0.006935] Found optimal setting for mtrr clean up
+[    0.006937]  gran_size: 64K 	chunk_size: 1G 	num_reg: 3  	lose cover RAM: 0G
+[    0.007081] e820: update [mem 0xe0000000-0xffffffff] usable ==> reserved
+[    0.007089] last_pfn = 0xdfff0 max_arch_pfn = 0x400000000
+[    0.020919] found SMP MP-table at [mem 0x0009fbf0-0x0009fbff]
+[    0.020963] check: Scanning 1 areas for low memory corruption
+[    0.021817] RAMDISK: [mem 0x354a1000-0x36a47fff]
+[    0.021831] ACPI: Early table checksum verification disabled
+[    0.021835] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+[    0.021840] ACPI: XSDT 0x00000000DFFF0030 00003C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+[    0.021850] ACPI: FACP 0x00000000DFFF00F0 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+[    0.021862] ACPI: DSDT 0x00000000DFFF02F0 002353 (v02 VBOX   VBOXBIOS 00000002 VBOX 0002AB1D)
+[    0.021870] ACPI: FACS 0x00000000DFFF0200 000040
+[    0.021877] ACPI: FACS 0x00000000DFFF0200 000040
+[    0.021883] ACPI: APIC 0x00000000DFFF0240 00005C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+[    0.021891] ACPI: SSDT 0x00000000DFFF02A0 000045 (v01 VBOX   VBOXCPUT 00000002 VBOX 0002AB1D)
+[    0.021899] ACPI: Reserving FACP table memory at [mem 0xdfff00f0-0xdfff01e3]
+[    0.021901] ACPI: Reserving DSDT table memory at [mem 0xdfff02f0-0xdfff2642]
+[    0.021903] ACPI: Reserving FACS table memory at [mem 0xdfff0200-0xdfff023f]
+[    0.021905] ACPI: Reserving FACS table memory at [mem 0xdfff0200-0xdfff023f]
+[    0.021907] ACPI: Reserving APIC table memory at [mem 0xdfff0240-0xdfff029b]
+[    0.021909] ACPI: Reserving SSDT table memory at [mem 0xdfff02a0-0xdfff02e4]
+[    0.021931] ACPI: Local APIC address 0xfee00000
+[    0.023255] No NUMA configuration found
+[    0.023257] Faking a node at [mem 0x0000000000000000-0x000000011fffffff]
+[    0.023304] NODE_DATA(0) allocated [mem 0x11ffd6000-0x11fffffff]
+[    0.024467] Zone ranges:
+[    0.024469]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[    0.024471]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[    0.024474]   Normal   [mem 0x0000000100000000-0x000000011fffffff]
+[    0.024476]   Device   empty
+[    0.024478] Movable zone start for each node
+[    0.024494] Early memory node ranges
+[    0.024496]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[    0.024498]   node   0: [mem 0x0000000000100000-0x00000000dffeffff]
+[    0.024501]   node   0: [mem 0x0000000100000000-0x000000011fffffff]
+[    0.024524] Zeroed struct page in unavailable ranges: 114 pages
+[    0.024526] Initmem setup node 0 [mem 0x0000000000001000-0x000000011fffffff]
+[    0.024529] On node 0 totalpages: 1048462
+[    0.024531]   DMA zone: 64 pages used for memmap
+[    0.024532]   DMA zone: 21 pages reserved
+[    0.024534]   DMA zone: 3998 pages, LIFO batch:0
+[    0.024857]   DMA32 zone: 14272 pages used for memmap
+[    0.024859]   DMA32 zone: 913392 pages, LIFO batch:63
+[    0.102345]   Normal zone: 2048 pages used for memmap
+[    0.102348]   Normal zone: 131072 pages, LIFO batch:31
+[    0.113279] ACPI: PM-Timer IO Port: 0x4008
+[    0.113283] ACPI: Local APIC address 0xfee00000
+[    0.113406] IOAPIC[0]: apic_id 2, version 32, address 0xfec00000, GSI 0-23
+[    0.113411] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[    0.113414] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[    0.113417] ACPI: IRQ0 used by override.
+[    0.113420] ACPI: IRQ9 used by override.
+[    0.113427] Using ACPI (MADT) for SMP configuration information
+[    0.113437] smpboot: Allowing 2 CPUs, 0 hotplug CPUs
+[    0.113475] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[    0.113478] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[    0.113480] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[    0.113482] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[    0.113485] PM: Registered nosave memory: [mem 0xdfff0000-0xdfffffff]
+[    0.113487] PM: Registered nosave memory: [mem 0xe0000000-0xfebfffff]
+[    0.113488] PM: Registered nosave memory: [mem 0xfec00000-0xfec00fff]
+[    0.113490] PM: Registered nosave memory: [mem 0xfec01000-0xfedfffff]
+[    0.113492] PM: Registered nosave memory: [mem 0xfee00000-0xfee00fff]
+[    0.113494] PM: Registered nosave memory: [mem 0xfee01000-0xfffbffff]
+[    0.113495] PM: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+[    0.113499] [mem 0xe0000000-0xfebfffff] available for PCI devices
+[    0.113500] Booting paravirtualized kernel on KVM
+[    0.113504] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645519600211568 ns
+[    0.113515] setup_percpu: NR_CPUS:8192 nr_cpumask_bits:2 nr_cpu_ids:2 nr_node_ids:1
+[    0.113641] percpu: Embedded 59 pages/cpu s204800 r8192 d28672 u1048576
+[    0.113653] pcpu-alloc: s204800 r8192 d28672 u1048576 alloc=1*2097152
+[    0.113655] pcpu-alloc: [0] 0 1 
+[    0.113713] PV qspinlock hash table entries: 256 (order: 0, 4096 bytes, linear)
+[    0.113719] Built 1 zonelists, mobility grouping on.  Total pages: 1032057
+[    0.113721] Policy zone: Normal
+[    0.113723] Kernel command line: BOOT_IMAGE=/boot/vmlinuz-5.4.214-ext4ex1 root=UUID=6c9de6cb-11ba-4f5a-a889-d610259a7830 ro quiet splash
+[    0.114108] Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes, linear)
+[    0.114199] Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes, linear)
+[    0.114269] mem auto-init: stack:off, heap alloc:on, heap free:off
+[    0.130739] Memory: 3996380K/4193848K available (16387K kernel code, 3548K rwdata, 4624K rodata, 2888K init, 5720K bss, 197468K reserved, 0K cma-reserved)
+[    0.131318] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=2, Nodes=1
+[    0.131352] Kernel/User page tables isolation: enabled
+[    0.131377] ftrace: allocating 43160 entries in 169 pages
+[    0.168736] rcu: Hierarchical RCU implementation.
+[    0.168738] rcu: 	RCU restricting CPUs from NR_CPUS=8192 to nr_cpu_ids=2.
+[    0.168740] rcu: RCU calculated value of scheduler-enlistment delay is 25 jiffies.
+[    0.168742] rcu: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=2
+[    0.179175] NR_IRQS: 524544, nr_irqs: 440, preallocated irqs: 16
+[    0.180613] random: crng init done
+[    0.201548] Console: colour VGA+ 80x25
+[    0.201554] printk: console [tty0] enabled
+[    0.201578] ACPI: Core revision 20190816
+[    0.201721] APIC: Switch to symmetric I/O mode setup
+[    0.202237] x2apic enabled
+[    0.202746] Switched APIC routing to physical x2apic.
+[    0.206180] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[    0.206228] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x30e5559347e, max_idle_ns: 440795323014 ns
+[    0.206233] Calibrating delay loop (skipped) preset value.. 6784.29 BogoMIPS (lpj=13568592)
+[    0.206236] pid_max: default: 32768 minimum: 301
+[    0.206292] LSM: Security Framework initializing
+[    0.206308] Yama: becoming mindful.
+[    0.206340] AppArmor: AppArmor initialized
+[    0.210272] Mount-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.210280] Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes, linear)
+[    0.210296] *** VALIDATE tmpfs ***
+[    0.210529] *** VALIDATE proc ***
+[    0.210605] *** VALIDATE cgroup1 ***
+[    0.210607] *** VALIDATE cgroup2 ***
+[    0.210772] Last level iTLB entries: 4KB 1024, 2MB 1024, 4MB 1024
+[    0.210774] Last level dTLB entries: 4KB 1024, 2MB 1024, 4MB 1024, 1GB 4
+[    0.210778] Spectre V1 : Mitigation: usercopy/swapgs barriers and __user pointer sanitization
+[    0.210780] Spectre V2 : Mitigation: Retpolines
+[    0.210781] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[    0.210782] Speculative Store Bypass: Vulnerable
+[    0.210787] MDS: Mitigation: Clear CPU buffers
+[    0.210788] MMIO Stale Data: Unknown: No mitigations
+[    0.210789] SRBDS: Unknown: Dependent on hypervisor status
+[    0.211151] Freeing SMP alternatives memory: 36K
+[    0.321250] smpboot: CPU0: Intel(R) Core(TM) i7-4770 CPU @ 3.40GHz (family: 0x6, model: 0x3c, stepping: 0x3)
+[    0.321411] Performance Events: unsupported p6 CPU model 60 no PMU driver, software events only.
+[    0.321452] rcu: Hierarchical SRCU implementation.
+[    0.322036] NMI watchdog: Perf NMI watchdog permanently disabled
+[    0.322108] smp: Bringing up secondary CPUs ...
+[    0.322230] x86: Booting SMP configuration:
+[    0.322230] .... node  #0, CPUs:      #1
+[    0.029631] kvm-clock: cpu 1, msr 116201041, secondary cpu clock
+[    0.322230] smp: Brought up 1 node, 2 CPUs
+[    0.322230] smpboot: Max logical packages: 1
+[    0.322230] smpboot: Total of 2 processors activated (13568.59 BogoMIPS)
+[    0.322236] devtmpfs: initialized
+[    0.322263] x86/mm: Memory block size: 128MB
+[    0.322558] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 7645041785100000 ns
+[    0.322558] futex hash table entries: 512 (order: 3, 32768 bytes, linear)
+[    0.322558] pinctrl core: initialized pinctrl subsystem
+[    0.322558] PM: RTC time: 17:34:31, date: 2026-11-17
+[    0.322558] NET: Registered protocol family 16
+[    0.322558] audit: initializing netlink subsys (disabled)
+[    0.322577] audit: type=2000 audit(1794936885.654:1): state=initialized audit_enabled=0 res=1
+[    0.322577] EISA bus registered
+[    0.322577] cpuidle: using governor ladder
+[    0.322577] cpuidle: using governor menu
+[    0.322577] ACPI: bus type PCI registered
+[    0.322577] acpiphp: ACPI Hot Plug PCI Controller Driver version: 0.5
+[    0.322577] PCI: Using configuration type 1 for base access
+[    0.326314] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[    0.330314] ACPI: Added _OSI(Module Device)
+[    0.330314] ACPI: Added _OSI(Processor Device)
+[    0.330314] ACPI: Added _OSI(3.0 _SCP Extensions)
+[    0.330314] ACPI: Added _OSI(Processor Aggregator Device)
+[    0.330314] ACPI: Added _OSI(Linux-Dell-Video)
+[    0.330314] ACPI: Added _OSI(Linux-Lenovo-NV-HDMI-Audio)
+[    0.330314] ACPI: Added _OSI(Linux-HPI-Hybrid-Graphics)
+[    0.333369] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[    0.338459] ACPI: Interpreter enabled
+[    0.338482] ACPI: (supports S0 S5)
+[    0.338484] ACPI: Using IOAPIC for interrupt routing
+[    0.339208] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[    0.339539] ACPI: Enabled 2 GPEs in block 00 to 07
+[    0.355087] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[    0.355095] acpi PNP0A03:00: _OSC: OS supports [ASPM ClockPM Segments MSI HPX-Type3]
+[    0.356669] acpi PNP0A03:00: _OSC: not requesting OS control; OS requires [ExtendedConfig ASPM ClockPM MSI]
+[    0.356690] acpi PNP0A03:00: fail to add MMCONFIG information, can't access extended PCI configuration space under this bridge.
+[    0.357443] PCI host bridge to bus 0000:00
+[    0.357446] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[    0.357449] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[    0.357451] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[    0.357454] pci_bus 0000:00: root bus resource [mem 0xe0000000-0xfdffffff window]
+[    0.357457] pci_bus 0000:00: root bus resource [bus 00-ff]
+[    0.357515] pci 0000:00:00.0: [8086:1237] type 00 class 0x060000
+[    0.358923] pci 0000:00:01.0: [8086:7000] type 00 class 0x060100
+[    0.360037] pci 0000:00:01.1: [8086:7111] type 00 class 0x01018a
+[    0.360530] pci 0000:00:01.1: reg 0x20: [io  0xd000-0xd00f]
+[    0.360725] pci 0000:00:01.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[    0.360728] pci 0000:00:01.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[    0.360730] pci 0000:00:01.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[    0.360732] pci 0000:00:01.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[    0.361563] pci 0000:00:02.0: [15ad:0405] type 00 class 0x030000
+[    0.362514] pci 0000:00:02.0: reg 0x10: [io  0xd010-0xd01f]
+[    0.364892] pci 0000:00:02.0: reg 0x14: [mem 0xe0000000-0xe0ffffff pref]
+[    0.366507] pci 0000:00:02.0: reg 0x18: [mem 0xf0000000-0xf01fffff]
+[    0.378725] pci 0000:00:03.0: [8086:100e] type 00 class 0x020000
+[    0.381013] pci 0000:00:03.0: reg 0x10: [mem 0xf0200000-0xf021ffff]
+[    0.384138] pci 0000:00:03.0: reg 0x18: [io  0xd020-0xd027]
+[    0.393433] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000
+[    0.394357] pci 0000:00:04.0: reg 0x10: [io  0xd040-0xd05f]
+[    0.396244] pci 0000:00:04.0: reg 0x14: [mem 0xf0400000-0xf07fffff]
+[    0.398379] pci 0000:00:04.0: reg 0x18: [mem 0xf0800000-0xf0803fff pref]
+[    0.407312] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100
+[    0.407506] pci 0000:00:05.0: reg 0x10: [io  0xd100-0xd1ff]
+[    0.407600] pci 0000:00:05.0: reg 0x14: [io  0xd200-0xd23f]
+[    0.408870] pci 0000:00:06.0: [106b:003f] type 00 class 0x0c0310
+[    0.410360] pci 0000:00:06.0: reg 0x10: [mem 0xf0804000-0xf0804fff]
+[    0.423328] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000
+[    0.423863] pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+[    0.423877] pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+[    0.426272] pci 0000:00:0b.0: [8086:265c] type 00 class 0x0c0320
+[    0.428354] pci 0000:00:0b.0: reg 0x10: [mem 0xf0805000-0xf0805fff]
+[    0.440085] pci 0000:00:0d.0: [8086:2829] type 00 class 0x010601
+[    0.442358] pci 0000:00:0d.0: reg 0x10: [io  0xd240-0xd247]
+[    0.444259] pci 0000:00:0d.0: reg 0x14: [io  0xd248-0xd24b]
+[    0.446358] pci 0000:00:0d.0: reg 0x18: [io  0xd250-0xd257]
+[    0.450293] pci 0000:00:0d.0: reg 0x1c: [io  0xd258-0xd25b]
+[    0.452145] pci 0000:00:0d.0: reg 0x20: [io  0xd260-0xd26f]
+[    0.453964] pci 0000:00:0d.0: reg 0x24: [mem 0xf0806000-0xf0807fff]
+[    0.468657] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
+[    0.469576] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 9 *10 11)
+[    0.469865] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 *9 10 11)
+[    0.470125] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 9 10 *11)
+[    0.470486] iommu: Default domain type: Translated 
+[    0.470486] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[    0.470486] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[    0.470486] pci 0000:00:02.0: vgaarb: bridge control possible
+[    0.470486] vgaarb: loaded
+[    0.470596] SCSI subsystem initialized
+[    0.470624] libata version 3.00 loaded.
+[    0.470624] ACPI: bus type USB registered
+[    0.470624] usbcore: registered new interface driver usbfs
+[    0.470624] usbcore: registered new interface driver hub
+[    0.470624] usbcore: registered new device driver usb
+[    0.470624] pps_core: LinuxPPS API ver. 1 registered
+[    0.470624] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[    0.470624] PTP clock support registered
+[    0.470624] EDAC MC: Ver: 3.0.0
+[    0.470624] PCI: Using ACPI for IRQ routing
+[    0.470624] PCI: pci_cache_line_size set to 64 bytes
+[    0.470624] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[    0.470624] e820: reserve RAM buffer [mem 0xdfff0000-0xdfffffff]
+[    0.470680] NetLabel: Initializing
+[    0.470682] NetLabel:  domain hash size = 128
+[    0.470682] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[    0.470710] NetLabel:  unlabeled traffic allowed by default
+[    0.478898] clocksource: Switched to clocksource kvm-clock
+[    0.507993] *** VALIDATE bpf ***
+[    0.508080] VFS: Disk quotas dquot_6.6.0
+[    0.508105] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[    0.508132] *** VALIDATE ramfs ***
+[    0.508136] *** VALIDATE hugetlbfs ***
+[    0.508261] AppArmor: AppArmor Filesystem Enabled
+[    0.508286] pnp: PnP ACPI init
+[    0.508419] pnp 00:00: Plug and Play ACPI device, IDs PNP0303 (active)
+[    0.508541] pnp 00:01: Plug and Play ACPI device, IDs PNP0f03 (active)
+[    0.510519] pnp: PnP ACPI: found 2 devices
+[    0.514436] thermal_sys: Registered thermal governor 'fair_share'
+[    0.514437] thermal_sys: Registered thermal governor 'bang_bang'
+[    0.514437] thermal_sys: Registered thermal governor 'step_wise'
+[    0.514438] thermal_sys: Registered thermal governor 'user_space'
+[    0.514438] thermal_sys: Registered thermal governor 'power_allocator'
+[    0.518968] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[    0.519052] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[    0.519054] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[    0.519057] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[    0.519060] pci_bus 0000:00: resource 7 [mem 0xe0000000-0xfdffffff window]
+[    0.519173] NET: Registered protocol family 2
+[    0.519235] IP idents hash table entries: 65536 (order: 7, 524288 bytes, linear)
+[    0.519778] tcp_listen_portaddr_hash hash table entries: 2048 (order: 3, 32768 bytes, linear)
+[    0.519818] TCP established hash table entries: 32768 (order: 6, 262144 bytes, linear)
+[    0.519998] TCP bind hash table entries: 32768 (order: 7, 524288 bytes, linear)
+[    0.520127] TCP: Hash tables configured (established 32768 bind 32768)
+[    0.520157] UDP hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.520183] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes, linear)
+[    0.520243] NET: Registered protocol family 1
+[    0.520254] NET: Registered protocol family 44
+[    0.520276] pci 0000:00:00.0: Limiting direct PCI/PCI transfers
+[    0.520295] pci 0000:00:01.0: Activating ISA DMA hang workarounds
+[    0.520367] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[    0.526797] PCI: CLS 0 bytes, default 64
+[    0.526848] Unpacking initramfs...
+[    0.568879] Freeing initrd memory: 22172K
+[    0.568882] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[    0.568884] software IO TLB: mapped [mem 0xdbff0000-0xdfff0000] (64MB)
+[    0.568989] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x30e5559347e, max_idle_ns: 440795323014 ns
+[    0.569035] clocksource: Switched to clocksource tsc
+[    0.569091] platform rtc_cmos: registered platform RTC device (no PNP device found)
+[    0.569121] check: Scanning for low memory corruption every 60 seconds
+[    0.569552] Initialise system trusted keyrings
+[    0.569558] Key type blacklist registered
+[    0.569640] workingset: timestamp_bits=36 max_order=20 bucket_order=0
+[    0.571238] zbud: loaded
+[    0.571922] squashfs: version 4.0 (2009/01/31) Phillip Lougher
+[    0.572268] fuse: init (API version 7.31)
+[    0.572283] *** VALIDATE fuse ***
+[    0.572284] *** VALIDATE fuse ***
+[    0.572457] Platform Keyring initialized
+[    0.575230] Key type asymmetric registered
+[    0.575231] Asymmetric key parser 'x509' registered
+[    0.575238] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 244)
+[    0.575297] io scheduler mq-deadline registered
+[    0.575423] shpchp: Standard Hot Plug PCI Controller Driver version: 0.4
+[    0.575458] intel_idle: Please enable MWAIT in BIOS SETUP
+[    0.575630] ACPI: AC Adapter [AC] (on-line)
+[    0.575719] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[    0.575777] ACPI: Power Button [PWRF]
+[    0.575885] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[    0.575919] ACPI: Sleep Button [SLPF]
+[    0.576430] Serial: 8250/16550 driver, 32 ports, IRQ sharing enabled
+[    0.578413] Linux agpgart interface v0.103
+[    0.746434] loop: module loaded
+[    0.747089] ata_piix 0000:00:01.1: version 2.13
+[    0.750447] scsi host0: ata_piix
+[    0.750976] scsi host1: ata_piix
+[    0.751092] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd000 irq 14
+[    0.751095] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd008 irq 15
+[    0.751626] tun: Universal TUN/TAP device driver, 1.6
+[    0.753202] PPP generic driver version 2.4.2
+[    0.754812] VFIO - User Level meta-driver version: 0.3
+[    0.754971] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[    0.754981] ehci-pci: EHCI PCI platform driver
+[    0.762855] ehci-pci 0000:00:0b.0: EHCI Host Controller
+[    0.762888] ehci-pci 0000:00:0b.0: new USB bus registered, assigned bus number 1
+[    0.764291] ehci-pci 0000:00:0b.0: irq 19, io mem 0xf0805000
+[    0.779250] ehci-pci 0000:00:0b.0: USB 2.0 started, EHCI 1.00
+[    0.779386] usb usb1: New USB device found, idVendor=1d6b, idProduct=0002, bcdDevice= 5.04
+[    0.779391] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.779395] usb usb1: Product: EHCI Host Controller
+[    0.779398] usb usb1: Manufacturer: Linux 5.4.214-ext4ex1 ehci_hcd
+[    0.779401] usb usb1: SerialNumber: 0000:00:0b.0
+[    0.779963] hub 1-0:1.0: USB hub found
+[    0.779979] hub 1-0:1.0: 12 ports detected
+[    0.780707] ehci-platform: EHCI generic platform driver
+[    0.780729] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[    0.780738] ohci-pci: OHCI PCI platform driver
+[    0.788786] ohci-pci 0000:00:06.0: OHCI PCI host controller
+[    0.788818] ohci-pci 0000:00:06.0: new USB bus registered, assigned bus number 2
+[    0.789343] ohci-pci 0000:00:06.0: irq 22, io mem 0xf0804000
+[    0.848738] usb usb2: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 5.04
+[    0.848752] usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[    0.848763] usb usb2: Product: OHCI PCI host controller
+[    0.848775] usb usb2: Manufacturer: Linux 5.4.214-ext4ex1 ohci_hcd
+[    0.848786] usb usb2: SerialNumber: 0000:00:06.0
+[    0.849598] hub 2-0:1.0: USB hub found
+[    0.849653] hub 2-0:1.0: 12 ports detected
+[    0.852303] ohci-platform: OHCI generic platform driver
+[    0.852348] uhci_hcd: USB Universal Host Controller Interface driver
+[    0.852661] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[    0.855281] serio: i8042 KBD port at 0x60,0x64 irq 1
+[    0.855305] serio: i8042 AUX port at 0x60,0x64 irq 12
+[    0.856370] mousedev: PS/2 mouse device common for all mice
+[    0.859728] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input2
+[    0.861287] rtc_cmos rtc_cmos: registered as rtc0
+[    0.861325] rtc_cmos rtc_cmos: alarms up to one day, 114 bytes nvram
+[    0.861343] i2c /dev entries driver
+[    0.861470] device-mapper: uevent: version 1.0.3
+[    0.861916] device-mapper: ioctl: 4.41.0-ioctl (2019-09-16) initialised: dm-devel@redhat.com
+[    0.862010] platform eisa.0: Probing EISA bus 0
+[    0.862014] platform eisa.0: EISA: Cannot allocate resource for mainboard
+[    0.862018] platform eisa.0: Cannot allocate resource for EISA slot 1
+[    0.862022] platform eisa.0: Cannot allocate resource for EISA slot 2
+[    0.862025] platform eisa.0: Cannot allocate resource for EISA slot 3
+[    0.862028] platform eisa.0: Cannot allocate resource for EISA slot 4
+[    0.862031] platform eisa.0: Cannot allocate resource for EISA slot 5
+[    0.862035] platform eisa.0: Cannot allocate resource for EISA slot 6
+[    0.862038] platform eisa.0: Cannot allocate resource for EISA slot 7
+[    0.862041] platform eisa.0: Cannot allocate resource for EISA slot 8
+[    0.862044] platform eisa.0: EISA: Detected 0 cards
+[    0.862050] intel_pstate: CPU model not supported
+[    0.862286] ledtrig-cpu: registered to indicate activity on CPUs
+[    0.862544] drop_monitor: Initializing network drop monitor service
+[    0.862971] NET: Registered protocol family 10
+[    0.883017] Segment Routing with IPv6
+[    0.883048] NET: Registered protocol family 17
+[    0.883163] Key type dns_resolver registered
+[    0.883468] RAS: Correctable Errors collector initialized.
+[    0.883475] IPI shorthand broadcast: enabled
+[    0.883485] sched_clock: Marking stable (857783092, 25631502)->(884353681, -939087)
+[    0.883666] registered taskstats version 1
+[    0.883677] Loading compiled-in X.509 certificates
+[    0.885332] Loaded X.509 cert 'Build time autogenerated kernel key: dd2c3cd753fcd84ebf8c81b5054ebeaac8622632'
+[    0.885369] zswap: loaded using pool lzo/zbud
+[    0.885645] Key type ._fscrypt registered
+[    0.885647] Key type .fscrypt registered
+[    0.893673] Key type encrypted registered
+[    0.893677] AppArmor: AppArmor sha1 policy hashing enabled
+[    0.893686] ima: No TPM chip found, activating TPM-bypass!
+[    0.893692] ima: Allocated hash algorithm: sha1
+[    0.893698] ima: No architecture policies found
+[    0.893713] evm: Initialising EVM extended attributes:
+[    0.893713] evm: security.selinux
+[    0.893714] evm: security.SMACK64
+[    0.893715] evm: security.SMACK64EXEC
+[    0.893716] evm: security.SMACK64TRANSMUTE
+[    0.893716] evm: security.SMACK64MMAP
+[    0.893717] evm: security.apparmor
+[    0.893718] evm: security.ima
+[    0.893718] evm: security.capability
+[    0.893719] evm: HMAC attrs: 0x1
+[    0.894559] PM:   Magic number: 2:143:593
+[    0.894849] rtc_cmos rtc_cmos: setting system clock to 2026-11-17T17:34:32 UTC (1794936872)
+[    0.923183] ata1.00: ATAPI: VBOX CD-ROM, 1.0, max UDMA/133
+[    0.923994] scsi 0:0:0:0: CD-ROM            VBOX     CD-ROM           1.0  PQ: 0 ANSI: 5
+[    0.924619] sr 0:0:0:0: [sr0] scsi3-mmc drive: 32x/32x xa/form2 tray
+[    0.924620] cdrom: Uniform CD-ROM driver Revision: 3.20
+[    0.942316] sr 0:0:0:0: Attached scsi CD-ROM sr0
+[    0.942513] sr 0:0:0:0: Attached scsi generic sg0 type 5
+[    0.946015] Freeing unused decrypted memory: 2040K
+[    0.946514] Freeing unused kernel image memory: 2888K
+[    0.966457] Write protecting the kernel read-only data: 24576k
+[    0.966943] Freeing unused kernel image memory: 2036K
+[    0.967221] Freeing unused kernel image memory: 1520K
+[    1.012625] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    1.012627] x86/mm: Checking user space page tables
+[    1.060344] x86/mm: Checked W+X mappings: passed, no W+X pages found.
+[    1.060346] Run /init as init process
+[    1.146311] usb 2-1: new full-speed USB device number 2 using ohci-pci
+[    1.185509] piix4_smbus 0000:00:07.0: SMBus Host Controller at 0x4100, revision 0
+[    1.195196] ahci 0000:00:0d.0: version 3.0
+[    1.196886] ahci 0000:00:0d.0: SSS flag set, parallel bus scan disabled
+[    1.197137] ahci 0000:00:0d.0: AHCI 0001.0100 32 slots 2 ports 3 Gbps 0x3 impl SATA mode
+[    1.197142] ahci 0000:00:0d.0: flags: 64bit ncq stag only ccc 
+[    1.206281] scsi host2: ahci
+[    1.214283] scsi host3: ahci
+[    1.214403] ata3: SATA max UDMA/133 abar m8192@0xf0806000 port 0xf0806100 irq 21
+[    1.214411] ata4: SATA max UDMA/133 abar m8192@0xf0806000 port 0xf0806180 irq 21
+[    1.240380] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[    1.240381] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[    1.407995] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input4
+[    1.466429] usb 2-1: New USB device found, idVendor=80ee, idProduct=0021, bcdDevice= 1.00
+[    1.466432] usb 2-1: New USB device strings: Mfr=1, Product=3, SerialNumber=0
+[    1.466435] usb 2-1: Product: USB Tablet
+[    1.466437] usb 2-1: Manufacturer: VirtualBox
+[    1.478104] hidraw: raw HID events driver (C) Jiri Kosina
+[    1.532576] ata3: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[    1.532740] ata3.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+[    1.532743] ata3.00: 125829120 sectors, multi 128: LBA48 NCQ (depth 32)
+[    1.533011] ata3.00: configured for UDMA/133
+[    1.533171] scsi 2:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[    1.533464] sd 2:0:0:0: [sda] 125829120 512-byte logical blocks: (64.4 GB/60.0 GiB)
+[    1.533477] sd 2:0:0:0: [sda] Write Protect is off
+[    1.533479] sd 2:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    1.533501] sd 2:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.533741] sd 2:0:0:0: Attached scsi generic sg1 type 0
+[    1.645066]  sda: sda1 sda2 < sda5 >
+[    1.663145] sd 2:0:0:0: [sda] Attached SCSI disk
+[    1.679313] e1000 0000:00:03.0 eth0: (PCI:33MHz:32-bit) 08:00:27:a4:3b:bd
+[    1.679318] e1000 0000:00:03.0 eth0: Intel(R) PRO/1000 Network Connection
+[    1.847654] ata4: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[    1.848089] ata4.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+[    1.848094] ata4.00: 4194304 sectors, multi 128: LBA48 NCQ (depth 32)
+[    1.848794] ata4.00: configured for UDMA/133
+[    1.849070] scsi 3:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[    1.849848] sd 3:0:0:0: [sdb] 4194304 512-byte logical blocks: (2.15 GB/2.00 GiB)
+[    1.849908] sd 3:0:0:0: [sdb] Write Protect is off
+[    1.849921] sd 3:0:0:0: [sdb] Mode Sense: 00 3a 00 00
+[    1.850024] sd 3:0:0:0: [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    1.850215] sd 3:0:0:0: Attached scsi generic sg2 type 0
+[    1.887084] sd 3:0:0:0: [sdb] Attached SCSI disk
+[    1.904441] e1000 0000:00:03.0 enp0s3: renamed from eth0
+[    1.925855] usbcore: registered new interface driver usbhid
+[    1.925856] usbhid: USB HID core driver
+[    1.936065] input: VirtualBox USB Tablet as /devices/pci0000:00/0000:00:06.0/usb2/2-1/2-1:1.0/0003:80EE:0021.0001/input/input5
+[    1.940874] hid-generic 0003:80EE:0021.0001: input,hidraw0: USB HID v1.10 Mouse [VirtualBox USB Tablet] on usb-0000:00:06.0-1/input0
+[    2.030331] EXT4-fs (sda5): mounted filesystem with ordered data mode. Opts: (null)
+[    2.206226] systemd[1]: Inserted module 'autofs4'
+[    2.220344] systemd[1]: systemd 245.4-4ubuntu3.20 running in system mode. (+PAM +AUDIT +SELINUX +IMA +APPARMOR +SMACK +SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT +GNUTLS +ACL +XZ +LZ4 +SECCOMP +BLKID +ELFUTILS +KMOD +IDN2 -IDN +PCRE2 default-hierarchy=hybrid)
+[    2.220374] systemd[1]: Detected virtualization oracle.
+[    2.220377] systemd[1]: Detected architecture x86-64.
+[    2.239641] systemd[1]: Set hostname to <EXPERIMENT_USER-VirtualBox>.
+[    2.391601] systemd[1]: Configuration file /run/systemd/system/netplan-ovs-cleanup.service is marked world-inaccessible. This has no effect as configuration data is accessible via APIs without restrictions. Proceeding anyway.
+[    2.485950] systemd[1]: Created slice system-modprobe.slice.
+[    2.486171] systemd[1]: Created slice system-systemd\x2dfsck.slice.
+[    2.486539] systemd[1]: Created slice User and Session Slice.
+[    2.486651] systemd[1]: Started Forward Password Requests to Wall Directory Watch.
+[    2.486927] systemd[1]: Set up automount Arbitrary Executable File Formats File System Automount Point.
+[    2.486998] systemd[1]: Reached target Network (Pre).
+[    2.487031] systemd[1]: Reached target User and Group Name Lookups.
+[    2.487053] systemd[1]: Reached target Remote File Systems.
+[    2.487068] systemd[1]: Reached target Slices.
+[    2.487092] systemd[1]: Reached target Mounting snaps.
+[    2.487128] systemd[1]: Reached target System Time Set.
+[    2.487149] systemd[1]: Reached target System Time Synchronized.
+[    2.487335] systemd[1]: Listening on Syslog Socket.
+[    2.487455] systemd[1]: Listening on fsck to fsckd communication Socket.
+[    2.487523] systemd[1]: Listening on initctl Compatibility Named Pipe.
+[    2.487881] systemd[1]: Listening on Journal Audit Socket.
+[    2.487988] systemd[1]: Listening on Journal Socket (/dev/log).
+[    2.488145] systemd[1]: Listening on Journal Socket.
+[    2.488274] systemd[1]: Listening on udev Control Socket.
+[    2.488370] systemd[1]: Listening on udev Kernel Socket.
+[    2.489791] systemd[1]: Mounting Huge Pages File System...
+[    2.491304] systemd[1]: Mounting POSIX Message Queue File System...
+[    2.494501] systemd[1]: Mounting Kernel Debug File System...
+[    2.495755] systemd[1]: Mounting Kernel Trace File System...
+[    2.497910] systemd[1]: Starting Journal Service...
+[    2.499370] systemd[1]: Starting Set the console keyboard layout...
+[    2.501117] systemd[1]: Starting Create list of static device nodes for the current kernel...
+[    2.503670] systemd[1]: Starting Load Kernel Module chromeos_pstore...
+[    2.505120] systemd[1]: Starting Load Kernel Module drm...
+[    2.507542] systemd[1]: Starting Load Kernel Module efi_pstore...
+[    2.512765] systemd[1]: Starting Load Kernel Module pstore_blk...
+[    2.518733] systemd[1]: Starting Load Kernel Module pstore_zone...
+[    2.527918] systemd[1]: Starting Load Kernel Module ramoops...
+[    2.531952] systemd[1]: Condition check resulted in Set Up Additional Binary Formats being skipped.
+[    2.532008] systemd[1]: Condition check resulted in File System Check on Root Device being skipped.
+[    2.536933] systemd[1]: Starting Load Kernel Modules...
+[    2.541694] systemd[1]: Starting Remount Root and Kernel File Systems...
+[    2.543148] systemd[1]: Starting udev Coldplug all Devices...
+[    2.544456] systemd[1]: Starting Uncomplicated firewall...
+[    2.563386] EXT4-fs (sda5): re-mounted. Opts: errors=remount-ro
+[    2.569152] systemd[1]: Mounted Huge Pages File System.
+[    2.569395] systemd[1]: Mounted POSIX Message Queue File System.
+[    2.569564] systemd[1]: Mounted Kernel Debug File System.
+[    2.569721] systemd[1]: Mounted Kernel Trace File System.
+[    2.570482] systemd[1]: Finished Create list of static device nodes for the current kernel.
+[    2.570869] systemd[1]: modprobe@chromeos_pstore.service: Succeeded.
+[    2.571350] systemd[1]: Finished Load Kernel Module chromeos_pstore.
+[    2.571677] systemd[1]: modprobe@drm.service: Succeeded.
+[    2.572174] systemd[1]: Finished Load Kernel Module drm.
+[    2.572502] systemd[1]: modprobe@efi_pstore.service: Succeeded.
+[    2.572981] systemd[1]: Finished Load Kernel Module efi_pstore.
+[    2.573307] systemd[1]: modprobe@pstore_blk.service: Succeeded.
+[    2.573870] systemd[1]: Finished Load Kernel Module pstore_blk.
+[    2.574204] systemd[1]: modprobe@pstore_zone.service: Succeeded.
+[    2.586988] systemd[1]: Finished Load Kernel Module pstore_zone.
+[    2.587442] systemd[1]: modprobe@ramoops.service: Succeeded.
+[    2.588020] systemd[1]: Finished Load Kernel Module ramoops.
+[    2.588729] systemd[1]: Finished Remount Root and Kernel File Systems.
+[    2.589482] systemd[1]: Finished Uncomplicated firewall.
+[    2.603291] systemd[1]: Activating swap /swapfile...
+[    2.605244] systemd[1]: Condition check resulted in Rebuild Hardware Database being skipped.
+[    2.605294] systemd[1]: Condition check resulted in Platform Persistent Storage Archival being skipped.
+[    2.606645] systemd[1]: Starting Load/Save Random Seed...
+[    2.608688] systemd[1]: Starting Create System Users...
+[    2.626457] lp: driver loaded but no devices found
+[    2.637010] systemd[1]: Finished Load/Save Random Seed.
+[    2.644841] ppdev: user-space parallel port driver
+[    2.664442] systemd[1]: Finished Create System Users.
+[    2.665770] systemd[1]: Starting Create Static Device Nodes in /dev...
+[    2.702871] systemd[1]: Finished Create Static Device Nodes in /dev.
+[    2.704397] systemd[1]: Starting udev Kernel Device Manager...
+[    2.736515] systemd[1]: Finished udev Coldplug all Devices.
+[    2.754413] [drm] DMA map mode: Caching DMA mappings.
+[    2.754511] [drm] Capabilities:
+[    2.754512] [drm]   Rect copy.
+[    2.754513] [drm]   Cursor.
+[    2.754514] [drm]   Cursor bypass.
+[    2.754514] [drm]   Cursor bypass 2.
+[    2.754515] [drm]   Alpha cursor.
+[    2.754516] [drm]   Extended Fifo.
+[    2.754518] [drm]   Pitchlock.
+[    2.754519] [drm]   Irq mask.
+[    2.754519] [drm]   GMR.
+[    2.754520] [drm]   Traces.
+[    2.754521] [drm]   GMR2.
+[    2.754521] [drm]   Screen Object 2.
+[    2.754522] [drm]   Command Buffers.
+[    2.754523] [drm]   Command Buffers 2.
+[    2.754524] [drm]   Guest Backed Resources.
+[    2.754524] [drm] Capabilities2:
+[    2.754526] [drm] Max GMR ids is 8192
+[    2.754527] [drm] Max number of GMR pages is 1048576
+[    2.754528] [drm] Max dedicated hypervisor surface memory is 507904 kiB
+[    2.754529] [drm] Maximum display memory size is 16384 kiB
+[    2.754530] [drm] VRAM at 0xe0000000 size is 16384 kiB
+[    2.754532] [drm] MMIO at 0xf0000000 size is 2048 kiB
+[    2.754562] pmd_set_huge: Cannot satisfy [mem 0xf0000000-0xf0200000] with a huge-page mapping due to MTRR override.
+[    2.762488] [TTM] Zone  kernel: Available graphics memory: 2013536 KiB
+[    2.762490] [TTM] Initializing pool allocator
+[    2.762496] [TTM] Initializing DMA pool allocator
+[    2.762554] [drm] Supports vblank timestamp caching Rev 2 (21.10.2013).
+[    2.762555] [drm] No driver support for vblank timestamp query.
+[    2.763203] [drm] Screen Target Display device initialized
+[    2.763319] [drm] width 720
+[    2.763341] [drm] height 400
+[    2.763346] [drm] bpp 32
+[    2.763585] [drm] Fifo max 0x00200000 min 0x00001000 cap 0x00000355
+[    2.764169] [drm] Using command buffers with DMA pool.
+[    2.764174] [drm] DX: no.
+[    2.764175] [drm] Atomic: yes.
+[    2.764176] [drm] SM4_1: no.
+[    2.764205] [drm:vmw_host_log [vmwgfx]] *ERROR* Failed to send host log message.
+[    2.765532] [drm:vmw_host_log [vmwgfx]] *ERROR* Failed to send host log message.
+[    2.778472] fbcon: svgadrmfb (fb0) is primary device
+[    2.783916] Console: switching to colour frame buffer device 100x37
+[    2.788448] [drm] Initialized vmwgfx 2.15.0 20180704 for 0000:00:02.0 on minor 0
+[    2.792045] systemd[1]: Finished Load Kernel Modules.
+[    2.793539] systemd[1]: Mounting FUSE Control File System...
+[    2.794999] systemd[1]: Mounting Kernel Configuration File System...
+[    2.798794] systemd[1]: Starting Apply Kernel Variables...
+[    2.800582] systemd[1]: Mounted FUSE Control File System.
+[    2.800679] systemd[1]: Condition check resulted in VMware vmblock fuse mount being skipped.
+[    2.819421] systemd[1]: Mounted Kernel Configuration File System.
+[    2.824361] systemd[1]: Started Journal Service.
+[    2.839024] systemd-journald[228]: Received client request to flush runtime journal.
+[    2.986615] Adding 2097148k swap on /swapfile.  Priority:-2 extents:6 across:2260988k FS
+[    3.553961] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[    3.554115] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input6
+[    3.565965] vboxguest: host-version: 7.2.16r174877 0x8000000f
+[    3.609569] vbg_heartbeat_init: Setting up heartbeat to trigger every 2000 milliseconds
+[    3.609737] input: VirtualBox mouse integration as /devices/pci0000:00/0000:00:04.0/input/input7
+[    3.619488] vboxguest: misc device minor 59, IRQ 20, I/O port d040, MMIO at 0x00000000f0400000 (size 0x0000000000400000)
+[    3.810969] RAPL PMU: API unit is 2^-32 Joules, 0 fixed counters, 10737418240 ms ovfl timer
+[    3.835366] cryptd: max_cpu_qlen set to 1000
+[    3.884756] AVX2 version of gcm_enc/dec engaged.
+[    3.884757] AES CTR mode by8 optimization enabled
+[    4.399749] snd_intel8x0 0000:00:05.0: white list rate for 1028:0177 is 48000
+[    6.744052] audit: type=1400 audit(1794936878.343:2): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/sbin/tcpdump" pid=555 comm="apparmor_parser"
+[    6.756110] audit: type=1400 audit(1794936878.355:3): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/cups/backend/cups-pdf" pid=554 comm="apparmor_parser"
+[    6.756114] audit: type=1400 audit(1794936878.355:4): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/sbin/cupsd" pid=554 comm="apparmor_parser"
+[    6.756118] audit: type=1400 audit(1794936878.355:5): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/sbin/cupsd//third_party" pid=554 comm="apparmor_parser"
+[    6.772161] audit: type=1400 audit(1794936878.371:6): apparmor="STATUS" operation="profile_load" profile="unconfined" name="libreoffice-senddoc" pid=560 comm="apparmor_parser"
+[    6.774044] audit: type=1400 audit(1794936878.371:7): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-client.action" pid=559 comm="apparmor_parser"
+[    6.774048] audit: type=1400 audit(1794936878.371:8): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/NetworkManager/nm-dhcp-helper" pid=559 comm="apparmor_parser"
+[    6.774051] audit: type=1400 audit(1794936878.371:9): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/usr/lib/connman/scripts/dhclient-script" pid=559 comm="apparmor_parser"
+[    6.774054] audit: type=1400 audit(1794936878.371:10): apparmor="STATUS" operation="profile_load" profile="unconfined" name="/{,usr/}sbin/dhclient" pid=559 comm="apparmor_parser"
+[    6.790375] audit: type=1400 audit(1794936878.391:11): apparmor="STATUS" operation="profile_load" profile="unconfined" name="nvidia_modprobe" pid=562 comm="apparmor_parser"
+[    8.306862] Started bpfilter
+[    8.310514] bpfilter: Loaded bpfilter_umh pid 833
+[    8.766312] e1000: enp0s3 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: RX
+[    8.766924] IPv6: ADDRCONF(NETDEV_CHANGE): enp0s3: link becomes ready
+[   56.690278] vboxvideo: loading out-of-tree module taints kernel.
+[   56.690345] vboxvideo: module verification failed: signature and/or required key missing - tainting kernel
+[   56.693206] vboxvideo: loading version 7.2.16 r174877
+[   57.037503] vgdrvHeartbeatInit: Setting up heartbeat to trigger every 2000 milliseconds
+[   57.039795] Host supports full mouse state reporting, switching to extended mouse integration protocol
+[   57.039884] input: VirtualBox mouse integration as /devices/pci0000:00/0000:00:04.0/input/input8
+[   57.040955] vboxguest: Successfully loaded version 7.2.16 r174877
+[   57.040995] vboxguest: misc device minor 59, IRQ 20, I/O port d040, MMIO at 00000000f0400000 (size 0x400000)
+[   57.040996] vboxguest: Successfully loaded version 7.2.16 r174877 (interface 0x00010004)
+[   57.047417] vboxsf: g_fHostFeatures=0x8000000f g_fSfFeatures=0x1 g_uSfLastFunction=29
+[   57.047592] *** VALIDATE vboxsf ***
+[   57.047599] vboxsf: Successfully loaded version 7.2.16 r174877
+[   57.047628] vboxsf: Successfully loaded version 7.2.16 r174877 on 5.4.214-ext4ex1 SMP mod_unload modversions  (LINUX_VERSION_CODE=0x504d6)
+[   57.076782] 17:35:27.337210 main     VBoxService 7.2.16 r174877 (verbosity: 0) linux.amd64 (Aug 13 2026 21:29:05) release log
+               17:35:27.337212 main     Log opened 2026-11-17T17:35:27.337205000Z
+[   57.076831] 17:35:27.337294 main     OS Product: Linux
+[   57.076866] 17:35:27.337331 main     OS Release: 5.4.214-ext4ex1
+[   57.076901] 17:35:27.337366 main     OS Version: #2 SMP Wed Nov 18 02:32:24 KST 2026
+[   57.076946] 17:35:27.337400 main     Executable: /opt/VBoxGuestAdditions-7.2.16/sbin/VBoxService
+               17:35:27.337402 main     Process ID: 7639
+               17:35:27.337403 main     Package type: LINUX_64BITS_GENERIC
+[   57.078229] 17:35:27.338685 main     7.2.16 r174877 started. Verbose level = 0
+[   57.079150] 17:35:27.339603 main     vbglR3GuestCtrlDetectPeekGetCancelSupport: Supported (#1)
+[   57.093432] 17:35:27.353878 automount vbsvcAutomounterMountIt: Successfully mounted 'VMShare' on '/media/sf_VMShare'
+[   64.085966] ISO 9660 Extensions: Microsoft Joliet Level 3
+[   64.086711] ISO 9660 Extensions: RRIP_1991A
+[   65.404124] rfkill: input handler disabled
+[   72.117079] EXT4-fs (loop16): mounted filesystem with ordered data mode. Opts: (null)
+[  119.539465] EXT4-fs (loop17): mounted filesystem with ordered data mode. Opts: (null)
+[  121.847147] python3 (8931): drop_caches: 2
+[  122.047531] python3 (8931): drop_caches: 2
+[  122.248215] python3 (8931): drop_caches: 2
+[  122.426747] python3 (8931): drop_caches: 2
+[  122.609909] python3 (8931): drop_caches: 2
+[  122.794159] python3 (8931): drop_caches: 2
+[  122.978992] python3 (8931): drop_caches: 2
+[  123.189771] python3 (8931): drop_caches: 2
+[  123.373116] python3 (8931): drop_caches: 2
+[  123.555208] python3 (8931): drop_caches: 2
+[  123.726389] python3 (8931): drop_caches: 2
+[  123.937871] python3 (8931): drop_caches: 2
+[  124.156516] python3 (8931): drop_caches: 2
+[  124.330979] python3 (8931): drop_caches: 2
+[  124.506185] python3 (8931): drop_caches: 2
+[  124.690611] python3 (8931): drop_caches: 2
+[  124.880662] python3 (8931): drop_caches: 2
+[  125.056881] python3 (8931): drop_caches: 2
+[  125.283002] python3 (8931): drop_caches: 2
+[  266.678840] python3 (9454): drop_caches: 2
+[  267.301255] python3 (9454): drop_caches: 2
+[  267.877676] python3 (9454): drop_caches: 2
+[  268.490879] python3 (9454): drop_caches: 2
+[  268.816811] python3 (9454): drop_caches: 2
+[  269.428235] python3 (9454): drop_caches: 2
+[  269.863209] python3 (9454): drop_caches: 2
+[  270.262492] python3 (9454): drop_caches: 2
+[  270.909936] python3 (9454): drop_caches: 2
+[  271.452449] python3 (9454): drop_caches: 2
+[  271.903578] python3 (9454): drop_caches: 2
+[  272.496000] python3 (9454): drop_caches: 2
+[  273.109509] python3 (9454): drop_caches: 2
+[  273.667049] python3 (9454): drop_caches: 2
+[  274.120694] python3 (9454): drop_caches: 2
+[  274.785953] python3 (9454): drop_caches: 2
+[  275.348865] python3 (9454): drop_caches: 2
+[  275.986458] python3 (9454): drop_caches: 2
+[  276.576072] python3 (9454): drop_caches: 2
+[  276.913952] python3 (9454): drop_caches: 2
+[  277.255440] python3 (9454): drop_caches: 2
+[  277.606707] python3 (9454): drop_caches: 2
+[  278.226283] python3 (9454): drop_caches: 2
+[  278.801433] python3 (9454): drop_caches: 2
+[  282.273036] python3 (9509): drop_caches: 2
+[  282.965700] python3 (9509): drop_caches: 2
+[  283.491558] python3 (9509): drop_caches: 2
+[  284.152931] python3 (9509): drop_caches: 2
+[  284.468037] python3 (9509): drop_caches: 2
+[  285.137297] python3 (9509): drop_caches: 2
+[  285.555605] python3 (9509): drop_caches: 2
+[  285.932262] python3 (9509): drop_caches: 2
+[  286.569593] python3 (9509): drop_caches: 2
+[  287.108880] python3 (9509): drop_caches: 2
+[  287.545966] python3 (9509): drop_caches: 2
+[  288.188434] python3 (9509): drop_caches: 2
+[  288.852473] python3 (9509): drop_caches: 2
+[  289.418125] python3 (9509): drop_caches: 2
+[  289.858129] python3 (9509): drop_caches: 2
+[  290.483219] python3 (9509): drop_caches: 2
+[  291.062840] python3 (9509): drop_caches: 2
+[  291.697321] python3 (9509): drop_caches: 2
+[  292.320693] python3 (9509): drop_caches: 2
+[  292.655446] python3 (9509): drop_caches: 2
+[  293.037253] python3 (9509): drop_caches: 2
+[  293.331189] python3 (9509): drop_caches: 2
+[  293.938763] python3 (9509): drop_caches: 2
+[  294.543708] python3 (9509): drop_caches: 2
+[  295.088852] python3 (9509): drop_caches: 2
+[  295.656526] python3 (9509): drop_caches: 2
+[  296.262092] python3 (9509): drop_caches: 2
+[  296.872592] python3 (9509): drop_caches: 2
+[  297.191380] python3 (9509): drop_caches: 2
+[  297.533814] python3 (9509): drop_caches: 2
+[  297.942556] python3 (9509): drop_caches: 2
+[  298.523071] python3 (9509): drop_caches: 2
+[  299.150493] python3 (9509): drop_caches: 2
+[  299.717082] python3 (9509): drop_caches: 2
+[  300.354211] python3 (9509): drop_caches: 2
+[  300.878346] python3 (9509): drop_caches: 2
+[  301.531063] python3 (9509): drop_caches: 2
+[  302.180622] python3 (9509): drop_caches: 2
+[  302.863968] python3 (9509): drop_caches: 2
+[  303.258647] python3 (9509): drop_caches: 2
+[  303.816790] python3 (9509): drop_caches: 2
+[  304.464739] python3 (9509): drop_caches: 2
+[  304.914684] python3 (9509): drop_caches: 2
+[  305.323653] python3 (9509): drop_caches: 2
+[  305.968789] python3 (9509): drop_caches: 2
+[  306.294178] python3 (9509): drop_caches: 2
+[  306.920359] python3 (9509): drop_caches: 2
+[  307.472566] python3 (9509): drop_caches: 2
+[  308.102177] python3 (9509): drop_caches: 2
+[  308.815940] python3 (9509): drop_caches: 2
+[  309.315392] python3 (9509): drop_caches: 2
+[  309.846528] python3 (9509): drop_caches: 2
+[  310.467869] python3 (9509): drop_caches: 2
+[  311.009379] python3 (9509): drop_caches: 2
+[  311.618403] python3 (9509): drop_caches: 2
+[  312.016256] python3 (9509): drop_caches: 2
+[  312.607117] python3 (9509): drop_caches: 2
+[  313.174629] python3 (9509): drop_caches: 2
+[  313.646268] python3 (9509): drop_caches: 2
+[  314.241557] python3 (9509): drop_caches: 2
+[  314.858329] python3 (9509): drop_caches: 2
+[  315.173628] python3 (9509): drop_caches: 2
+[  315.713756] python3 (9509): drop_caches: 2
+[  316.223535] python3 (9509): drop_caches: 2
+[  316.852838] python3 (9509): drop_caches: 2
+[  317.260866] python3 (9509): drop_caches: 2
+[  317.924089] python3 (9509): drop_caches: 2
+[  318.511620] python3 (9509): drop_caches: 2
+[  318.878334] python3 (9509): drop_caches: 2
+[  319.538669] python3 (9509): drop_caches: 2
+[  319.873098] python3 (9509): drop_caches: 2
+[  320.194153] python3 (9509): drop_caches: 2
+[  320.769161] python3 (9509): drop_caches: 2
+[  321.415728] python3 (9509): drop_caches: 2
+[  321.740096] python3 (9509): drop_caches: 2
+[  322.108034] python3 (9509): drop_caches: 2
+[  322.703843] python3 (9509): drop_caches: 2
+[  323.091122] python3 (9509): drop_caches: 2
+[  323.680518] python3 (9509): drop_caches: 2
+[  324.299812] python3 (9509): drop_caches: 2
+[  324.718837] python3 (9509): drop_caches: 2
+[  325.383091] python3 (9509): drop_caches: 2
+[  325.882527] python3 (9509): drop_caches: 2
+[  326.446387] python3 (9509): drop_caches: 2
+[  326.766230] python3 (9509): drop_caches: 2
+[  327.380536] python3 (9509): drop_caches: 2
+[  328.017681] python3 (9509): drop_caches: 2
+[  328.474932] python3 (9509): drop_caches: 2
+[  329.097104] python3 (9509): drop_caches: 2
+[  329.718059] python3 (9509): drop_caches: 2
+[  330.113333] python3 (9509): drop_caches: 2
+[  330.716024] python3 (9509): drop_caches: 2
+[  331.219880] python3 (9509): drop_caches: 2
+[  331.854867] python3 (9509): drop_caches: 2
+[  332.453472] python3 (9509): drop_caches: 2
+[  333.182830] python3 (9509): drop_caches: 2
+[  333.867638] python3 (9509): drop_caches: 2
+[  334.707026] python3 (9509): drop_caches: 2
+[  335.095344] python3 (9509): drop_caches: 2
+[  335.850670] python3 (9509): drop_caches: 2
+[  336.605603] python3 (9509): drop_caches: 2
+[  337.358658] python3 (9509): drop_caches: 2
+[  337.763361] python3 (9509): drop_caches: 2
+[  338.158318] python3 (9509): drop_caches: 2
+[  338.576236] python3 (9509): drop_caches: 2
+[  339.191097] python3 (9509): drop_caches: 2
+[  339.804346] python3 (9509): drop_caches: 2
+[  340.406821] python3 (9509): drop_caches: 2
+[  340.962395] python3 (9509): drop_caches: 2
+[  341.602175] python3 (9509): drop_caches: 2
+[  342.185851] python3 (9509): drop_caches: 2
+[  342.800375] python3 (9509): drop_caches: 2
+[  343.372432] python3 (9509): drop_caches: 2
+[  343.917121] python3 (9509): drop_caches: 2
+[  344.442452] python3 (9509): drop_caches: 2
+[  344.762247] python3 (9509): drop_caches: 2
+[  345.139330] python3 (9509): drop_caches: 2
+[  345.756522] python3 (9509): drop_caches: 2
+[  346.234509] python3 (9509): drop_caches: 2
+[  346.769686] python3 (9509): drop_caches: 2
+[  347.189532] python3 (9509): drop_caches: 2
+[  347.607822] python3 (9509): drop_caches: 2
+[  348.137180] python3 (9509): drop_caches: 2
+[  348.625606] python3 (9509): drop_caches: 2
+[  349.268232] python3 (9509): drop_caches: 2
+[  349.655693] python3 (9509): drop_caches: 2
+[  349.980653] python3 (9509): drop_caches: 2
+[  350.494858] python3 (9509): drop_caches: 2
+[  351.098052] python3 (9509): drop_caches: 2
+[  351.723841] python3 (9509): drop_caches: 2
+[  352.400855] python3 (9509): drop_caches: 2
+[  353.044438] python3 (9509): drop_caches: 2
+[  353.684233] python3 (9509): drop_caches: 2
+[  354.279772] python3 (9509): drop_caches: 2
+[  354.868546] python3 (9509): drop_caches: 2
+[  355.486877] python3 (9509): drop_caches: 2
+[  356.101915] python3 (9509): drop_caches: 2
+[  356.512604] python3 (9509): drop_caches: 2
+[  356.929311] python3 (9509): drop_caches: 2
+[  357.331636] python3 (9509): drop_caches: 2
+[  357.883361] python3 (9509): drop_caches: 2
+[  358.499336] python3 (9509): drop_caches: 2
+[  359.081142] python3 (9509): drop_caches: 2
+[  359.452088] python3 (9509): drop_caches: 2
+[  360.056021] python3 (9509): drop_caches: 2
+[  360.598271] python3 (9509): drop_caches: 2
+[  361.217631] python3 (9509): drop_caches: 2
+[  361.524907] python3 (9509): drop_caches: 2
+[  362.031500] python3 (9509): drop_caches: 2
+[  362.608336] python3 (9509): drop_caches: 2
+[  363.266708] python3 (9509): drop_caches: 2
+[  363.944815] python3 (9509): drop_caches: 2
+[  364.520260] python3 (9509): drop_caches: 2
+[  365.108140] python3 (9509): drop_caches: 2
+[  365.515247] python3 (9509): drop_caches: 2
+[  365.878338] python3 (9509): drop_caches: 2
+[  366.424077] python3 (9509): drop_caches: 2
+[  366.816198] python3 (9509): drop_caches: 2
+[  367.179399] python3 (9509): drop_caches: 2
+[  367.682363] python3 (9509): drop_caches: 2
+[  368.047430] python3 (9509): drop_caches: 2
+[  368.630378] python3 (9509): drop_caches: 2
+[  369.050583] python3 (9509): drop_caches: 2
+[  369.668077] python3 (9509): drop_caches: 2
+[  370.259523] python3 (9509): drop_caches: 2
+[  370.885212] python3 (9509): drop_caches: 2
+[  371.465989] python3 (9509): drop_caches: 2
+[  372.037302] python3 (9509): drop_caches: 2
+[  372.679046] python3 (9509): drop_caches: 2
+[  373.292752] python3 (9509): drop_caches: 2
+[  373.908748] python3 (9509): drop_caches: 2
+[  374.539684] python3 (9509): drop_caches: 2
+[  375.064850] python3 (9509): drop_caches: 2
+[  375.648214] python3 (9509): drop_caches: 2
+[  376.267111] python3 (9509): drop_caches: 2
+[  376.686696] python3 (9509): drop_caches: 2
+[  377.268558] python3 (9509): drop_caches: 2
+[  377.681785] python3 (9509): drop_caches: 2
+[  378.166642] python3 (9509): drop_caches: 2
+[  378.608360] python3 (9509): drop_caches: 2
+[  378.984635] python3 (9509): drop_caches: 2
+[  379.492236] python3 (9509): drop_caches: 2
+[  379.824062] python3 (9509): drop_caches: 2
+[  380.271753] python3 (9509): drop_caches: 2
+[  380.803609] python3 (9509): drop_caches: 2
+[  381.427014] python3 (9509): drop_caches: 2
+[  382.090766] python3 (9509): drop_caches: 2
+[  382.732833] python3 (9509): drop_caches: 2
+[  383.317358] python3 (9509): drop_caches: 2
+[  383.856702] python3 (9509): drop_caches: 2
+[  384.227387] python3 (9509): drop_caches: 2
+[  384.843991] python3 (9509): drop_caches: 2
+[  385.407095] python3 (9509): drop_caches: 2
+[  386.070840] python3 (9509): drop_caches: 2
+[  386.524084] python3 (9509): drop_caches: 2
+[  387.111021] python3 (9509): drop_caches: 2
+[  387.764535] python3 (9509): drop_caches: 2
+[  388.312087] python3 (9509): drop_caches: 2
+[  388.732863] python3 (9509): drop_caches: 2
+[  389.319155] python3 (9509): drop_caches: 2
+[  389.761102] python3 (9509): drop_caches: 2
+[  390.162378] python3 (9509): drop_caches: 2
+[  390.802454] python3 (9509): drop_caches: 2
+[  391.445567] python3 (9509): drop_caches: 2
+[  391.994455] python3 (9509): drop_caches: 2
+[  392.569752] python3 (9509): drop_caches: 2
+[  392.875451] python3 (9509): drop_caches: 2
+[  393.410093] python3 (9509): drop_caches: 2
+[  393.857650] python3 (9509): drop_caches: 2
+[  394.485062] python3 (9509): drop_caches: 2
+[  395.055324] python3 (9509): drop_caches: 2
+[  395.667529] python3 (9509): drop_caches: 2
+[  396.239129] python3 (9509): drop_caches: 2
+[  396.650286] python3 (9509): drop_caches: 2
+[  397.300761] python3 (9509): drop_caches: 2
+[  397.716721] python3 (9509): drop_caches: 2
+[  398.319796] python3 (9509): drop_caches: 2
+[  398.876187] python3 (9509): drop_caches: 2
+[  399.298685] python3 (9509): drop_caches: 2
+[  399.913262] python3 (9509): drop_caches: 2
+[  400.273932] python3 (9509): drop_caches: 2
+[  400.854601] python3 (9509): drop_caches: 2
+[  401.523139] python3 (9509): drop_caches: 2
+[  402.165898] python3 (9509): drop_caches: 2
+[  402.865259] python3 (9509): drop_caches: 2
+[  403.395862] python3 (9509): drop_caches: 2
+[  403.992213] python3 (9509): drop_caches: 2
+[  404.267643] python3 (9509): drop_caches: 2
+[  404.864347] python3 (9509): drop_caches: 2
+[  405.407586] python3 (9509): drop_caches: 2
+[  406.068857] python3 (9509): drop_caches: 2
+[  406.659610] python3 (9509): drop_caches: 2
+[  407.066417] python3 (9509): drop_caches: 2
+[  407.505150] python3 (9509): drop_caches: 2
+[  408.116076] python3 (9509): drop_caches: 2
+[  408.531691] python3 (9509): drop_caches: 2
+[  409.073971] python3 (9509): drop_caches: 2
+[  409.695264] python3 (9509): drop_caches: 2
+[  410.281726] python3 (9509): drop_caches: 2
+[  410.615875] python3 (9509): drop_caches: 2
+[  441.599590] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  442.173527] python3 (10304): drop_caches: 3
+[  442.525710] python3 (10304): drop_caches: 3
+[  443.091107] python3 (10304): drop_caches: 3
+[  443.616046] python3 (10304): drop_caches: 3
+[  444.140313] python3 (10304): drop_caches: 3
+[  444.800756] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  445.203241] python3 (10304): drop_caches: 3
+[  445.711772] python3 (10304): drop_caches: 3
+[  446.260068] python3 (10304): drop_caches: 3
+[  446.809853] python3 (10304): drop_caches: 3
+[  447.599787] python3 (10304): drop_caches: 3
+[  448.331923] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  448.685403] python3 (10304): drop_caches: 3
+[  449.172152] python3 (10304): drop_caches: 3
+[  449.755820] python3 (10304): drop_caches: 3
+[  450.379206] python3 (10304): drop_caches: 3
+[  451.200901] python3 (10304): drop_caches: 3
+[  451.877102] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  452.128969] python3 (10304): drop_caches: 3
+[  452.446825] python3 (10304): drop_caches: 3
+[  452.844580] python3 (10304): drop_caches: 3
+[  453.365081] python3 (10304): drop_caches: 3
+[  453.853684] python3 (10304): drop_caches: 3
+[  454.401670] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  454.745004] python3 (10304): drop_caches: 3
+[  455.146318] python3 (10304): drop_caches: 3
+[  455.589970] python3 (10304): drop_caches: 3
+[  456.151946] python3 (10304): drop_caches: 3
+[  456.710947] python3 (10304): drop_caches: 3
+[  457.381114] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  457.682008] python3 (10304): drop_caches: 3
+[  458.106943] python3 (10304): drop_caches: 3
+[  458.602818] python3 (10304): drop_caches: 3
+[  459.122778] python3 (10304): drop_caches: 3
+[  459.476297] python3 (10304): drop_caches: 3
+[  460.121504] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  460.359688] python3 (10304): drop_caches: 3
+[  460.745258] python3 (10304): drop_caches: 3
+[  461.256245] python3 (10304): drop_caches: 3
+[  461.827517] python3 (10304): drop_caches: 3
+[  462.285564] python3 (10304): drop_caches: 3
+[  462.976702] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  463.392491] python3 (10304): drop_caches: 3
+[  463.876331] python3 (10304): drop_caches: 3
+[  464.412964] python3 (10304): drop_caches: 3
+[  464.931374] python3 (10304): drop_caches: 3
+[  465.654962] python3 (10304): drop_caches: 3
+[  466.275108] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  466.720491] python3 (10304): drop_caches: 3
+[  467.225484] python3 (10304): drop_caches: 3
+[  467.605380] python3 (10304): drop_caches: 3
+[  467.925214] python3 (10304): drop_caches: 3
+[  468.485993] python3 (10304): drop_caches: 3
+[  469.112391] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  469.557142] python3 (10304): drop_caches: 3
+[  470.113922] python3 (10304): drop_caches: 3
+[  470.468915] python3 (10304): drop_caches: 3
+[  470.892679] python3 (10304): drop_caches: 3
+[  471.584298] python3 (10304): drop_caches: 3
+[  472.413317] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  472.704075] python3 (10304): drop_caches: 3
+[  473.226163] python3 (10304): drop_caches: 3
+[  473.759484] python3 (10304): drop_caches: 3
+[  474.201610] python3 (10304): drop_caches: 3
+[  474.966429] python3 (10304): drop_caches: 3
+[  475.467034] blk_update_request: I/O error, dev loop18, sector 0 op 0x1:(WRITE) flags 0x800 phys_seg 0 prio class 0
+[  475.467163] blk_update_request: I/O error, dev loop18, sector 0 op 0x1:(WRITE) flags 0x800 phys_seg 0 prio class 0
+[  475.701696] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  476.066628] python3 (10304): drop_caches: 3
+[  476.522481] python3 (10304): drop_caches: 3
+[  477.064157] python3 (10304): drop_caches: 3
+[  477.496158] python3 (10304): drop_caches: 3
+[  477.948496] python3 (10304): drop_caches: 3
+[  478.589132] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  478.844215] python3 (10304): drop_caches: 3
+[  479.167906] python3 (10304): drop_caches: 3
+[  479.614201] python3 (10304): drop_caches: 3
+[  480.119707] python3 (10304): drop_caches: 3
+[  480.532944] python3 (10304): drop_caches: 3
+[  481.030306] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  481.338249] python3 (10304): drop_caches: 3
+[  481.705925] python3 (10304): drop_caches: 3
+[  482.251911] python3 (10304): drop_caches: 3
+[  482.728262] python3 (10304): drop_caches: 3
+[  483.396430] python3 (10304): drop_caches: 3
+[  483.882561] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  484.237585] python3 (10304): drop_caches: 3
+[  484.731615] python3 (10304): drop_caches: 3
+[  485.186787] python3 (10304): drop_caches: 3
+[  485.536946] python3 (10304): drop_caches: 3
+[  486.083407] python3 (10304): drop_caches: 3
+[  486.523113] EXT4-fs (loop18): mounted filesystem with ordered data mode. Opts: data=ordered
+[  486.745115] python3 (10304): drop_caches: 3
+[  487.129416] python3 (10304): drop_caches: 3
+[  487.561849] python3 (10304): drop_caches: 3
+[  487.815955] python3 (10304): drop_caches: 3
+[  488.272080] python3 (10304): drop_caches: 3

@@ -1,0 +1,8 @@
+{
+  "argv": [
+    "mke2fs",
+    "-V"
+  ],
+  "returncode": 0,
+  "elapsed_ns": 7838817
+}

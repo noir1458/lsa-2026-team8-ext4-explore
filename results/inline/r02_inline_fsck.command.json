@@ -1,0 +1,10 @@
+{
+  "argv": [
+    "e2fsck",
+    "-f",
+    "-n",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/inline-run/r02_inline.img"
+  ],
+  "returncode": 0,
+  "elapsed_ns": 73009040
+}

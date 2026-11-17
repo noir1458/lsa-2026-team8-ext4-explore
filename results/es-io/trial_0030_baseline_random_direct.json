@@ -1,0 +1,30 @@
+{
+  "round": 2,
+  "trial": 30,
+  "label": "baseline",
+  "command": [
+    "taskset",
+    "-c",
+    "0",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/bench/es_io_bench",
+    "--file",
+    "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/es-mount/es.bin",
+    "--extents",
+    "1024",
+    "--span",
+    "65536",
+    "--queries",
+    "4000",
+    "--seed",
+    "22261125",
+    "--pattern",
+    "random",
+    "--io",
+    "direct",
+    "--policy",
+    "0",
+    "--profile",
+    "0"
+  ],
+  "returncode": 0
+}

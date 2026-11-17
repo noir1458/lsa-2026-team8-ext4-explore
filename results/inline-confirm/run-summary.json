@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "failure": null,
+  "expected_trials": 240,
+  "completed_trials": 240,
+  "inline_files_at32": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000
+  ],
+  "images_retained": false,
+  "notes": [
+    "st_blocks is in 512-byte units and excludes the preallocated inode table; inline files are not physically free.",
+    "Read data buffers and expected bytes are prepared before the timer. Exact byte checks and inode flag/stat collection occur after it.",
+    "Grow first validates all original 32-byte files, so growth is a warm metadata/data operation.",
+    "Process I/O counters include a small /proc observer overhead, exclude subsequent validation, and are not direct physical device I/O.",
+    "inline_data can also affect directory representation; this screens the existing feature, not only an isolated regular-file function.",
+    "128-byte eligibility is observed through inode flags, never assumed; larger files may use ordinary extent storage."
+  ]
+}

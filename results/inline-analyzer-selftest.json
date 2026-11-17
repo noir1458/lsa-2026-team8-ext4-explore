@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "evidence_type": "synthetic analyzer validation, not performance evidence",
+  "positive_case": "36 cells, exact paired -20% for every timing metric",
+  "negative_case": "removed one planned cell, rejected with missing coverage",
+  "fixture": "/tmp/inline-analyzer-test-ourt6b4u",
+  "plot_check": "PASS: synthetic PNG and PDF generated; full PNG visually inspected"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "platform": "macOS functional tests only; no ext4 or Linux timing claim",
+  "sanitizers": "ASan+UBSan",
+  "sizes": [
+    32,
+    128,
+    512,
+    4096
+  ],
+  "count": 127,
+  "successful_modes": 18,
+  "negative_checks": [
+    "corrupted content rejected",
+    "existing target refused"
+  ],
+  "barrier": "PASS",
+  "fixture": "/tmp/inline-functional-h1pua544"
+}

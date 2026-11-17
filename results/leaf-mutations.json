@@ -1,0 +1,294 @@
+{
+  "schema": 1,
+  "fixture": "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/leaf-mount/check-mut-fb27946b5d2e497f957c7af0f6f21720",
+  "files_per_directory": 1200,
+  "initial_parameters": {
+    "leaf_prefilter": "N"
+  },
+  "drop_caches": 2,
+  "result": "PASS",
+  "modes": [
+    {
+      "label": "baseline",
+      "mode": 0,
+      "limit": 0,
+      "parameters": {
+        "leaf_prefilter": "N"
+      },
+      "stages": [
+        {
+          "stage": "baseline_before",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1200,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "41cfd4ca5de0c0b0332b9604dc1fc91ceb3b06091fcd2131cad19aa065c68fc7",
+          "identity_sha256": "e225101c85827c451c1872e6f276c2ddbfc53a00b2b3f3c1f8136ef8ca0f5faa",
+          "negative_checks": 32,
+          "verification_elapsed_ns": 170356441,
+          "drop_caches": 2
+        },
+        {
+          "stage": "baseline_rename",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1200,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "6cc3410dbdcda04b84955ea956fc5f30cd2db11483db0fcbae051e976bde7718",
+          "identity_sha256": "6133ad3d71a2b649fe7e847d6f1c42e9a0979ae0d9153d05d9c6c035d2fafd25",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 145287413,
+          "drop_caches": 2
+        },
+        {
+          "stage": "baseline_hardlink",
+          "files": 2401,
+          "directory_counts": {
+            "src": 1201,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "9afc412e89331eebd09ad807408a54b51d3ae6980cad359547d84e1a46fcf590",
+          "identity_sha256": "7c7ffc9574682129b6ed01be9c0879e89d6fdc1d635815f2ee56527a22926d2a",
+          "negative_checks": 32,
+          "verification_elapsed_ns": 146088601,
+          "drop_caches": 2
+        },
+        {
+          "stage": "baseline_unlink_original",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1200,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "4307ea1eaab3383d25be39da1441dc0bb5c4a17ae991d4fd2672196adc34882d",
+          "identity_sha256": "cab4aec060fa84104ae8242f4d6ee82f8e82f75fb3e8768fa328e8eeb026a11f",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 147411456,
+          "drop_caches": 2
+        },
+        {
+          "stage": "baseline_cross_rename",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1199,
+            "dst": 1201
+          },
+          "content_name_nlink_sha256": "fde7d44a40037391497ff5aad151dc5a5d64fd5a8f198da425978c9338f0e297",
+          "identity_sha256": "8ff319fbebe8b356897d87b0f0593bc4dce1b5e15fdfeb7909c68185566f70ec",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 144678069,
+          "drop_caches": 2
+        },
+        {
+          "stage": "baseline_replace_rename",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1198,
+            "dst": 1202
+          },
+          "content_name_nlink_sha256": "a253d1555006a1da4cde32ee33af0d1e883993b465343a75888e76c189e3918c",
+          "identity_sha256": "160a6702e57ef7af02173b4ee11075f453b31ce31a698e60c7962ecb7b2f9074",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 169748809,
+          "drop_caches": 2
+        },
+        {
+          "stage": "baseline_unlink",
+          "files": 2399,
+          "directory_counts": {
+            "src": 1197,
+            "dst": 1202
+          },
+          "content_name_nlink_sha256": "d8feb23a04e2f20b653e5f4e6d065fdc61a030d926219c04db4f1d9776685366",
+          "identity_sha256": "ed76aca41d371ad04c3bfe428c6f3c94019d3f75feb6a543169d87bdead51887",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 146972779,
+          "drop_caches": 2
+        },
+        {
+          "stage": "baseline_recreate",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1198,
+            "dst": 1202
+          },
+          "content_name_nlink_sha256": "6d28fd2f1d5de1912748488daf61761f53efd3f3287eacf67b1edcae6f574426",
+          "identity_sha256": "160a6702e57ef7af02173b4ee11075f453b31ce31a698e60c7962ecb7b2f9074",
+          "negative_checks": 32,
+          "verification_elapsed_ns": 145575680,
+          "drop_caches": 2
+        },
+        {
+          "stage": "baseline_restored",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1200,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "41cfd4ca5de0c0b0332b9604dc1fc91ceb3b06091fcd2131cad19aa065c68fc7",
+          "identity_sha256": "e225101c85827c451c1872e6f276c2ddbfc53a00b2b3f3c1f8136ef8ca0f5faa",
+          "negative_checks": 36,
+          "verification_elapsed_ns": 145554012,
+          "drop_caches": 2
+        }
+      ],
+      "result": "PASS"
+    },
+    {
+      "label": "tail",
+      "mode": 1,
+      "limit": 0,
+      "parameters": {
+        "leaf_prefilter": "Y"
+      },
+      "stages": [
+        {
+          "stage": "tail_before",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1200,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "41cfd4ca5de0c0b0332b9604dc1fc91ceb3b06091fcd2131cad19aa065c68fc7",
+          "identity_sha256": "e225101c85827c451c1872e6f276c2ddbfc53a00b2b3f3c1f8136ef8ca0f5faa",
+          "negative_checks": 32,
+          "verification_elapsed_ns": 177176843,
+          "drop_caches": 2
+        },
+        {
+          "stage": "tail_rename",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1200,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "6cc3410dbdcda04b84955ea956fc5f30cd2db11483db0fcbae051e976bde7718",
+          "identity_sha256": "6133ad3d71a2b649fe7e847d6f1c42e9a0979ae0d9153d05d9c6c035d2fafd25",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 175147870,
+          "drop_caches": 2
+        },
+        {
+          "stage": "tail_hardlink",
+          "files": 2401,
+          "directory_counts": {
+            "src": 1201,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "9afc412e89331eebd09ad807408a54b51d3ae6980cad359547d84e1a46fcf590",
+          "identity_sha256": "7c7ffc9574682129b6ed01be9c0879e89d6fdc1d635815f2ee56527a22926d2a",
+          "negative_checks": 32,
+          "verification_elapsed_ns": 138067238,
+          "drop_caches": 2
+        },
+        {
+          "stage": "tail_unlink_original",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1200,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "4307ea1eaab3383d25be39da1441dc0bb5c4a17ae991d4fd2672196adc34882d",
+          "identity_sha256": "cab4aec060fa84104ae8242f4d6ee82f8e82f75fb3e8768fa328e8eeb026a11f",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 136704886,
+          "drop_caches": 2
+        },
+        {
+          "stage": "tail_cross_rename",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1199,
+            "dst": 1201
+          },
+          "content_name_nlink_sha256": "fde7d44a40037391497ff5aad151dc5a5d64fd5a8f198da425978c9338f0e297",
+          "identity_sha256": "8ff319fbebe8b356897d87b0f0593bc4dce1b5e15fdfeb7909c68185566f70ec",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 139907175,
+          "drop_caches": 2
+        },
+        {
+          "stage": "tail_replace_rename",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1198,
+            "dst": 1202
+          },
+          "content_name_nlink_sha256": "a253d1555006a1da4cde32ee33af0d1e883993b465343a75888e76c189e3918c",
+          "identity_sha256": "160a6702e57ef7af02173b4ee11075f453b31ce31a698e60c7962ecb7b2f9074",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 151443153,
+          "drop_caches": 2
+        },
+        {
+          "stage": "tail_unlink",
+          "files": 2399,
+          "directory_counts": {
+            "src": 1197,
+            "dst": 1202
+          },
+          "content_name_nlink_sha256": "d8feb23a04e2f20b653e5f4e6d065fdc61a030d926219c04db4f1d9776685366",
+          "identity_sha256": "ed76aca41d371ad04c3bfe428c6f3c94019d3f75feb6a543169d87bdead51887",
+          "negative_checks": 33,
+          "verification_elapsed_ns": 149368601,
+          "drop_caches": 2
+        },
+        {
+          "stage": "tail_recreate",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1198,
+            "dst": 1202
+          },
+          "content_name_nlink_sha256": "6d28fd2f1d5de1912748488daf61761f53efd3f3287eacf67b1edcae6f574426",
+          "identity_sha256": "160a6702e57ef7af02173b4ee11075f453b31ce31a698e60c7962ecb7b2f9074",
+          "negative_checks": 32,
+          "verification_elapsed_ns": 189452702,
+          "drop_caches": 2
+        },
+        {
+          "stage": "tail_restored",
+          "files": 2400,
+          "directory_counts": {
+            "src": 1200,
+            "dst": 1200
+          },
+          "content_name_nlink_sha256": "41cfd4ca5de0c0b0332b9604dc1fc91ceb3b06091fcd2131cad19aa065c68fc7",
+          "identity_sha256": "e225101c85827c451c1872e6f276c2ddbfc53a00b2b3f3c1f8136ef8ca0f5faa",
+          "negative_checks": 36,
+          "verification_elapsed_ns": 149767754,
+          "drop_caches": 2
+        }
+      ],
+      "result": "PASS"
+    }
+  ],
+  "restoration_errors": [],
+  "note": "Correctness only; verification_elapsed_ns is not a performance benchmark.",
+  "directory_flags": {
+    "src": {
+      "flags_hex": "0x81000",
+      "index_flag": true
+    },
+    "dst": {
+      "flags_hex": "0x81000",
+      "index_flag": true
+    }
+  },
+  "baseline": {
+    "stage": "initial",
+    "files": 2400,
+    "directory_counts": {
+      "src": 1200,
+      "dst": 1200
+    },
+    "content_name_nlink_sha256": "41cfd4ca5de0c0b0332b9604dc1fc91ceb3b06091fcd2131cad19aa065c68fc7",
+    "identity_sha256": "e225101c85827c451c1872e6f276c2ddbfc53a00b2b3f3c1f8136ef8ca0f5faa",
+    "negative_checks": 32,
+    "verification_elapsed_ns": 170689928,
+    "drop_caches": 2
+  },
+  "fixture_retained": false
+}

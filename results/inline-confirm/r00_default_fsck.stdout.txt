@@ -1,0 +1,6 @@
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/inline-confirm/r00_default.img: 4015/8192 files (0.1% non-contiguous), 5589/16384 blocks

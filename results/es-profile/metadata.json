@@ -1,0 +1,27 @@
+{
+  "bench": "/home/EXPERIMENT_USER/lsa-ext4-explore/bench/es_bench",
+  "file": "/home/EXPERIMENT_USER/lsa-ext4-explore/fixtures/es-mount/es.bin",
+  "output": "/home/EXPERIMENT_USER/lsa-ext4-explore/results/es-profile",
+  "extents": 1024,
+  "span": 65536,
+  "queries": 200000,
+  "threads": 1,
+  "rounds": 1,
+  "seed": 20261118,
+  "patterns": "hot,sequential,random",
+  "cache_states": "es-warm,es-cold",
+  "labels": "baseline,refresh",
+  "profile": true,
+  "cpus": "0",
+  "timeout": 120,
+  "uname": [
+    "Linux",
+    "EXPERIMENT_USER-VirtualBox",
+    "5.4.214-ext4ex1",
+    "#2 SMP Wed Nov 18 02:32:24 KST 2026",
+    "x86_64",
+    "x86_64"
+  ],
+  "reset": "per-trial EXT4_IOC_CLEAR_ES_CACHE; setup refresh=0",
+  "scope": "metadata SEEK_DATA calls inside known written spans; no user file-data reads"
+}
